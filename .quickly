@@ -1,0 +1,5 @@
+project = stormcloud
+version = 12.04
+template = ubuntu-application
+lp_id = stormcloud
+ppa = stormcloud
