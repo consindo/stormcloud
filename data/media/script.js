@@ -51,7 +51,7 @@ function generateStats(data, callback) {
 	//Temperature
 	weather.temperature = $(data).filterNode('item').children().filterNode("yweather:condition").attr("temp")
 	weather.temperatureUnit = $(data).filterNode('yweather:units').attr("temperature")
-	
+
 	//Wind
 	weather.windUnit = $(data).filterNode('yweather:units').attr("speed")
 	weather.windSpeed = $(data).filterNode('yweather:wind').attr("speed")
@@ -85,7 +85,9 @@ function generateStats(data, callback) {
 }
 
 function render(location) {
-	getWeatherData(location, function(rawdata) { 
+	$('.border .sync').addClass('busy');
+
+	getWeatherData(location, function(rawdata) {
 		generateStats(rawdata, function(weather) {
 
 			console.log(weather)
@@ -98,9 +100,9 @@ function render(location) {
 				$("#temperature").text(weather.temperature + " °")
 				document.title = weather.temperature
 			}
-			
-			$("#windSpeed").text(weather.windSpeed)	
-			$("#windUnit").text(weather.windUnit)	
+
+			$("#windSpeed").text(weather.windSpeed)
+			$("#windUnit").text(weather.windUnit)
 			$("#humidity").text(weather.humidity + " %")
 
 			//Background Color
@@ -121,6 +123,9 @@ function render(location) {
 			$('.border .sync, .border .settings').css("opacity", "0.8")
 			$('#actualWeather').fadeIn(500)
 			$("#locationModal").fadeOut(500)
+			// spin the thing for 500ms longer than it actually takes, because
+			// most of the time refreshing is actually instant :)
+			setTimeout(function() { $('.border .sync').removeClass('busy'); }, 500);
 		})
 	})
 }
@@ -132,7 +137,7 @@ function background(temp) {
 		// Array to RGB
 		if (typeof(i) == 'object') {
 			return 'rgb(' + i.join(', ') + ')';
-		
+
 		// Hex to array
 		} else if (typeof(i) == 'string') {
 			var output = [];
@@ -144,12 +149,12 @@ function background(temp) {
 			return output;
 		}
 	};
-		
+
 	// Get color at position
 	var blend = function( x ) {
-		
+
 		x = Number(x);
-		
+
 		var gradient = [{
 			pos: 0,
 			color: convert('#0081d3')
@@ -184,7 +189,7 @@ function background(temp) {
 			pos: 100,
 			color: convert('#e44211')
 		}];
-		
+
 		var left = {
 			pos: -1,
 			color: false,
@@ -195,7 +200,7 @@ function background(temp) {
 			color:  false,
 			percent: 0
 		};
-		
+
 		// Get the 2 closest stops to the specified position
 		for (var i=0, l=gradient.length; i<l; i++) {
 			var stop = gradient[i];
@@ -225,7 +230,7 @@ function background(temp) {
 			Math.round((left.color[1] * left.percent) + (right.color[1] * right.percent)),
 			Math.round((left.color[2] * left.percent) + (right.color[2] * right.percent)),
 		];
-		
+
 		return convert(blend);
 
 	};
@@ -345,7 +350,7 @@ function init_settings() {
 	    typingTimer = setTimeout(doneTyping, doneTypingInterval)
 	});
 
-	//on keydown, clear the countdown 
+	//on keydown, clear the countdown
 	locationInput.keydown(function(){
 	    clearTimeout(typingTimer)
 	});
@@ -376,7 +381,7 @@ function init_settings() {
 
 	/* Other Settings */
 	if (!localStorage.stormcloud_measurement) {
-		localStorage.stormcloud_measurement = "f"		
+		localStorage.stormcloud_measurement = "f"
 	}
 	$('#locationModal .temptype [data-type=' + localStorage.stormcloud_measurement + ']').addClass('selected')
 
@@ -401,12 +406,12 @@ function init_settings() {
 			$('body').removeClass('retina')
 		}
 	})
-	
+
 	/* Error Message Retry Button */
 	$('#errorMessage .btn').click(function() {
 		render(localStorage.stormcloud)
 	})
-	
+
 }
 function show_settings(amount) {
 

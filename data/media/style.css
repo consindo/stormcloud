@@ -22,7 +22,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    user-select: none;  
+    user-select: none;
 }
 p, span, div {
 	cursor: default;
@@ -34,6 +34,20 @@ p, span, div {
 	display: inline-block;
 	opacity: 0;
 	-webkit-transition: 500ms ease opacity;
+}
+@-webkit-keyframes busy-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 8px 8px;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -webkit-transform-origin: 8px 8px;
+  }
+}
+
+.border .sync.busy {
+	-webkit-animation: busy-spinning 0.5s infinite linear;
 }
 .border {
 	position: absolute;
