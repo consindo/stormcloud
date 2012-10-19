@@ -242,8 +242,10 @@ font-size: 0;
 #locationModal .temptype span[data-type=k] {
 	font-family: "Ubuntu Condensed";
 	font-size: 18px;
-	line-height: 30px;
-	padding: 2px 14px 5px;
+	line-height: 36px;
+	height: 37px;
+	padding: 0px 14px 0px;
+	vertical-align: top;
 }
 #locationModal .temptype span:last-child {
 	border-right: 2px solid #222;
