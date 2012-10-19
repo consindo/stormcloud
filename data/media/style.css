@@ -240,11 +240,10 @@ font-size: 0;
 	background-color: #555;
 }
 #locationModal .temptype span[data-type=k] {
-	color: transparent;
-	background-image: url(degrees-kelvin.svg);
-	background-repeat: no-repeat;
-	background-position: 45% 45%;
-	background-size: 18px;
+	font-family: "Ubuntu Condensed";
+	font-size: 18px;
+	line-height: 30px;
+	padding: 2px 14px 5px;
 }
 #locationModal .temptype span:last-child {
 	border-right: 2px solid #222;
