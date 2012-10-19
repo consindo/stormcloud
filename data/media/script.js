@@ -89,8 +89,6 @@ function render(location) {
 
 	getWeatherData(location, function(rawdata) {
 		generateStats(rawdata, function(weather) {
-
-			console.log(weather)
 			$("#city").text(weather.city)
 			$("#code").text(weather_code(weather.code)).attr("class", "w" + weather.code)
 
@@ -107,8 +105,13 @@ function render(location) {
 			}
 			document.title = temp
 
-			$("#windSpeed").text(weather.windSpeed)
-			$("#windUnit").text(weather.windUnit)
+			var windSpeed = weather.windSpeed
+			if (localStorage.stormcloud_speed != "mph") {
+				//Converts to either kph or m/s
+				windSpeed = (localStorage.stormcloud_speed == "kph") ? Math.round(windSpeed * 1.609344) : Math.round(windSpeed * 4.4704) /10
+			}
+			$("#windSpeed").text(windSpeed)
+			$("#windUnit").text((localStorage.stormcloud_speed == "ms") ? "m/s" : localStorage.stormcloud_speed)
 			$("#humidity").text(weather.humidity + " %")
 
 			//Background Color
@@ -127,7 +130,7 @@ function render(location) {
 				}
 			}
 
-			//Show ICON
+			//Show Icon
 			$('.border .sync, .border .settings').css("opacity", "0.8")
 			$('#actualWeather').fadeIn(500)
 			$("#locationModal").fadeOut(500)
