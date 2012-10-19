@@ -96,6 +96,9 @@ function render(location) {
 			if (localStorage.stormcloud_measurement == "c") {
 				$("#temperature").text(Math.round((weather.temperature -32)*5/9) + " °")
 				document.title = Math.round((weather.temperature -32)*5/9)
+			} else if (localStorage.stormcloud_measurement == "k") {
+				$("#temperature").text(Math.round((weather.temperature -32)*5/9) + 273 + " K")
+				//document.title = Math.round((weather.temperature -32)*5/9)
 			} else {
 				$("#temperature").text(weather.temperature + " °")
 				document.title = weather.temperature
@@ -114,6 +117,8 @@ function render(location) {
 				$('#' + i + ' .code').text(weather_code(weather.week[i].code))
 				if (localStorage.stormcloud_measurement == "c") {
 					$('#' + i + ' .temp').html(Math.round((weather.week[i].high -32)*5/9) + "°<span>" + Math.round((weather.week[i].low -32)*5/9) + "°</span>")
+				} else if (localStorage.stormcloud_measurement == "k") {
+					$('#' + i + ' .temp').html(Math.round((weather.week[i].high -32)*5/9) + 273 + "<span>" + Math.round((weather.week[i].low -32)*5/9 + 273)  + "</span>")
 				} else {
 					$('#' + i + ' .temp').html(weather.week[i].high + "°<span>" + weather.week[i].low + "°</span>")
 				}
