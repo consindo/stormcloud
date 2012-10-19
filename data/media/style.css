@@ -219,27 +219,41 @@ font-size: 0;
 	background-repeat: no-repeat;
 	background-position: 50%;
 }
-#locationModal .temptype {
+#locationModal .measurement {
 	font-family: "ClimaconsRegular";
 	font-size: 32px;
 }
-#locationModal .temptype {
-	margin-top: 15px;
+#locationModal .measurement span {
+	padding: 0 7px 5px 10px;
 }
-#locationModal .temptype span {
+#locationModal .speed span {
+	line-height: 35px;
+	padding: 0 7px;
+	width: 42px;
+	box-sizing: border-box;
+	height: 41px;
+	text-align: center;
+}
+.toggleswitch {
+	margin-top: 10px;
+}
+.toggleswitch span {
 	display: inline-block;
 	line-height: 1;
 	-webkit-transition: 150ms ease background-color;
-	padding: 0 7px 5px 10px;
+	
 	border: 2px solid #222;
 	border-right: 0;
 	background-color: #333;
 	cursor: default;
 }
-#locationModal .temptype span.selected, #locationModal .temptype span:hover {
+.toggleswitch span.selected, #locationModal .toggleswitch span:hover {
 	background-color: #555;
 }
-#locationModal .temptype span[data-type=k] {
+.toggleswitch span:last-child {
+	border-right: 2px solid #222;
+}
+#locationModal .measurement span[data-type=k] {
 	font-family: "Ubuntu Condensed";
 	font-size: 18px;
 	line-height: 36px;
@@ -247,9 +261,7 @@ font-size: 0;
 	padding: 0px 14px 0px;
 	vertical-align: top;
 }
-#locationModal .temptype span:last-child {
-	border-right: 2px solid #222;
-}
+
 #locationModal .retina {
 	margin-top: 10px;
 }

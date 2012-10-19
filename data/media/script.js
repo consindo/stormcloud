@@ -93,16 +93,19 @@ function render(location) {
 			console.log(weather)
 			$("#city").text(weather.city)
 			$("#code").text(weather_code(weather.code)).attr("class", "w" + weather.code)
+
+			//Sets initial temp as Fahrenheit
+			var temp = weather.temperature
 			if (localStorage.stormcloud_measurement == "c") {
-				$("#temperature").text(Math.round((weather.temperature -32)*5/9) + " °")
-				document.title = Math.round((weather.temperature -32)*5/9)
+				temp = Math.round((weather.temperature -32)*5/9)
+				$("#temperature").text(temp + " °")
 			} else if (localStorage.stormcloud_measurement == "k") {
-				$("#temperature").text(Math.round((weather.temperature -32)*5/9) + 273 + " K")
-				//document.title = Math.round((weather.temperature -32)*5/9)
+				temp = Math.round((weather.temperature -32)*5/9) + 273
+				$("#temperature").text(temp + " K")
 			} else {
-				$("#temperature").text(weather.temperature + " °")
-				document.title = weather.temperature
+				$("#temperature").text(temp + " °")
 			}
+			document.title = temp
 
 			$("#windSpeed").text(weather.windSpeed)
 			$("#windUnit").text(weather.windUnit)
@@ -136,7 +139,6 @@ function render(location) {
 }
 
 function background(temp) {
-	/* Cheers to George Czabania for this code. */
 	// Convert RGB array to CSS
 	var convert = function( i ) {
 		// Array to RGB
@@ -384,19 +386,20 @@ function init_settings() {
 		}
 	})
 
-	/* Other Settings */
-	if (!localStorage.stormcloud_measurement) {
-		localStorage.stormcloud_measurement = "f"
-	}
-	$('#locationModal .temptype [data-type=' + localStorage.stormcloud_measurement + ']').addClass('selected')
+	// Sets up localstorage
+	localStorage.stormcloud_measurement = (localStorage.stormcloud_measurement) ? localStorage.stormcloud_measurement : "f"
+	localStorage.stormcloud_speed = (localStorage.stormcloud_speed) ? localStorage.stormcloud_speed : "mph"
 
-	//Sets up the things
-	$('#locationModal .temptype span').click(function() {
-		$('#locationModal .temptype span').removeClass('selected')
-		localStorage.stormcloud_measurement = $(this).addClass('selected').attr("data-type")
+	$('#locationModal .measurement [data-type=' + localStorage.stormcloud_measurement + ']').addClass('selected')
+	$('#locationModal .speed [data-type=' + localStorage.stormcloud_speed + ']').addClass('selected')
+
+	//Sets up the Toggle Switches
+	$('#locationModal .toggleswitch span').click(function() {
+		$(this).parent().children().removeClass('selected')
+		localStorage.setItem("stormcloud_" + $(this).parent().attr("class").replace("toggleswitch ", ""), $(this).addClass('selected').attr("data-type"))
 	})
 
-	/* Retina Support */
+	// Retina Support because Ubuntu doesn't have Retina Support
 	if (localStorage.stormcloud_retina == "checked") {
 		$('#locationModal .retina input').attr("checked", "checked")
 		document.title = "checked"
