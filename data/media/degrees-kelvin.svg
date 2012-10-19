@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="33.319527"
+   height="23.998896"
+   viewBox="0 0 33.319527 23.998896"
+   enable-background="new 0 0 100 100"
+   xml:space="preserve"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Degrees-Fahrenheit.svg"><metadata
+   id="metadata9"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs7" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1024"
+   inkscape:window-height="526"
+   id="namedview5"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="4.72"
+   inkscape:cx="7.3038853"
+   inkscape:cy="19.37952"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="text2986" />
+<path
+   clip-rule="evenodd"
+   d="m 6.998,16.050828 c -3.865,0 -6.998,-3.134 -6.998,-6.9989998 0,-3.865 3.133,-6.999 6.998,-6.999 3.865,0 7.000001,3.134 7.000001,6.999 0,3.8649998 -3.134,6.9989998 -7.000001,6.9989998 z m 0,-9.9989998 c -1.656,0 -2.999,1.344 -2.999,3 0,1.6559998 1.343,2.9999998 2.999,2.9999998 1.657,0 3,-1.344 3,-2.9999998 0,-1.656 -1.342,-3 -3,-3 z"
+   id="path3"
+   style="fill: #ffffff; fill-rule:evenodd"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="ssssssssss" />
+<g
+   id="text2986"
+   transform="translate(-33.002,-35.949172)"><path
+     d="m 55.497284,49.556793 c 0.45358,-0.494812 0.917475,-1.010252 1.391688,-1.546321 0.494814,-0.536045 0.969018,-1.061794 1.422615,-1.577247 0.453577,-0.536043 0.876238,-1.041174 1.267983,-1.515394 0.412341,-0.474189 0.76284,-0.886541 1.051498,-1.237056 l 5.473974,0 c -1.092749,1.257689 -2.164864,2.463818 -3.216346,3.61839 -1.030894,1.13398 -2.164861,2.309182 -3.401906,3.525611 0.618517,0.556684 1.257662,1.226755 1.917438,2.010216 0.65975,0.762858 1.298895,1.556635 1.917437,2.381334 0.618513,0.824708 1.185497,1.649412 1.700953,2.474113 0.515423,0.824705 0.948393,1.577247 1.298909,2.257628 l -5.288416,0 C 60.703217,59.412009 60.321792,58.824408 59.888834,58.185261 59.476471,57.5255 59.033193,56.876046 58.558998,56.236897 58.084784,55.577138 57.579653,54.948302 57.043604,54.350386 56.528156,53.752482 56.012716,53.247351 55.497284,52.834992 l 0,7.113075 -4.608036,0 0,-23.256661 4.608036,-0.742234 0,13.607621"
+     id="path2991"
+     style="fill: #ffffff"
+     inkscape:connector-curvature="0" /></g></svg>

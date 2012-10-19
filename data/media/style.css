@@ -229,17 +229,25 @@ font-size: 0;
 #locationModal .temptype span {
 	display: inline-block;
 	line-height: 1;
-	-webkit-transition: 150ms ease background;
+	-webkit-transition: 150ms ease background-color;
 	padding: 0 7px 5px 10px;
 	border: 2px solid #222;
-	background: #333;
+	border-right: 0;
+	background-color: #333;
 	cursor: default;
 }
 #locationModal .temptype span.selected, #locationModal .temptype span:hover {
-	background: #555;
+	background-color: #555;
 }
-#locationModal .temptype span:first-child {
-	border-right: 0;
+#locationModal .temptype span[data-type=k] {
+	color: transparent;
+	background-image: url(degrees-kelvin.svg);
+	background-repeat: no-repeat;
+	background-position: 45% 45%;
+	background-size: 18px;
+}
+#locationModal .temptype span:last-child {
+	border-right: 2px solid #222;
 }
 #locationModal .retina {
 	margin-top: 10px;
