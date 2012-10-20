@@ -346,6 +346,9 @@ function init_settings() {
 		background(null)
 	})
 
+	//Fuck CSS.
+	$("span[data-color]:not([data-color=gradient])").map(function() { $(this).css('background', '#' + $(this).attr("data-color")) })
+
 	/* Error Message Retry Button */
 	$('#errorMessage .btn').click(function() {
 		render(localStorage.stormcloud)
