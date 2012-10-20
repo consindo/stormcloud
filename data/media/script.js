@@ -2,8 +2,7 @@ function getZipCode(location, callback) {
 	//If it's a woeid, we bypass the first step
 	if ($.isNumeric(location)) {
 		woeid_request(location, callback)
-
-	//If they use a normal texual location
+	//If they use a normal location
 	} else {
 		$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml", function(locationData) {
 			// Gets the WOEID
@@ -12,7 +11,6 @@ function getZipCode(location, callback) {
 				// WOEID Request to find Global ZIP Code
 				woeid_request(woeid, callback)
 			} else {
-				//No Data =(
 				callback()
 			}
 		})
@@ -79,8 +77,6 @@ function generateStats(data, callback) {
 
 	if (callback) {
 		callback(weather)
-	} else {
-		console.log(weather)
 	}
 }
 
@@ -136,14 +132,14 @@ function render(location) {
 			$("#locationModal").fadeOut(500)
 			// spin the thing for 500ms longer than it actually takes, because
 			// most of the time refreshing is actually instant :)
-			setTimeout(function() { $('.border .sync').removeClass('busy'); }, 500);
+			setTimeout(function() { $('.border .sync').removeClass('busy'); }, 500)
 		})
 	})
 }
 
 function background(temp) {
 	// Convert RGB array to CSS
-	var convert = function( i ) {
+	var convert = function(i) {
 		// Array to RGB
 		if (typeof(i) == 'object') {
 			return 'rgb(' + i.join(', ') + ')';
@@ -153,18 +149,16 @@ function background(temp) {
 			var output = [];
 			if (i[0] == '#') i = i.slice(1);
 			if (i.length == 3)	i = i[0] + i[0] + i[1] + i[1] + i[2] + i[2];
-			output.push(parseInt(i.slice(0,2), 16));
-			output.push(parseInt(i.slice(2,4), 16));
-			output.push(parseInt(i.slice(4,6), 16));
+			output.push(parseInt(i.slice(0,2), 16))
+			output.push(parseInt(i.slice(2,4), 16))
+			output.push(parseInt(i.slice(4,6), 16))
 			return output;
 		}
 	};
 
 	// Get color at position
-	var blend = function( x ) {
-
-		x = Number(x);
-
+	var blend = function(x) {
+		x = Number(x)
 		var gradient = [{
 			pos: 0,
 			color: convert('#0081d3')
@@ -240,9 +234,7 @@ function background(temp) {
 			Math.round((left.color[1] * left.percent) + (right.color[1] * right.percent)),
 			Math.round((left.color[2] * left.percent) + (right.color[2] * right.percent)),
 		];
-
 		return convert(blend);
-
 	};
 
 	//Sets Background Color
@@ -250,30 +242,19 @@ function background(temp) {
 	$("#container").css("background", blend(percentage))
 }
 
-// Converts yahoo weather to icon font
+// Converts Yahoo weather to icon font
 function weather_code(a){var b={0:"(",1:"z",2:"(",3:"z",4:"z",5:"e",6:"e",7:"o",8:"3",9:"3",10:"9",11:"9",12:"9",13:"o",14:"o",15:"o",16:"o",17:"e",18:"e",19:"s",20:"s",21:"s",22:"s",23:"l",24:"l",25:"`",26:"`",27:"2",28:"1",29:"2",30:"1",31:"/",32:"v",33:"/",34:"v",35:"e",36:"v",37:"z",38:"z",39:"z",40:"3",41:"o",42:"o",43:"o",44:"`",45:"z",46:"o",47:"z",3200:"`"};return b[a]}
 
 $(document).ready(function() {
-	//Filter Node Function
+	//Filters Proprietary RSS Tags
 	jQuery.fn.filterNode = function(name){
 	   return this.filter(function(){
 	      return this.nodeName === name;
 	   });
 	};
-	//Prevents Dragging on certain elements
-	$('.border .settings, .border .sync, .border .close, #locationModal').mouseover(function() {
-		document.title = "disabledrag"
-	}).mouseout(function() {
-		document.title = "enabledrag"
-	})
-
-	init_settings()
-
-	$('.border .sync').click(function() {
-		render(localStorage.stormcloud)
-	})
 
 	//APP START.
+	init_settings()
 	if (!localStorage.stormcloud) {
 		show_settings("location")
 	} else {
@@ -289,13 +270,19 @@ $(document).ready(function() {
 
 function init_settings() {
 
-	$(".border .close").click(function() {
-		document.title = 'close'
-	})
-
-	//Click Handler
-	$(".border .settings").click(function() {
-		show_settings("all")
+	//Prevents Dragging on certain elements
+	$('.border .settings, .border .sync, .border .close, #locationModal').mouseover(function() {
+		document.title = "disabledrag"
+	}).mouseout(function() {
+		document.title = "enabledrag"
+	}).click(function() {
+		if ($(this).hasClass("close")) {
+			document.title = 'close'
+		} else if ($(this).hasClass("settings")) {
+			show_settings("all")
+		} else if ($(this).hasClass("sync")) {
+			render(localStorage.stormcloud)
+		}
 	})
 
 	//First Run
@@ -306,16 +293,14 @@ function init_settings() {
 	//on keyup, start the countdown
 	locationInput.keyup(function(){
 	    typingTimer = setTimeout(doneTyping, doneTypingInterval)
-	});
-
+	}).keydown(function(){
 	//on keydown, clear the countdown
-	locationInput.keydown(function(){
 	    clearTimeout(typingTimer)
 	});
 
-	function doneTyping () {
+	function doneTyping() {
 		$("#locationModal .loader").attr("class", "loading loader").html("|")
-			getZipCode(locationInput.val(), function(zipCode) {
+		getZipCode(locationInput.val(), function(zipCode) {
 			if (zipCode) {
 				$("#locationModal .loader").attr("class", "tick loader").html("&#10003;").attr("data-code", zipCode)
 			} else {
