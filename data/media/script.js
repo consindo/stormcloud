@@ -238,8 +238,12 @@ function background(temp) {
 	};
 
 	//Sets Background Color
-	var percentage = Math.round((temp - 45) *  2.2)
-	$("#container").css("background", blend(percentage))
+	if (localStorage.stormcloud_color == "gradient") {
+		var percentage = Math.round((temp - 45) *  2.2)
+		$("#container").css("background", blend(percentage))
+	} else {
+		$("#container").css("background", "#" + localStorage.stormcloud_color)
+	}
 }
 
 // Converts Yahoo weather to icon font
@@ -325,6 +329,7 @@ function init_settings() {
 	// Sets up localstorage
 	localStorage.stormcloud_measurement = (localStorage.stormcloud_measurement) ? localStorage.stormcloud_measurement : "f"
 	localStorage.stormcloud_speed = (localStorage.stormcloud_speed) ? localStorage.stormcloud_speed : "mph"
+	localStorage.stormcloud_color = (localStorage.stormcloud_color) ? localStorage.stormcloud_color : "gradient"
 
 	$('#locationModal .measurement [data-type=' + localStorage.stormcloud_measurement + ']').addClass('selected')
 	$('#locationModal .speed [data-type=' + localStorage.stormcloud_speed + ']').addClass('selected')
@@ -335,20 +340,10 @@ function init_settings() {
 		localStorage.setItem("stormcloud_" + $(this).parent().attr("class").replace("toggleswitch ", ""), $(this).addClass('selected').attr("data-type"))
 	})
 
-	// Retina Support because Ubuntu doesn't have Retina Support
-	if (localStorage.stormcloud_retina == "checked") {
-		$('#locationModal .retina input').attr("checked", "checked")
-		document.title = "checked"
-		$('body').addClass('retina')
-	}
-	$('#locationModal .retina input').click(function() {
-		localStorage.stormcloud_retina = $('#locationModal .retina input').attr("checked")
-		document.title = $('#locationModal .retina input').attr("checked")
-		if (localStorage.stormcloud_retina == "checked") {
-			$('body').addClass('retina')
-		} else {
-			$('body').removeClass('retina')
-		}
+	//Color thing
+	$('.color span').click(function() {
+		localStorage.stormcloud_color = $(this).attr("data-color")
+		background(null)
 	})
 
 	/* Error Message Retry Button */

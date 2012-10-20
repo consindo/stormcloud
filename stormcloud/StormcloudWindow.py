@@ -93,12 +93,6 @@ class StormcloudWindow(Window):
             if title == "close":
                 Gtk.main_quit()
 
-            # Stupid Names for Retina Support sorry =(
-            elif title == "checked":
-                self.window.set_size_request(600, 1000)
-            elif title == "undefined":
-                self.window.set_size_request(300, 500)
-
             # Disables Dragging
             elif title == "disabledrag":
                 self.drag = False

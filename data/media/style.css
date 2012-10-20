@@ -312,3 +312,7 @@ font-size: 0;
 .btn:hover {
 	background: #555;
 }
+.donate {
+	display: block;
+	margin-top: 10px;
+}
