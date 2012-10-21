@@ -75,16 +75,6 @@ class Window(Gtk.Window):
         self.builder = builder
         self.ui = builder.get_ui(self, True)
 
-        # Optional Launchpad integration
-        # This shouldn't crash if not found as it is simply used for bug reporting.
-        # See https://wiki.ubuntu.com/UbuntuDevelopment/Internationalisation/Coding
-        # for more information about Launchpad integration.
-        try:
-            from gi.repository import LaunchpadIntegration # pylint: disable=E0611
-            LaunchpadIntegration.set_sourcepackagename('stormcloud')
-        except ImportError:
-            pass
-
     def on_mnu_close_activate(self, widget, data=None):
         """Signal handler for closing the StormcloudWindow."""
         self.destroy()
