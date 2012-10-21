@@ -6,7 +6,7 @@ function getZipCode(location, callback) {
 	} else {
 		$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml", function(locationData) {
 			// Gets the WOEID
-			var woeid = $(locationData).children().children().children().children().filterNode("woeid").text()
+			var woeid = $(locationData).children().children().children().first().children().filterNode("woeid").text()
 			if (woeid) {
 				// WOEID Request to find Global ZIP Code
 				woeid_request(woeid, callback)
