@@ -74,7 +74,7 @@ class StormcloudWindow(Window):
 
         try:
             launcher = Unity.LauncherEntry.get_for_desktop_id("stormcloud.desktop")
-            
+            launcher.set_property("count_visible", True)
         except NameError:
             pass
 
@@ -88,6 +88,7 @@ class StormcloudWindow(Window):
             return True
 
         def title_changed(widget, frame, title):
+            print title
 
             if title == "close":
                 Gtk.main_quit()
@@ -102,11 +103,13 @@ class StormcloudWindow(Window):
 
             #Unity Counts
             elif title == "enable_launcher":
+                print "Enabling.."
                 try:
                     launcher.set_property("count_visible", True)
                 except NameError:
                     pass
             elif title == "disable_launcher":
+                print "Disabling.."
                 try:
                     launcher.set_property("count_visible", False)
                 except NameError:

@@ -356,7 +356,7 @@ function init_settings() {
 		document.title = "enable_launcher"
 	}
 	$('#locationModal .launcher input').click(function() {
-		localStorage.stormcloud_launcher = $('#locationModal .retina input').attr("checked")
+		localStorage.stormcloud_launcher = $('#locationModal .launcher input').attr("checked")
 		if (localStorage.stormcloud_launcher == "checked") {
 			document.title = "enable_launcher"
 		} else {
