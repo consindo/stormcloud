@@ -68,7 +68,7 @@ class StormcloudWindow(Window):
         self.webviewsettings = self.webview.get_settings()
         self.webviewsettings.set_property("javascript-can-open-windows-automatically", True)
         self.webviewsettings.set_property("enable-universal-access-from-file-uris", True)
-        self.webviewsettings.set_property("enable-developer-extras", True)
+        self.webviewsettings.set_property('enable-default-context-menu',False)
         self.webview.load_uri(get_media_file('app.html'))
         self.box.show_all()
 
