@@ -331,10 +331,10 @@ function init_settings() {
 	})
 
 	// Sets up localstorage
-	localStorage.stormcloud_measurement = (localStorage.stormcloud_measurement) ? localStorage.stormcloud_measurement : "f"
-	localStorage.stormcloud_speed = (localStorage.stormcloud_speed) ? localStorage.stormcloud_speed : "mph"
-	localStorage.stormcloud_color = (localStorage.stormcloud_color) ? localStorage.stormcloud_color : "gradient"
-	localStorage.stormcloud_launcher = (localStorage.stormcloud_launcher) ? localStorage.stormcloud_launcher : "checked"
+	localStorage.stormcloud_measurement = localStorage.stormcloud_measurement || "f"
+	localStorage.stormcloud_speed = localStorage.stormcloud_speed || "mph"
+	localStorage.stormcloud_color =  localStorage.stormcloud_color || "gradient"
+	localStorage.stormcloud_launcher = localStorage.stormcloud_launcher || "checked"
 
 	$('#locationModal .measurement [data-type=' + localStorage.stormcloud_measurement + ']').addClass('selected')
 	$('#locationModal .speed [data-type=' + localStorage.stormcloud_speed + ']').addClass('selected')
