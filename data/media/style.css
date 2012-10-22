@@ -85,6 +85,24 @@ p, span, div {
 .close:hover {
 	background: rgba(0,0,0,0.2);
 }
+.minimize {
+	font-family: monospace;
+	font-size: 18px;
+	width: 30px;
+	height: 30px;
+	left: 30px;
+	font-weight: bold;
+	position:absolute;;
+	display: inline-block;
+	text-align: center;
+	line-height: 38px;
+	background: rgba(0,0,0,0.05);
+	cursor: default;
+	-webkit-transition: 200ms ease background;
+}
+.minimize:hover {
+	background: rgba(0,0,0,0.2);
+}
 #container {
 	height: 500px;
 	width: 300px;

@@ -277,13 +277,15 @@ $(document).ready(function() {
 function init_settings() {
 
 	//Prevents Dragging on certain elements
-	$('.border .settings, .border .sync, .border .close, #locationModal').mouseover(function() {
+	$('.border .settings, .border .sync, .border .close, .border .minimize, #locationModal').mouseover(function() {
 		document.title = "disabledrag"
 	}).mouseout(function() {
 		document.title = "enabledrag"
 	}).click(function() {
 		if ($(this).hasClass("close")) {
 			document.title = 'close'
+		} else if ($(this).hasClass("minimize")) {
+			document.title = 'minimize'
 		} else if ($(this).hasClass("settings")) {
 			show_settings("all")
 		} else if ($(this).hasClass("sync")) {

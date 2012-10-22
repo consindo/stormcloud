@@ -91,6 +91,8 @@ class StormcloudWindow(Window):
 
             if title == "close":
                 Gtk.main_quit()
+            elif title == "minimize":
+                self.window.iconify()
 
             # Disables Dragging
             elif title == "disabledrag":
