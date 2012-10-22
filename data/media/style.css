@@ -94,9 +94,6 @@ p, span, div {
 	-webkit-transition: 500ms background ease;
 	-webkit-transform-origin: 0 0;
 }
-.retina #container {
-	-webkit-transform: scale(2);
-}
 #actualWeather {
 	display: none;
 }
@@ -196,9 +193,6 @@ font-size: 0;
 	padding: 25px;
 	-webkit-transform-origin: 0 0;
 }
-.retina #locationModal {
-	-webkit-transform: scale(2);
-}
 #locationModal input[type=text] {
 	width: 216px;
 	border: 2px solid #333;
@@ -262,7 +256,7 @@ font-size: 0;
 	vertical-align: top;
 }
 
-#locationModal .retina {
+#locationModal .launcher {
 	margin-top: 10px;
 }
 #locationModal label {
