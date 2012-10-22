@@ -5,8 +5,9 @@ function getZipCode(location, callback) {
 	//If they use a normal location
 	} else {
 		$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml", function(locationData) {
-			// Gets the WOEID
+			// Gets the WOEID && Caches Location Name
 			var woeid = $(locationData).children().children().children().first().children().filterNode("woeid").text()
+			localStorage.stormcloud_location = $(locationData).children().children().children().first().children().filterNode("name").text()
 			if (woeid) {
 				// WOEID Request to find Global ZIP Code
 				woeid_request(woeid, callback)
@@ -18,6 +19,7 @@ function getZipCode(location, callback) {
 
 	function woeid_request(woeid, callback) {
 		$.get("http://weather.yahooapis.com/forecastrss?w=" + woeid, function(woeidData) {
+			//Cache Name
 			callback($(woeidData).children().children().children().filterNode("item").children().filterNode("guid").text().substring(0,8))
 		})
 	}
@@ -85,7 +87,7 @@ function render(location) {
 
 	getWeatherData(location, function(rawdata) {
 		generateStats(rawdata, function(weather) {
-			$("#city").text(weather.city)
+			$("#city").text(localStorage.stormcloud_location || weather.city)
 			$("#code").text(weather_code(weather.code)).attr("class", "w" + weather.code)
 
 			//Sets initial temp as Fahrenheit
