@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="57.994999"
+   height="51.994999"
+   viewBox="0 0 57.994999 51.994999"
+   id="Layer_1"
+   xml:space="preserve"><metadata
+   id="metadata9"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs7" />
+<path
+   d="M 47.995,11.999 H 10 C 8.896,11.999 8,11.103 8,10 8,8.896 8.896,8 10,8 h 37.995 c 1.104,0 2,0.896 2,2 0,1.103 -0.895,1.999 -2,1.999 z m -35.995,4 h 29.996 c 1.104,0 2,0.896 2,2 0,1.104 -0.896,1.999 -2,1.999 H 12 c -1.104,0 -2,-0.896 -2,-1.999 0,-1.105 0.896,-2 2,-2 z m 11.998,7.999 h 21.998 c 1.104,0 1.999,0.896 1.999,1.999 0,1.104 -0.895,2 -1.999,2 H 23.998 c -1.104,0 -1.999,-0.896 -1.999,-2 0,-1.103 0.895,-1.999 1.999,-1.999 z m 2,15.998 h 5.999 c 1.104,0 2,0.896 2,1.999 0,1.104 -0.896,2 -2,2 h -5.999 c -1.104,0 -2,-0.896 -2,-2 0,-1.103 0.896,-1.999 2,-1.999 z m 1,-6 c 0,-1.104 0.896,-1.999 2,-1.999 h 13.998 c 1.104,0 2,0.896 2,1.999 0,1.104 -0.896,2 -2,2 H 28.998 c -1.104,0 -2,-0.895 -2,-2 z"
+   id="path3"
+   style="fill:#ffffff;fill-rule:evenodd" />
+</svg>

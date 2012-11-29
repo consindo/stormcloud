@@ -1,0 +1,38 @@
+<div class="locationSettings">
+    <h2>Locations<span class="add" title="Add City">+</span></h2>
+    <ul>
+        <li class="placeInput"><input placeholder="Location" type="text"><span class="status"></span></li>
+        {{#each location}}
+        <li data-code="{{this.zip}}"><span class="name">{{this.place}}</span><span class="delete">&#10005;</span></li>
+        {{/each}}
+    </ul>
+</div>
+<div class="wrapperTwenty">
+    <div class="toggleswitch measurement">
+        {{{measurement}}}
+    </div>
+    <div class="toggleswitch speed">
+        {{{speed}}}
+    </div>
+    <div class="color">
+        <span data-color="gradient"></span>
+        <span data-color="A200FF"></span>
+        <span data-color="FF0097"></span>
+        <span data-color="00ABA9"></span>
+        <span data-color="8CBF26"></span>
+        <span data-color="A05000"></span>
+        <span data-color="333333"></span>
+        <span data-color="F09609"></span>
+        <span data-color="1BA1E2"></span>
+        <span data-color="E51400"></span>
+        <span data-color="339933"></span>
+    </div>
+    <div class="launcher" data-boop="{{launcher}}">
+    {{#if launcher}}
+        <input type="checkbox" id="launcherswitch" checked><label for="launcherswitch">Show Launcher Count</label>
+    {{else}}
+        <input type="checkbox" id="launcherswitch"><label for="launcherswitch">Show Launcher Count</label>
+    {{/if}}
+    </div>
+    <a class="btn" href="http://caffeinatedco.de/donate.html">DONATE</a><br>
+</div>
