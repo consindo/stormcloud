@@ -1,24 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   version="1.1"
-   width="47.997002"
-   height="47.997002"
-   viewBox="0 0 47.997002 47.997002"
-   id="Layer_1"
-   xml:space="preserve"><metadata
-   id="metadata9"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
-   id="defs7" />
-<path
-   d="M 23.999,35.997 C 17.372,35.997 12,30.625 12,23.999 12,17.372 17.372,12 23.999,12 c 0.755,0 1.491,0.078 2.207,0.212 -0.132,0.576 -0.208,1.173 -0.208,1.788 0,4.418 3.582,7.999 8,7.999 0.615,0 1.212,-0.076 1.788,-0.208 0.133,0.717 0.211,1.452 0.211,2.208 0,6.626 -5.372,11.998 -11.998,11.998 z M 22.211,16.207 C 18.655,17.02 16,20.196 16,23.999 c 0,4.417 3.581,7.999 7.999,7.999 3.802,0 6.978,-2.655 7.791,-6.211 -4.854,-0.904 -8.676,-4.726 -9.579,-9.58 z"
-   id="path3"
-   style="fill:#ffffff;fill-rule:evenodd" />
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="48" height="48" viewBox="0 0 47.997002 47.997002" xml:space="preserve"><style>
+	.style0{
+		fill:	#ffffff;
+		fill-rule:	evenodd;
+	}
+</style><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><defs/>
+<path d="M 24 36 C 17.4 36 12 30.6 12 24 12 17.4 17.4 12 24 12 c 0.8 0 1.5 0.1 2.2 0.2 -0.1 0.6 -0.2 1.2 -0.2 1.8 0 4.4 3.6 8 8 8 0.6 0 1.2 -0.1 1.8 -0.2 0.1 0.7 0.2 1.5 0.2 2.2 0 6.6 -5.4 12 -12 12 z M 22.2 16.2 C 18.7 17 16 20.2 16 24 c 0 4.4 3.6 8 8 8 3.8 0 7 -2.7 7.8 -6.2 -4.9 -0.9 -8.7 -4.7 -9.6 -9.6 z" class="style0"/>
 </svg>
