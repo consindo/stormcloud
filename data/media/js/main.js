@@ -57,6 +57,15 @@ $(function() {
 	//Tell Python / Wrapper some settings
 	stormcloud.postSettings()
 	stormcloud.softReload()
+
+	//Sets up Credits
+	document.getElementById('credits').innerHTML = Handlebars.templates['credits.template']()
+	$("body").on("click", "a.credits", function() {
+		$("#credits").addClass("show anim")
+	})
+	$("#credits img").click(function() {
+		$("#credits").removeClass("show")
+	})
 })
 
 stormcloud = {

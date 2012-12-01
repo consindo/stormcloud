@@ -48,6 +48,6 @@ function program5(depth0,data) {
   stack1 = depth0.launcher;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </div>\n    <a class=\"btn\" href=\"http://caffeinatedco.de/donate.html\">DONATE</a><br>\n</div>\n";
+  buffer += "\n    </div>\n    <a class=\"btn\" href=\"http://caffeinatedco.de/donate.html\">DONATE</a>&nbsp;<a class=\"btn credits\" href=\"#\">CREDITS</a><br>\n</div>\n";
   return buffer;});
 })();

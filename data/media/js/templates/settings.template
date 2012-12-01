@@ -34,5 +34,5 @@
         <input type="checkbox" id="launcherswitch"><label for="launcherswitch">Show Launcher Count</label>
     {{/if}}
     </div>
-    <a class="btn" href="http://caffeinatedco.de/donate.html">DONATE</a><br>
+    <a class="btn" href="http://caffeinatedco.de/donate.html">DONATE</a>&nbsp;<a class="btn credits" href="#">CREDITS</a><br>
 </div>

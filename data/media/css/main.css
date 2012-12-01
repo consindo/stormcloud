@@ -85,7 +85,49 @@ textarea {
   width: 300px;
   height: 500px;
   position: relative;
-  background: #2f75af; }
+  background: #2f75af;
+  overflow: hidden; }
+
+#credits {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  overflow-x: auto;
+  color: #444;
+  z-index: 10;
+  font-size: 15px;
+  padding: 20px;
+  font-family: 'Ubuntu Condensed';
+  background: #eee;
+  -webkit-animation: 500ms ease credits-show 1;
+  -webkit-transform-origin: left;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: perspective(600px) rotateY(-90deg);
+  overflow: hidden; }
+  #credits.show {
+    -webkit-transform: perspective(600px) rotateY(0deg); }
+  #credits.anim {
+    -webkit-transition: 500ms ease all; }
+  #credits strong {
+    letter-spacing: -1px; }
+  #credits img {
+    cursor: pointer; }
+  #credits ul {
+    padding-left: 1.5em; }
+  #credits h1, #credits h2 {
+    margin-top: 0.3em;
+    margin-bottom: 0.2em;
+    color: #222;
+    letter-spacing: -1px; }
+  #credits p {
+    margin-top: 0; }
+  #credits a {
+    text-decoration: none;
+    color: #444; }
+    #credits a:hover {
+      text-decoration: underline; }
 
 #container {
   width: 100%;
