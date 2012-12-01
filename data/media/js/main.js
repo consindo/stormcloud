@@ -36,7 +36,7 @@ $(function() {
 		stormcloud.posChange()
 	})
 	$(".sliderControls .right").click(function() {
-		slider.next()
+		if (slider.getPos() != slider.length - 1) slider.next()
 		stormcloud.posChange()
 	})
 
