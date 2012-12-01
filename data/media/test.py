@@ -21,7 +21,8 @@ if __name__ == "__main__":
 
     MainWindow.setCentralWidget(view)
 
-
+    # Makes it the right size
+    view.setSceneRect(0, 0, width, height)
     view.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
     view.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
 
@@ -29,24 +30,23 @@ if __name__ == "__main__":
 
     webview.resize(width, height)
     webview.load(QtCore.QUrl(os.path.abspath(os.path.join(sys.argv[0], "..", "index.html"))))
-    #webview.load(QtCore.QUrl("http://thismachine.info"))
     webview.setZoomFactor(1)
 
-    webview.settings().setAttribute(QWebSettings.WebAttribute.DeveloperExtrasEnabled, True)
+    #webview.settings().setAttribute(QWebSettings.WebAttribute.DeveloperExtrasEnabled, True)
     webview.settings().setAttribute(QWebSettings.WebAttribute.LocalStorageEnabled, True)
     webview.settings().setAttribute(QWebSettings.WebAttribute.LocalContentCanAccessRemoteUrls, True)
 
 
-    inspect = QWebInspector()
-    inspect.setPage(webview.page())
-    inspect.show()
+    #inspect = QWebInspector()
+    #inspect.setPage(webview.page())
+    #inspect.show()
 
     scene.addItem(webview)
 
     view.resize(width, height)
     view.show()
 
-    view.setWindowTitle('Simple')
+    view.setWindowTitle('Stormcloud')
 
     MainWindow.show()
 
