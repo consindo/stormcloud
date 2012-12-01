@@ -31,22 +31,20 @@ $(function() {
 
 	slider = new Swipe(document.getElementById('container'));
 
-	$(".sliderControls .left").click(function() {
-		slider.prev()
-		stormcloud.posChange()
-	})
-	$(".sliderControls .right").click(function() {
-		if (slider.getPos() != slider.length - 1) slider.next()
+	$(".sliderControls img").click(function() {
+		if ($(this).hasClass("right") && slider.getPos() != slider.length - 1) {
+			slider.next()
+		} else if ($(this).hasClass("left")) {
+			slider.prev()
+		}
 		stormcloud.posChange()
 	})
 
 	$(document).keydown(function(e){
 		if (e.keyCode == 37) {
-			slider.prev()
-			stormcloud.posChange()
+			$(".sliderControls .left").trigger("click")
 		} else if (e.keyCode == 39) {
-			slider.next()
-			stormcloud.posChange()
+			$(".sliderControls .right").trigger("click")
 		}
 	});
 
