@@ -91,6 +91,9 @@ body.drag {
   background: #2f75af;
   overflow: hidden; }
 
+#desktopBackground {
+  display: none; }
+
 #credits {
   position: absolute;
   left: 0;

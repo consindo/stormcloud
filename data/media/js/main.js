@@ -27,11 +27,14 @@ $(function() {
 	try {
 		// Load native UI library
 		gui = require('nw.gui')
+		os = require('os')
+
+		console.log(os.type())
 
 		// Get the current window
 		win = gui.Window.get()
 		win.show()
-		//win.showDevTools()
+		win.showDevTools()
 
 		//Bind Handlers
 		$("#panel .close").click(function() {
@@ -62,7 +65,10 @@ $(function() {
 	}
 
 	//Sets up Background Color
-	if (localStorage.stormcloud_color != "gradient") {
+	if (localStorage.stormcloud_color == "desktop") {
+		var rgb = getAverageRGB(document.getElementById('desktopBackground'))
+		$("#background").css('background', 'rgb('+rgb.r+','+rgb.b+','+rgb.g+')');
+	} else if (localStorage.stormcloud_color != "gradient") {
 		$("#background").css('background', localStorage.stormcloud_color)
 	}
 
@@ -235,6 +241,9 @@ stormcloud = {
 				if (localStorage.stormcloud_color == "gradient") {
 					var percentage = Math.round((temp - 45) *  2.2)
 					return blend(percentage)
+				} else if (localStorage.stormcloud_color == "desktop") {
+					var rgb = getAverageRGB(document.getElementById('desktopBackground'))
+					return 'rgb('+rgb.r+','+rgb.b+','+rgb.g+')';
 				} else {
 					return localStorage.stormcloud_color
 				}

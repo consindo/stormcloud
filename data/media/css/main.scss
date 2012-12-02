@@ -114,6 +114,11 @@ body.drag {
     overflow: hidden;
 }
 
+// This is so we can get the average color
+#desktopBackground {
+    display: none;
+}
+
 #credits {
     position: absolute;
     left: 0;
