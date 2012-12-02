@@ -307,11 +307,7 @@ stormcloud = {
 			stormcloud.dataGet.weather(locations[i], function(weather) {
 				$("#container li > div")[arr.indexOf(weather.zip)].innerHTML = template(weather)
 				stormcloud.posChange()
-
-				// This is buggy in QT
-				setTimeout(function() {
-					stormcloud.textfix()
-				}, 100)
+				stormcloud.textfix()
 
 				// If the first location loads, fade everything in
 				if (arr.indexOf(weather.zip) == 0) {

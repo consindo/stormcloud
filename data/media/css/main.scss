@@ -167,9 +167,28 @@ $app_height: 500px;
     }
 }
 
+// Draggable
+a, input {
+    -webkit-app-region: no-drag;
+}
+img {
+    -webkit-user-drag: none;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.sliderControls img {
+    -webkit-app-region: no-drag;
+}
+
+
 #container {
     width: 100%;
     height: 100%;
+
+    -webkit-app-region: drag;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 
     -webkit-transition-property: opacity, background-color;
     -webkit-transition-duration: 300ms, 300ms;
@@ -327,6 +346,7 @@ $app_height: 500px;
         }
         span {
             display: inline-block;
+            cursor: default;
         }
     }
 }
@@ -376,6 +396,7 @@ $app_height: 500px;
 
             span {
                 display: inline-block;
+                cursor: default;
             }
         }
     }
@@ -409,15 +430,18 @@ $app_height: 500px;
 
         & > span {
             display: block;
+            cursor: default;
         }
 
         span.day {
             -webkit-box-flex: 1;
             -webkit-flex: 1;
+            cursor: default;
         }
         span.code {
             -webkit-box-flex: 2;
             -webkit-flex: 2;
+            cursor: default;
 
             img {
                 height: auto;
@@ -427,6 +451,7 @@ $app_height: 500px;
         span.temp {
             -webkit-box-flex: 1;
             -webkit-flex: 1;
+            cursor: default;
         }
     }
 }
@@ -578,6 +603,7 @@ input[type=checkbox] {
 }
 .measurement span {
     padding: 0 7px 5px 10px;
+    cursor: default;
 }
 
 .toggleswitch {
@@ -588,6 +614,7 @@ input[type=checkbox] {
         line-height: 1;
         vertical-align: top;
         -webkit-transition: 150ms ease background-color;
+        cursor: default;
 
         border: 2px solid #222;
         border-right: 0;
@@ -618,6 +645,7 @@ input[type=checkbox] {
         box-sizing: border-box;
         height: 41px;
         text-align: center;
+        cursor: default;
     }
 }
 .measurement span[data-type=k] {
@@ -628,6 +656,7 @@ input[type=checkbox] {
     padding: 0px 14px 0px;
     vertical-align: top;
     font-weight: bold;
+    cursor: default;
 }
 
 .launcher {
@@ -651,6 +680,7 @@ input[type=checkbox]:checked{
     width: 14px;
     display: inline-block;
     border: 4px solid rgba(0,0,0,0.4);
+    cursor: default;
 }
 span[data-color=gradient] {
     background: -webkit-linear-gradient(#0071B2, #D6411B);
@@ -658,6 +688,7 @@ span[data-color=gradient] {
     height: 22px;
     width: 22px;
     border-right: 2px solid #333;
+    cursor: default;
 }
 
 .btn {

@@ -129,9 +129,24 @@ textarea {
     #credits a:hover {
       text-decoration: underline; }
 
+a, input {
+  -webkit-app-region: no-drag; }
+
+img {
+  -webkit-user-drag: none;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; }
+
+.sliderControls img {
+  -webkit-app-region: no-drag; }
+
 #container {
   width: 100%;
   height: 100%;
+  -webkit-app-region: drag;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   -webkit-transition-property: opacity, background-color;
   -webkit-transition-duration: 300ms, 300ms;
   -webkit-transition-timing-function: ease, ease; }
@@ -248,7 +263,8 @@ textarea {
       height: 100%;
       vertical-align: middle; }
     .city div span {
-      display: inline-block; }
+      display: inline-block;
+      cursor: default; }
 
 .weather {
   height: 30%;
@@ -283,7 +299,8 @@ textarea {
     .stats .left div {
       right: 5%; }
       .stats .left div span {
-        display: inline-block; }
+        display: inline-block;
+        cursor: default; }
   .stats .right > div {
     left: 5%; }
   .stats .right > div > div {
@@ -309,19 +326,23 @@ textarea {
     text-transform: uppercase;
     letter-spacing: -1px; }
     .forecast > div > span {
-      display: block; }
+      display: block;
+      cursor: default; }
     .forecast > div span.day {
       -webkit-box-flex: 1;
-      -webkit-flex: 1; }
+      -webkit-flex: 1;
+      cursor: default; }
     .forecast > div span.code {
       -webkit-box-flex: 2;
-      -webkit-flex: 2; }
+      -webkit-flex: 2;
+      cursor: default; }
       .forecast > div span.code img {
         height: auto;
         width: 65%; }
     .forecast > div span.temp {
       -webkit-box-flex: 1;
-      -webkit-flex: 1; }
+      -webkit-flex: 1;
+      cursor: default; }
 
 input[type=checkbox] {
   border: 2px solid #222;
@@ -440,7 +461,8 @@ input[type=checkbox] {
   font-size: 32px; }
 
 .measurement span {
-  padding: 0 7px 5px 10px; }
+  padding: 0 7px 5px 10px;
+  cursor: default; }
 
 .toggleswitch {
   margin-top: 10px; }
@@ -449,6 +471,7 @@ input[type=checkbox] {
     line-height: 1;
     vertical-align: top;
     -webkit-transition: 150ms ease background-color;
+    cursor: default;
     border: 2px solid #222;
     border-right: 0;
     background-color: #333;
@@ -468,7 +491,8 @@ input[type=checkbox] {
     width: 42px;
     box-sizing: border-box;
     height: 41px;
-    text-align: center; }
+    text-align: center;
+    cursor: default; }
 
 .measurement span[data-type=k] {
   font-family: "Ubuntu Condensed";
@@ -477,7 +501,8 @@ input[type=checkbox] {
   height: 37px;
   padding: 0px 14px 0px;
   vertical-align: top;
-  font-weight: bold; }
+  font-weight: bold;
+  cursor: default; }
 
 .launcher {
   margin-top: 10px; }
@@ -499,14 +524,16 @@ input[type=checkbox]:checked {
   height: 14px;
   width: 14px;
   display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.4); }
+  border: 4px solid rgba(0, 0, 0, 0.4);
+  cursor: default; }
 
 span[data-color=gradient] {
   background: -webkit-linear-gradient(#0071b2, #d6411b);
   border: 0;
   height: 22px;
   width: 22px;
-  border-right: 2px solid #333; }
+  border-right: 2px solid #333;
+  cursor: default; }
 
 .btn {
   border: 2px solid #222;
