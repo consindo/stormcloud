@@ -64,8 +64,7 @@ $(function() {
 
 	//Sets up Background Color
 	if (localStorage.stormcloud_color == "desktop") {
-		var rgb = getAverageRGB(document.getElementById('desktopBackground'))
-		$("#background").css('background', 'rgb('+rgb.r+','+rgb.b+','+rgb.g+')');
+		$("#background").css('background', '#0f0');
 	} else if (localStorage.stormcloud_color != "gradient") {
 		$("#background").css('background', localStorage.stormcloud_color)
 	}
@@ -240,8 +239,7 @@ stormcloud = {
 					var percentage = Math.round((temp - 45) *  2.2)
 					return blend(percentage)
 				} else if (localStorage.stormcloud_color == "desktop") {
-					var rgb = getAverageRGB(document.getElementById('desktopBackground'))
-					return 'rgb('+rgb.r+','+rgb.b+','+rgb.g+')';
+					return '#0f0';
 				} else {
 					return localStorage.stormcloud_color
 				}
