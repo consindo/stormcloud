@@ -17,7 +17,6 @@
 	localStorage.stormcloud_measurement = localStorage.stormcloud_measurement || "f"
 	localStorage.stormcloud_speed = localStorage.stormcloud_speed || "mph"
 	localStorage.stormcloud_color =  localStorage.stormcloud_color || "gradient"
-	localStorage.stormcloud_launcher = localStorage.stormcloud_launcher || "checked"
 	localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}, {"zip":"USCA0091", "place": "Bieber"}, {"zip":"SWXX0031", "place": "Stockholm"}]'
 })()
 
@@ -31,7 +30,7 @@ $(function() {
 		// Get the current window
 		win = gui.Window.get()
 		win.show()
-		win.showDevTools()
+		//win.showDevTools()
 
 		//Bind Handlers
 		$("#panel .close").click(function() {
@@ -87,11 +86,7 @@ $(function() {
 
 	$(".sync").click(function() {
 		stormcloud.softReload()
-	})
-
-	//Tell Python / Wrapper some settings
-	stormcloud.postSettings()
-	stormcloud.softReload()
+	}).trigger('click')
 
 	//Sets up Credits
 	document.getElementById('credits').innerHTML = Handlebars.templates['credits.template']()
@@ -373,9 +368,10 @@ stormcloud = {
 		settingsObj.measurement = $("<div><span data-type='c'><img src='img/climacons/Degrees-Celcius.svg'></span><span data-type='f'><img src='img/climacons/Degrees-Fahrenheit.svg'></span><span data-type='k'>K</span></div>").children().filter("[data-type=" + localStorage.stormcloud_measurement +"]").addClass("selected").parent().html()
 		settingsObj.speed = $("<div><span data-type='mph'>mph</span><span data-type='kph'>kph</span><span data-type='ms'>m/s</span></div>").children().filter("[data-type=" + localStorage.stormcloud_speed +"]").addClass("selected").parent().html()
 		settingsObj.location = JSON.parse(localStorage.stormcloud_location)
-		settingsObj.launcher = localStorage.stormcloud_launcher
-		if (settingsObj.launcher == 'false') {
-			settingsObj.launcher = false
+		if (localStorage.stormcloud_color == 'desktop') {
+			settingsObj.desktop = true
+		} else {
+			settingsObj.desktop = false
 		}
 
 		//Set up handlers if not already done
@@ -400,9 +396,12 @@ stormcloud = {
 				stormcloud.reload = true
 			})
 
-			$('body').on('click', '#launcherswitch', function() {
-				localStorage.stormcloud_launcher = $('#launcherswitch').is(':checked')
-				stormcloud.postSettings()
+			$('body').on('click', '#desktopswitch', function() {
+				if ($(this).is(':checked')) {
+					localStorage.stormcloud_color = 'desktop'
+				} else {
+					localStorage.stormcloud_color = 'gradient'
+				}
 			})
 
 			$('body').on('click', '.locationSettings .add', function() {
@@ -476,15 +475,6 @@ stormcloud = {
 		return "<li style='display: none'><div id='settings'>" + Handlebars.templates['settings.template'](settingsObj) + "</div></li>"
 	},
 
-	postSettings: function() {
-		//This tells python to do shit
-		if (localStorage.stormcloud_launcher == "true") {
-			document.title = "enable_launcher"
-		} else {
-			document.title = "disable_launcher"
-		}
-	},
-
 	getUnityDesktopBackgroundColor: function() {
 		//Going to just do straight dom so I don't have to deal with nodes async model
 		try {
@@ -497,7 +487,7 @@ stormcloud = {
 				}
 			})
 		} catch (err) {
-			
+
 		}
 	},
 

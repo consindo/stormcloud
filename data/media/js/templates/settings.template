@@ -28,11 +28,12 @@
         <span data-color="339933"></span>
     </div>
     <div class="launcher" data-boop="{{launcher}}">
-    {{#if launcher}}
-        <input type="checkbox" id="launcherswitch" checked><label for="launcherswitch">Show Launcher Count</label>
+    {{#if desktop}}
+        <input type="checkbox" id="desktopswitch" checked>
     {{else}}
-        <input type="checkbox" id="launcherswitch"><label for="launcherswitch">Show Launcher Count</label>
+        <input type="checkbox" id="desktopswitch">
     {{/if}}
+        <label for="desktopswitch">Use Chameleonic Background</label>
     </div>
     <a class="btn" href="http://caffeinatedco.de/donate.html">DONATE</a>&nbsp;<a class="btn credits" href="#">CREDITS</a><br>
 </div>

@@ -19,12 +19,12 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   
-  return "\n        <input type=\"checkbox\" id=\"launcherswitch\" checked><label for=\"launcherswitch\">Show Launcher Count</label>\n    ";}
+  return "\n        <input type=\"checkbox\" id=\"desktopswitch\" checked>\n    ";}
 
 function program5(depth0,data) {
   
   
-  return "\n        <input type=\"checkbox\" id=\"launcherswitch\"><label for=\"launcherswitch\">Show Launcher Count</label>\n    ";}
+  return "\n        <input type=\"checkbox\" id=\"desktopswitch\">\n    ";}
 
   buffer += "<div class=\"locationSettings\">\n    <h2>Locations<span class=\"add\" title=\"Add City\">+</span></h2>\n    <ul>\n        <li class=\"placeInput\"><input placeholder=\"Location\" type=\"text\"><span class=\"status\"></span></li>\n        ";
   stack1 = depth0.location;
@@ -45,9 +45,9 @@ function program5(depth0,data) {
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.launcher; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   buffer += escapeExpression(stack1) + "\">\n    ";
-  stack1 = depth0.launcher;
+  stack1 = depth0.desktop;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </div>\n    <a class=\"btn\" href=\"http://caffeinatedco.de/donate.html\">DONATE</a>&nbsp;<a class=\"btn credits\" href=\"#\">CREDITS</a><br>\n</div>\n";
+  buffer += "\n        <label for=\"desktopswitch\">Use Chameleonic Background</label>\n    </div>\n    <a class=\"btn\" href=\"http://caffeinatedco.de/donate.html\">DONATE</a>&nbsp;<a class=\"btn credits\" href=\"#\">CREDITS</a><br>\n</div>\n";
   return buffer;});
 })();
