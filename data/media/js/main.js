@@ -61,7 +61,7 @@ $(function() {
 
 	//Sets up Background Color
 	if (localStorage.stormcloud_color == "desktop") {
-		$("#background").css('background', '#0f0');
+		stormcloud.getUnityDesktopBackgroundColor()
 	} else if (localStorage.stormcloud_color != "gradient") {
 		$("#background").css('background', localStorage.stormcloud_color)
 	}
@@ -235,8 +235,6 @@ stormcloud = {
 				if (localStorage.stormcloud_color == "gradient") {
 					var percentage = Math.round((temp - 45) *  2.2)
 					return blend(percentage)
-				} else if (localStorage.stormcloud_color == "desktop") {
-					return '#0f0';
 				} else {
 					return localStorage.stormcloud_color
 				}
@@ -331,7 +329,12 @@ stormcloud = {
 			stormcloud.softReload()
 		} else {
 			//We'll change the background here as well
-			$('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
+			if (localStorage.stormcloud_color == "desktop") {
+				// I regret this but fuck node.js
+				stormcloud.getUnityDesktopBackgroundColor()
+			} else {
+				$('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
+			}
 			$("#panel").removeClass("dim")
 		}
 	},
@@ -486,11 +489,15 @@ stormcloud = {
 		//Going to just do straight dom so I don't have to deal with nodes async model
 		try {
 			var exec = require('child_process').exec;
-			exec("ls -la", function(error, stdout, stderr) {
-				console.log(stdout)
+			exec("xprop -root | grep _GNOME_BACKGROUND_REPRESENTATIVE_COLORS", function(error, stdout, stderr) {
+				if (error === null) {
+					$("#container").css("background-color", stdout.substring(51, stdout.length -2))
+				} else {
+					$("#container").css("background-color", "#444444")
+				}
 			})
 		} catch (err) {
-			$("#background").css("background", "#444444")
+			
 		}
 	},
 
