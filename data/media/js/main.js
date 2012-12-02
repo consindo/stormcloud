@@ -27,9 +27,6 @@ $(function() {
 	try {
 		// Load native UI library
 		gui = require('nw.gui')
-		os = require('os')
-
-		console.log(os.type())
 
 		// Get the current window
 		win = gui.Window.get()
@@ -482,6 +479,18 @@ stormcloud = {
 			document.title = "enable_launcher"
 		} else {
 			document.title = "disable_launcher"
+		}
+	},
+
+	getUnityDesktopBackgroundColor: function() {
+		//Going to just do straight dom so I don't have to deal with nodes async model
+		try {
+			var exec = require('child_process').exec;
+			exec("ls -la", function(error, stdout, stderr) {
+				console.log(stdout)
+			})
+		} catch (err) {
+			$("#background").css("background", "#444444")
 		}
 	},
 
