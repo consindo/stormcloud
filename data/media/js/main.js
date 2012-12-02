@@ -31,7 +31,7 @@ $(function() {
 		// Get the current window
 		win = gui.Window.get()
 		win.show()
-		win.showDevTools()
+		//win.showDevTools()
 
 		//Bind Handlers
 		$("#panel .close").click(function() {
