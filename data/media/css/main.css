@@ -460,7 +460,7 @@ input[type=checkbox] {
             #settings .locationSettings ul li.placeInput input.mimic {
               -webkit-transition: 600ms ease all;
               background: #222;
-              padding: 0 20px; }
+              padding: 2px 20px; }
           #settings .locationSettings ul li.placeInput .status {
             display: inline-block;
             width: 27px;
