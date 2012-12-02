@@ -49,12 +49,10 @@ $(function() {
 		})
 
 		//Disables Dragging on Certain Elements
-		$('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a", function() {
+		$('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img", function() {
 			$('body').removeClass('drag')
-			console.log("OVER")
-		}).on("mouseout", ".close, .minimize, .sync, .sliderControls, #settings, #credits a", function() {
+		}).on("mouseout", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img", function() {
 			$('body').addClass('drag')
-			console.log("OUT")
 		})
 
 	} catch (err) {
