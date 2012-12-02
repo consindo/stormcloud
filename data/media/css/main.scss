@@ -485,6 +485,44 @@ input[type=checkbox] {
 0% { -webkit-transform: rotate(0deg);}
 100% {-webkit-transform: rotate(360deg);}
 }
+@-webkit-keyframes showplaceinput {
+    0% {
+        padding: 0;
+        height: 0;
+    }
+    100% {
+        padding: 2px 0;
+        height: 20px;
+    }
+}
+@-webkit-keyframes showinput {
+    0% {
+        opacity: 0.001;
+    }
+    60% {
+        opacity: 0.001;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes deletion {
+    0% {
+        -webkit-transform: translateX(0%);
+        height: 23px;
+        padding: 2px 0;
+    }
+    50% {
+        -webkit-transform: translateX(-130%);
+        height: 23px;
+        padding: 2px 0;
+    }
+    100% {
+        -webkit-transform: translateX(-130%);
+        height: 0;
+        padding: 0;
+    }
+}
 
 #settings {
     background: #333;
@@ -520,7 +558,10 @@ input[type=checkbox] {
             li {
 
                 &.placeInput {
+
                     display: none;
+                    -webkit-animation: 200ms ease showplaceinput 1;
+                    font-size:0;
 
                     input {
                         outline: 0;
@@ -529,10 +570,12 @@ input[type=checkbox] {
                         font-family: "Ubuntu Condensed";
                         font-size: 15px;
                         border: 0;
+                        height: 17px;
                         padding: 5px 30px 5px 20px;
                         position: relative;
                         margin-left: -20px;
                         width: 70%;
+                        -webkit-animation: 600ms ease showinput 1;
 
                         &.mimic {
                             -webkit-transition: 600ms ease all;
@@ -548,6 +591,8 @@ input[type=checkbox] {
                         vertical-align: top;
                         position: relative;
                         left: -27px;
+                        font-size: 15px;
+                        -webkit-animation: 600ms ease showinput 1;
 
                         &.thinking {
                             background: url(../img/sync.svg) no-repeat 50% 50%;
@@ -582,6 +627,14 @@ input[type=checkbox] {
                 font-size: 15px;
                 list-style-type: none;
                 padding: 2px 0;
+                -webkit-transition: 300ms ease -webkit-transform;
+
+                &.deleting {
+                    -webkit-animation: 500ms ease deletion 1;
+                    -webkit-transform: translateX(-130%);
+                    height: 0;
+                    padding: 0;
+                }
             }
         }
     }

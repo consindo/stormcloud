@@ -458,9 +458,14 @@ stormcloud = {
 			// The remove button next to a location.
 			$('body').on('click', '.locationSettings ul li .delete', function() {
 				if ($('.locationSettings ul li').length != 2) {
-					$(this).parent().remove()
-					localStorage.stormcloud_location = makeLocationArray()
-					stormcloud.reload = true
+					$(this).parent().addClass("deleting")
+
+					var elem = $(this).parent()
+					setTimeout(function() {
+						elem.remove()
+						localStorage.stormcloud_location = makeLocationArray()
+						stormcloud.reload = true
+					}, 600)
 				}
 			})
 		}
