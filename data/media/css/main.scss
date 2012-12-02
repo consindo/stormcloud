@@ -102,6 +102,10 @@ textarea {
 $app_width: 300px;
 $app_height: 500px;
 
+body.drag {
+    -webkit-app-region: drag;
+}
+
 #background {
     width: $app_width;
     height: $app_height;
@@ -122,7 +126,7 @@ $app_height: 500px;
     font-size: 15px;
     padding: 20px;
     font-family: 'Ubuntu Condensed';
-    background: #eee;
+    background: #f7f7f7;
     -webkit-animation: 500ms ease credits-show 1;
     -webkit-transform-origin: left;
     -webkit-transform-style: preserve-3d;
@@ -167,26 +171,17 @@ $app_height: 500px;
     }
 }
 
-// Draggable
-a, input {
-    -webkit-app-region: no-drag;
-}
 img {
     -webkit-user-drag: none;
     cursor: default;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 }
-.sliderControls img {
-    -webkit-app-region: no-drag;
-}
-
 
 #container {
     width: 100%;
     height: 100%;
 
-    -webkit-app-region: drag;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 

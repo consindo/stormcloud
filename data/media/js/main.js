@@ -48,6 +48,15 @@ $(function() {
 			gui.Shell.openExternal($(e.currentTarget).attr("href"))
 		})
 
+		//Disables Dragging on Certain Elements
+		$('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a", function() {
+			$('body').removeClass('drag')
+			console.log("OVER")
+		}).on("mouseout", ".close, .minimize, .sync, .sliderControls, #settings, #credits a", function() {
+			$('body').addClass('drag')
+			console.log("OUT")
+		})
+
 	} catch (err) {
 		console.log("Not running under node-webkit")
 	}
