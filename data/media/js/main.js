@@ -23,6 +23,34 @@
 
 //UI Start
 $(function() {
+	//Node Webkit Guff
+	try {
+		// Load native UI library
+		gui = require('nw.gui')
+
+		// Get the current window
+		win = gui.Window.get()
+		win.show()
+		win.showDevTools()
+
+		//Bind Handlers
+		$("#panel .close").click(function() {
+			win.close()
+		})
+
+		$("#panel .minimize").click(function() {
+			win.minimize()
+		})
+
+		//Opens links in browsers
+		$('body').on("click", "a", function(e) {
+			e.preventDefault()
+			gui.Shell.openExternal($(e.currentTarget).attr("href"))
+		})
+
+	} catch (err) {
+		console.log("Not running under node-webkit")
+	}
 
 	//Sets up Background Color
 	if (localStorage.stormcloud_color != "gradient") {
