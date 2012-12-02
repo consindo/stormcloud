@@ -1,8 +1,0 @@
-[Desktop Entry]
-_Name=Stormcloud
-_Comment=Find out the current weather
-Categories=GNOME;Internet;
-Exec=stormcloud
-Icon=/usr/share/stormcloud/media/stormcloud.svg
-Terminal=false
-Type=Application

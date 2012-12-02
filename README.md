@@ -3,8 +3,10 @@ Stormcloud
 
 An awesome weather app.
 
-- Design and dev by Jono Cooper
-- Thanks to @AdamWhitcroft for [Climacons](http://adamwhitcroft.com/climacons/)!
+- Design and Dev by @consindo
+- Icons (Climacons) by @AdamWhitcroft
+- Weather by Yahoo
+- Inspiration from @d0od, @sil and @GeorgeCzabania
 
 
 Released under the DBAD License (Don't be a dick license) and the Simplified BSD License.
