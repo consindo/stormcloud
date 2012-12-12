@@ -238,6 +238,8 @@ img {
   #panel .minimize {
     left: 30px;
     line-height: 38px; }
+  #panel div {
+    -webkit-app-region: no-drag; }
 
 .city {
   -webkit-box-flex: 1;
@@ -410,6 +412,7 @@ input[type=checkbox] {
     padding: 0; } }
 
 #settings {
+  -webkit-app-region: no-drag;
   background: #333;
   font-family: "Ubuntu Condensed";
   color: #fff;
