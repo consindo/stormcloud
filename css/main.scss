@@ -314,6 +314,9 @@ img {
         left: 30px;
         line-height: 38px;
     }
+    div {
+        -webkit-app-region: no-drag;
+    }
 }
 
 .city {
@@ -525,6 +528,7 @@ input[type=checkbox] {
 }
 
 #settings {
+    -webkit-app-region: no-drag;
     background: #333;
     font-family: "Ubuntu Condensed";
     color: #fff;
