@@ -15,7 +15,7 @@ Packages avaliable exclusively from the Ubuntu Software Center.
 Can't afford it?
 ----------------
 
-It's $2.99. If you live in some place like Cambodia or Vietnam, I can totally understand. If you're currently sitting in Starbucks with your MacBook, iPhone and $5 Latte - I don't even...
+It's $2.99. If you live in some place like Cambodia or Vietnam, I can totally understand. If you're currently sitting in Starbucks with your Mac, iPhone and $5 Latte - I don't even...
 
 But seriously. It's pretty simple to get Stormcloud up and running.
 
