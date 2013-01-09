@@ -109,9 +109,13 @@ stormcloud = {
 				$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml", function(locationData) {
 					// Gets the WOEID && Caches Location Name
 					var woeid = $($(locationData).find("woeid")[0]).text(),
-						place = $($(locationData).find("name")).text()
+						place = $($(locationData).find("name")[0]).text()
+
 					if (woeid) {
-						woeid_request({woeid: woeid, place: place}, callback)
+						woeid_request({
+							woeid: woeid,
+							place: place
+						}, callback)
 					} else {
 						callback()
 					}
@@ -121,7 +125,11 @@ stormcloud = {
 			// WOEID Request to find Global ZIP Code
 			function woeid_request(obj, callback) {
 				$.get("http://weather.yahooapis.com/forecastrss?w=" + encodeURIComponent(obj.woeid), function(woeidData) {
-					callback({zip: $($(woeidData).find("guid")).text().substring(0,8), place: obj.place})
+					try {
+						callback({zip: $($(woeidData).find("guid")).text().substring(0,8), place: obj.place})
+					} catch (err) {
+						callback()
+					}
 				})
 			}
 		},
