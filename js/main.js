@@ -96,6 +96,11 @@ $(function() {
 	$("#credits img").click(function() {
 		$("#credits").removeClass("show")
 	})
+
+	// Every 5 mins,
+	setInterval(function() {
+		stormcloud.softReload()
+	}, 300000)
 })
 
 stormcloud = {
