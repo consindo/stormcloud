@@ -57,3 +57,158 @@ window.Swipe=function(e,t){if(!e)return null;var n=this;this.options=t||{},this.
 
 //fgnass.github.com/spin.js#v1.2.7
 !function(e,t,n){function o(e,n){var r=t.createElement(e||"div"),i;for(i in n)r[i]=n[i];return r}function u(e){for(var t=1,n=arguments.length;t<n;t++)e.appendChild(arguments[t]);return e}function f(e,t,n,r){var o=["opacity",t,~~(e*100),n,r].join("-"),u=.01+n/r*100,f=Math.max(1-(1-e)/t*(100-u),e),l=s.substring(0,s.indexOf("Animation")).toLowerCase(),c=l&&"-"+l+"-"||"";return i[o]||(a.insertRule("@"+c+"keyframes "+o+"{"+"0%{opacity:"+f+"}"+u+"%{opacity:"+e+"}"+(u+.01)+"%{opacity:1}"+(u+t)%100+"%{opacity:"+e+"}"+"100%{opacity:"+f+"}"+"}",a.cssRules.length),i[o]=1),o}function l(e,t){var i=e.style,s,o;if(i[t]!==n)return t;t=t.charAt(0).toUpperCase()+t.slice(1);for(o=0;o<r.length;o++){s=r[o]+t;if(i[s]!==n)return s}}function c(e,t){for(var n in t)e.style[l(e,n)||n]=t[n];return e}function h(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var i in r)e[i]===n&&(e[i]=r[i])}return e}function p(e){var t={x:e.offsetLeft,y:e.offsetTop};while(e=e.offsetParent)t.x+=e.offsetLeft,t.y+=e.offsetTop;return t}var r=["webkit","Moz","ms","O"],i={},s,a=function(){var e=o("style",{type:"text/css"});return u(t.getElementsByTagName("head")[0],e),e.sheet||e.styleSheet}(),d={lines:12,length:7,width:5,radius:10,rotate:0,corners:1,color:"#000",speed:1,trail:100,opacity:.25,fps:20,zIndex:2e9,className:"spinner",top:"auto",left:"auto",position:"relative"},v=function m(e){if(!this.spin)return new m(e);this.opts=h(e||{},m.defaults,d)};v.defaults={},h(v.prototype,{spin:function(e){this.stop();var t=this,n=t.opts,r=t.el=c(o(0,{className:n.className}),{position:n.position,width:0,zIndex:n.zIndex}),i=n.radius+n.length+n.width,u,a;e&&(e.insertBefore(r,e.firstChild||null),a=p(e),u=p(r),c(r,{left:(n.left=="auto"?a.x-u.x+(e.offsetWidth>>1):parseInt(n.left,10)+i)+"px",top:(n.top=="auto"?a.y-u.y+(e.offsetHeight>>1):parseInt(n.top,10)+i)+"px"})),r.setAttribute("aria-role","progressbar"),t.lines(r,t.opts);if(!s){var f=0,l=n.fps,h=l/n.speed,d=(1-n.opacity)/(h*n.trail/100),v=h/n.lines;(function m(){f++;for(var e=n.lines;e;e--){var i=Math.max(1-(f+e*v)%h*d,n.opacity);t.opacity(r,n.lines-e,i,n)}t.timeout=t.el&&setTimeout(m,~~(1e3/l))})()}return t},stop:function(){var e=this.el;return e&&(clearTimeout(this.timeout),e.parentNode&&e.parentNode.removeChild(e),this.el=n),this},lines:function(e,t){function i(e,r){return c(o(),{position:"absolute",width:t.length+t.width+"px",height:t.width+"px",background:e,boxShadow:r,transformOrigin:"left",transform:"rotate("+~~(360/t.lines*n+t.rotate)+"deg) translate("+t.radius+"px"+",0)",borderRadius:(t.corners*t.width>>1)+"px"})}var n=0,r;for(;n<t.lines;n++)r=c(o(),{position:"absolute",top:1+~(t.width/2)+"px",transform:t.hwaccel?"translate3d(0,0,0)":"",opacity:t.opacity,animation:s&&f(t.opacity,t.trail,n,t.lines)+" "+1/t.speed+"s linear infinite"}),t.shadow&&u(r,c(i("#000","0 0 4px #000"),{top:"2px"})),u(e,u(r,i(t.color,"0 0 1px rgba(0,0,0,.1)")));return e},opacity:function(e,t,n){t<e.childNodes.length&&(e.childNodes[t].style.opacity=n)}}),function(){function e(e,t){return o("<"+e+' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">',t)}var t=c(o("group"),{behavior:"url(#default#VML)"});!l(t,"transform")&&t.adj?(a.addRule(".spin-vml","behavior:url(#default#VML)"),v.prototype.lines=function(t,n){function s(){return c(e("group",{coordsize:i+" "+i,coordorigin:-r+" "+ -r}),{width:i,height:i})}function l(t,i,o){u(a,u(c(s(),{rotation:360/n.lines*t+"deg",left:~~i}),u(c(e("roundrect",{arcsize:n.corners}),{width:r,height:n.width,left:n.radius,top:-n.width>>1,filter:o}),e("fill",{color:n.color,opacity:n.opacity}),e("stroke",{opacity:0}))))}var r=n.length+n.width,i=2*r,o=-(n.width+n.length)*2+"px",a=c(s(),{position:"absolute",top:o,left:o}),f;if(n.shadow)for(f=1;f<=n.lines;f++)l(f,-2,"progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)");for(f=1;f<=n.lines;f++)l(f);return u(t,a)},v.prototype.opacity=function(e,t,n,r){var i=e.firstChild;r=r.shadow&&r.lines||0,i&&t+r<i.childNodes.length&&(i=i.childNodes[t+r],i=i&&i.firstChild,i=i&&i.firstChild,i&&(i.opacity=n))}):s=l(t,"animation")}(),typeof define=="function"&&define.amd?define(function(){return v}):e.Spinner=v}(window,document);
+
+/*
+ * jQuery i18n plugin
+ * @requires jQuery v1.1 or later
+ *
+ * See http://recursive-design.com/projects/jquery-i18n/
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Version: 0.9.2 (201204070102)
+ */
+ (function($) {
+/**
+ * i18n provides a mechanism for translating strings using a jscript dictionary.
+ *
+ */
+
+
+/*
+ * i18n property list
+ */
+$.i18n = {
+
+  dict: null,
+
+/**
+ * setDictionary()
+ * Initialise the dictionary and translate nodes
+ *
+ * @param property_list i18n_dict : The dictionary to use for translation
+ */
+  setDictionary: function(i18n_dict) {
+    this.dict = i18n_dict;
+  },
+
+/**
+ * _()
+ * The actual translation function. Looks the given string up in the
+ * dictionary and returns the translation if one exists. If a translation
+ * is not found, returns the original word
+ *
+ * @param string str : The string to translate
+ * @param property_list params : params for using printf() on the string
+ * @return string : Translated word
+ *
+ */
+  _: function (str, params) {
+    var transl = str;
+    if (this.dict && this.dict[str]) {
+      transl = this.dict[str];
+    }
+    return this.printf(transl, params);
+  },
+
+/**
+ * toEntity()
+ * Change non-ASCII characters to entity representation
+ *
+ * @param string str : The string to transform
+ * @return string result : Original string with non-ASCII content converted to entities
+ *
+ */
+  toEntity: function (str) {
+    var result = '';
+    for (var i=0;i<str.length; i++) {
+      if (str.charCodeAt(i) > 128)
+        result += "&#"+str.charCodeAt(i)+";";
+      else
+        result += str.charAt(i);
+    }
+    return result;
+  },
+
+/**
+ * stripStr()
+ *
+ * @param string str : The string to strip
+ * @return string result : Stripped string
+ *
+ */
+  stripStr: function(str) {
+    return str.replace(/^\s*/, "").replace(/\s*$/, "");
+  },
+
+/**
+ * stripStrML()
+ *
+ * @param string str : The multi-line string to strip
+ * @return string result : Stripped string
+ *
+ */
+  stripStrML: function(str) {
+    // Split because m flag doesn't exist before JS1.5 and we need to
+    // strip newlines anyway
+    var parts = str.split('\n');
+    for (var i=0; i<parts.length; i++)
+      parts[i] = stripStr(parts[i]);
+
+    // Don't join with empty strings, because it "concats" words
+    // And strip again
+    return stripStr(parts.join(" "));
+  },
+
+/*
+ * printf()
+ * C-printf like function, which substitutes %s with parameters
+ * given in list. %%s is used to escape %s.
+ *
+ * Doesn't work in IE5.0 (splice)
+ *
+ * @param string S : string to perform printf on.
+ * @param string L : Array of arguments for printf()
+ */
+  printf: function(S, L) {
+    if (!L) return S;
+
+    var nS     = "";
+    var search = /%(\d+)\$s/g;
+    // replace %n1$ where n is a number
+    while (result = search.exec(S)) {
+      var index = parseInt(result[1], 10) - 1;
+      S = S.replace('%' + result[1] + '\$s', (L[index]));
+      L.splice(index, 1);
+    }
+    var tS = S.split("%s");
+
+    if (tS.length > 1) {
+      for(var i=0; i<L.length; i++) {
+        if (tS[i].lastIndexOf('%') == tS[i].length-1 && i != L.length-1)
+          tS[i] += "s"+tS.splice(i+1,1)[0];
+        nS += tS[i] + L[i];
+      }
+    }
+    return nS + tS[tS.length-1];
+  }
+
+};
+
+/*
+ * _t
+ * Allows you to translate a jQuery selector
+ *
+ * eg $('h1')._t('some text')
+ *
+ * @param string str : The string to translate
+ * @param property_list params : params for using printf() on the string
+ * @return element : chained and translated element(s)
+*/
+$.fn._t = function(str, params) {
+  return $(this).text($.i18n._(str, params));
+};
+
+
+})( Zepto );

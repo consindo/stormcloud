@@ -26,7 +26,15 @@ function program5(depth0,data) {
   
   return "\n        <input type=\"checkbox\" id=\"desktopswitch\">\n    ";}
 
-  buffer += "<div class=\"locationSettings\">\n    <h2>Locations<span class=\"add\" title=\"Add City\">+</span></h2>\n    <ul>\n        <li class=\"placeInput\"><input placeholder=\"Location\" type=\"text\"><span class=\"status\"></span></li>\n        ";
+  buffer += "<div class=\"locationSettings\">\n    <h2>";
+  foundHelper = helpers.locationsText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.locationsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "<span class=\"add\" title=\"Add City\">+</span></h2>\n    <ul>\n        <li class=\"placeInput\"><input placeholder=\"";
+  foundHelper = helpers.locationText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.locationText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "\" type=\"text\"><span class=\"status\"></span></li>\n        ";
   stack1 = depth0.location;
   stack1 = helpers.each.call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(1, program1, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -48,6 +56,14 @@ function program5(depth0,data) {
   stack1 = depth0.desktop;
   stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        <label for=\"desktopswitch\">Use Chameleonic Background</label>\n    </div>\n    <a class=\"btn credits\" href=\"#\">CREDITS</a><br>\n</div>\n";
+  buffer += "\n        <label for=\"desktopswitch\">";
+  foundHelper = helpers.charmText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.charmText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</label>\n    </div>\n    <a class=\"btn credits\" href=\"#\">";
+  foundHelper = helpers.creditsText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.creditsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</a><br>\n</div>\n";
   return buffer;});
 })();

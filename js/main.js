@@ -387,6 +387,12 @@ stormcloud = {
 			settingsObj.desktop = false
 		}
 
+		//Translations Guff
+		settingsObj.locationsText = $.i18n._("Locations")
+		settingsObj.locationText = $.i18n._("Location")
+		settingsObj.charmText = $.i18n._("Use Chameleonic Background")
+		settingsObj.creditsText = $.i18n._("Credits")
+
 		//Set up handlers if not already done
 		if (!stormcloud.settingsHandles) {
 			stormcloud.settingsHandles = true;

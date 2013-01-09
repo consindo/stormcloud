@@ -1,7 +1,7 @@
 <div class="locationSettings">
-    <h2>Locations<span class="add" title="Add City">+</span></h2>
+    <h2>{{locationsText}}<span class="add" title="Add City">+</span></h2>
     <ul>
-        <li class="placeInput"><input placeholder="Location" type="text"><span class="status"></span></li>
+        <li class="placeInput"><input placeholder="{{locationText}}" type="text"><span class="status"></span></li>
         {{#each location}}
         <li data-code="{{this.zip}}"><span class="name">{{this.place}}</span><span class="delete">&#10005;</span></li>
         {{/each}}
@@ -33,7 +33,7 @@
     {{else}}
         <input type="checkbox" id="desktopswitch">
     {{/if}}
-        <label for="desktopswitch">Use Chameleonic Background</label>
+        <label for="desktopswitch">{{charmText}}</label>
     </div>
-    <a class="btn credits" href="#">CREDITS</a><br>
+    <a class="btn credits" href="#">{{creditsText}}</a><br>
 </div>
