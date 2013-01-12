@@ -30,7 +30,7 @@ $(function() {
 		// Get the current window
 		win = gui.Window.get()
 		win.show()
-		//win.showDevTools()
+		win.showDevTools()
 
 		//Bind Handlers
 		$("#panel .close").click(function() {
@@ -87,6 +87,10 @@ $(function() {
 	$(".sync").click(function() {
 		stormcloud.softReload()
 	}).trigger('click')
+
+	$("#error .btn").click(function() {
+		stormcloud.softReload()
+	})
 
 	//Sets up Credits
 	document.getElementById('credits').innerHTML = Handlebars.templates['credits.template']()
@@ -250,6 +254,7 @@ stormcloud = {
 
 			$.ajax({
 				url: 'http://xml.weather.yahoo.com/forecastrss/' + location.zip + '_f.xml?'+(Math.random() * 100),
+				timeout: 10000,
 				success: function(data) {
 
 					//Weather Object
@@ -355,19 +360,24 @@ stormcloud = {
 			//We need this so it's in the right order - stupid async programming
 			arr[i] = locations[i].zip
 			stormcloud.dataGet.weather(locations[i], function(weather) {
-				$("#container li > div")[arr.indexOf(weather.zip)].innerHTML = template(weather)
-				stormcloud.posChange()
-				stormcloud.textfix()
+				if (weather == "error") {
+					$("#error").show()
+					$("#panel").removeClass("transparent").addClass("error")
+				} else {
+					$("#container li > div")[arr.indexOf(weather.zip)].innerHTML = template(weather)
+					stormcloud.posChange()
+					stormcloud.textfix()
 
-				// If the first location loads, fade everything in
-				if (arr.indexOf(weather.zip) == 0) {
-					setTimeout(function() {
-						$("#container, #panel").removeClass("transparent")
-						$("#spinner").addClass("transparent")
-					}, 50)
-					setTimeout(function() {
-						stormcloud.spinner.stop()
-					}, 400)
+					// If the first location loads, fade everything in
+					if (arr.indexOf(weather.zip) === 0) {
+						setTimeout(function() {
+							$("#container, #panel").removeClass("transparent")
+							$("#spinner").addClass("transparent")
+						}, 50)
+						setTimeout(function() {
+							stormcloud.spinner.stop()
+						}, 400)
+					}
 				}
 			})
 		}
@@ -537,10 +547,11 @@ stormcloud = {
 				hwaccel: 'o'
 			}
 
+		$("#error").hide()
 		$('#panel').show()
 		stormcloud.spinner = new Spinner(opts).spin(document.getElementById("spinner"))
 		$("#spinner").removeClass("transparent")
-		$('#container, #panel').addClass("transparent")
+		$('#container, #panel').addClass("transparent").removeClass("error")
 
 		//This all gets timed out because of animations....
 		setTimeout(function() {

@@ -106,6 +106,21 @@ body.drag {
     -webkit-app-region: drag;
 }
 
+#error {
+    position: absolute;
+    width: 100%;
+    padding-top: 50px;
+    top: 30px;
+    bottom: 0;
+    height: 200px;
+    z-index: 2000000001;
+    background: #2f75af;
+    color: #fff;
+    display: none;
+    text-align: center;
+    font-family: 'Ubuntu Condensed';
+}
+
 #background {
     width: $app_width;
     height: $app_height;
@@ -256,6 +271,10 @@ img {
         .sliderControls img, .sync {
             cursor: default;
         }
+    }
+
+    &.error .sliderControls, &.error .sync {
+        display: none;
     }
 
     .sliderControls {
@@ -743,6 +762,7 @@ span[data-color=gradient] {
 }
 
 .btn {
+    cursor: default;
     text-transform: uppercase;
     border: 2px solid #222;
     background: #333;
