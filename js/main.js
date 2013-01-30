@@ -135,7 +135,7 @@ stormcloud = {
 			function woeid_request(obj, callback) {
 				$.get("http://weather.yahooapis.com/forecastrss?w=" + encodeURIComponent(obj.woeid), function(woeidData) {
 					try {
-						callback({zip: $($(woeidData).find("guid")).text().substring(0,8), place: obj.place})
+						callback({zip: $($(woeidData).find("guid")).text().substring(0,8), place: $($(woeidData).find("location")).attr("city")})
 					} catch (err) {
 						callback()
 					}
