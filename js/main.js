@@ -20,10 +20,16 @@
 	localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}, {"zip":"USCA0091", "place": "Bieber"}, {"zip":"SWXX0031", "place": "Stockholm"}]'
 })()
 
+// Can either be chrome or linux
+window.app = "chrome"
+
 //UI Start
 $(function() {
+
+	$("body").addClass(window.app)
+
 	//Node Webkit Guff
-	try {
+	if (window.app == "linux") {
 		// Load native UI library
 		gui = require('nw.gui')
 
@@ -54,8 +60,9 @@ $(function() {
 			$('body').addClass('drag')
 		})
 
-	} catch (err) {
-		console.log("Not running under node-webkit")
+	} else if (window.app == "chrome") {
+		$("body").removeClass('drag')
+		console.log("Running under Chrome")
 	}
 
 	//Sets up Background Color

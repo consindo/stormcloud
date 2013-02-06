@@ -45,7 +45,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -99,8 +99,8 @@ body.drag {
   font-family: 'Ubuntu Condensed'; }
 
 #background {
-  width: 300px;
-  height: 500px;
+  width: 280px;
+  height: 450px;
   position: relative;
   background: #2f75af;
   overflow: hidden; }
@@ -175,8 +175,8 @@ img {
     opacity: 0; }
 
 .middle {
-  width: 300px;
-  height: 500px;
+  width: 280px;
+  height: 450px;
   overflow: auto;
   color: #fff; }
 
@@ -196,7 +196,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 280px;
   z-index: 1;
   color: #fff;
   display: none;
@@ -359,7 +359,7 @@ img {
       cursor: default; }
 
 input[type=checkbox] {
-  border: 2px solid #222;
+  border: 2px solid #222222;
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
@@ -432,7 +432,7 @@ input[type=checkbox] {
   background: #333;
   font-family: "Ubuntu Condensed";
   color: #fff;
-  height: 500px;
+  height: 450px;
   box-sizing: border-box;
   overflow-y: auto; }
   #settings .locationSettings {
@@ -534,7 +534,7 @@ input[type=checkbox] {
     vertical-align: top;
     -webkit-transition: 150ms ease background-color;
     cursor: default;
-    border: 2px solid #222;
+    border: 2px solid #222222;
     border-right: 0;
     background-color: #333;
     cursor: default; }
@@ -546,7 +546,7 @@ input[type=checkbox] {
     .toggleswitch span.selected, .toggleswitch span:hover {
       background-color: #555; }
     .toggleswitch span:last-child {
-      border-right: 2px solid #222; }
+      border-right: 2px solid #222222; }
   .toggleswitch.speed span {
     line-height: 35px;
     padding: 0 7px;
@@ -580,7 +580,7 @@ input[type=checkbox]:checked {
   font-size: 0;
   margin-top: 10px;
   display: inline-block;
-  border: 2px solid #333; }
+  border: 2px solid #333333; }
 
 .color span {
   height: 14px;
@@ -594,13 +594,13 @@ span[data-color=gradient] {
   border: 0;
   height: 22px;
   width: 22px;
-  border-right: 2px solid #333;
+  border-right: 2px solid #333333;
   cursor: default; }
 
 .btn {
   cursor: default;
   text-transform: uppercase;
-  border: 2px solid #222;
+  border: 2px solid #222222;
   background: #333;
   color: white;
   -webkit-transition: 150ms ease background;
@@ -613,6 +613,12 @@ span[data-color=gradient] {
   text-decoration: none; }
   .btn:hover {
     background: #555; }
+
+/* ================
+   OS Specific Stuff
+   ================ */
+.chrome #panel .close, .chrome #panel .minimize {
+  display: none; }
 
 /* ==========================================================================
    Helper classes
@@ -716,7 +722,7 @@ span[data-color=gradient] {
 @media print {
   * {
     background: transparent !important;
-    color: #000 !important;
+    color: black !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
@@ -741,7 +747,7 @@ span[data-color=gradient] {
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid; }
 
   thead {
