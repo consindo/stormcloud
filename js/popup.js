@@ -1,1 +1,1 @@
-$("html").html(chrome.extension.getBackgroundPage().document.documentElement.innerHTML)
+$("body").html(chrome.extension.getBackgroundPage().localStorage.stormcloud_weathercache)
