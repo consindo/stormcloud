@@ -38,7 +38,7 @@ stormcloud.reload = function() {
 }
 
 stormcloud.posChange = function() {
-	if (localStorage.color == "gradient") {
+	if (localStorage.stormcloud_color == "gradient") {
 		$('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
 	} else {
 		$('#container').css('background-color', localStorage.color)
