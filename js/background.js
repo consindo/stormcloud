@@ -329,3 +329,7 @@ function weather_code(a) {
 
 // App Start
 stormcloud.render(JSON.parse(localStorage.stormcloud_location))
+
+setTimeout(function() {
+	stormcloud.render(JSON.parse(localStorage.stormcloud_location))
+}, 30000)
