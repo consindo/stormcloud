@@ -252,7 +252,6 @@ img {
     width: $app_width;
     z-index: 1;
     color: #fff;
-    display:none;
 
     -webkit-transition: 300ms ease opacity;
 
@@ -261,14 +260,6 @@ img {
 
         .sync {
             opacity: 0;
-            cursor: default;
-        }
-    }
-
-    &.transparent, &.dim.transparent {
-        opacity: 0;
-
-        .sliderControls img, .sync {
             cursor: default;
         }
     }

@@ -1,7 +1,18 @@
+window.app = "chrome"
+
 $(function() {
 	// Copy Ze localstorage over
+	$("body").addClass(window.app)
 	localStorage = chrome.extension.getBackgroundPage().localStorage
 	stormcloud.reload()
+
+	$("#panel .sliderControls img").click(function() {
+		if ($(this).hasClass("left")) {
+			slider.prev()
+		} else {
+			slider.next()
+		}
+	})
 })
 
 stormcloud = {

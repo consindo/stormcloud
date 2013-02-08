@@ -199,16 +199,11 @@ img {
   width: 280px;
   z-index: 1;
   color: #fff;
-  display: none;
   -webkit-transition: 300ms ease opacity; }
   #panel.dim {
     opacity: 0.3; }
     #panel.dim .sync {
       opacity: 0;
-      cursor: default; }
-  #panel.transparent, #panel.dim.transparent {
-    opacity: 0; }
-    #panel.transparent .sliderControls img, #panel.transparent .sync, #panel.dim.transparent .sliderControls img, #panel.dim.transparent .sync {
       cursor: default; }
   #panel.error .sliderControls, #panel.error .sync {
     display: none; }
