@@ -18,8 +18,9 @@ if (localStorage.stormcloud) {
 }
 // Sets up localstorage
 localStorage.stormcloud_measurement = localStorage.stormcloud_measurement || "f"
-localStorage.stormcloud_speed = localStorage.stormcloud_speed || "mph"
-localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}, {"zip":"USCA0091", "place": "Bieber"}, {"zip":"SWXX0031", "place": "Stockholm"}]'
+  localStorage.stormcloud_speed = localStorage.stormcloud_speed || "mph"
+  localStorage.stormcloud_color =  localStorage.stormcloud_color || "gradient"
+  localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}, {"zip":"USCA0091", "place": "Bieber"}, {"zip":"SWXX0031", "place": "Stockholm"}]'
 
 stormcloud = {
 	dataGet: {
