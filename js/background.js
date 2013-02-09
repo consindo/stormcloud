@@ -28,7 +28,7 @@ stormcloud = {
 				woeid_request(location, callback)
 			//If they use a normal location
 			} else {
-				$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml", function(locationData) {
+				$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml&" + Math.round(Math.random() * 1000000), function(locationData) {
 					// Gets the WOEID && Caches Location Name
 					var woeid = $($(locationData).find("woeid")[0]).text(),
 						place = $($(locationData).find("name")[0]).text()
@@ -46,7 +46,7 @@ stormcloud = {
 
 			// WOEID Request to find Global ZIP Code
 			function woeid_request(obj, callback) {
-				$.get("http://weather.yahooapis.com/forecastrss?w=" + encodeURIComponent(obj.woeid), function(woeidData) {
+				$.get("http://weather.yahooapis.com/forecastrss?w=" + encodeURIComponent(obj.woeid) + "&" + Math.round(Math.random() * 1000000), function(woeidData) {
 					try {
 						callback({zip: $($(woeidData).find("guid")).text().substring(0,8), place: $($(woeidData).find("location")).attr("city")})
 					} catch (err) {
@@ -162,7 +162,7 @@ stormcloud = {
 			}
 
 			$.ajax({
-				url: 'http://xml.weather.yahoo.com/forecastrss/' + location.zip + '_f.xml?'+(Math.random() * 100),
+				url: 'http://xml.weather.yahoo.com/forecastrss/' + location.zip + '_f.xml?' + Math.round(Math.random() * 1000000),
 				timeout: 10000,
 				success: function(data) {
 
@@ -256,8 +256,9 @@ stormcloud = {
 				localStorage.stormcloud_weathercache = JSON.stringify(arr)
 
 				try {
-					chrome.browserAction.setBadgeText({text: arr[0].temperature.replace(" ", "")})
 					chrome.browserAction.setBadgeBackgroundColor({color: "#888"})
+					chrome.browserAction.setBadgeText({text: arr[0].temperature.replace(" ", "")})
+					// chrome.browserAction.setBadgeText({text: Math.random().toString())})
 				} catch (err) {
 
 				}
@@ -332,4 +333,4 @@ stormcloud.render(JSON.parse(localStorage.stormcloud_location))
 
 setInterval(function() {
 	stormcloud.render(JSON.parse(localStorage.stormcloud_location))
-}, 30000)
+}, 150000)

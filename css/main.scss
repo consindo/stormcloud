@@ -542,9 +542,14 @@ input[type=checkbox] {
     background: #333;
     font-family: "Ubuntu Condensed";
     color: #fff;
-    height: $app_height;
     box-sizing: border-box;
     overflow-y: auto;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     .locationSettings {
         padding-top: 40px;
