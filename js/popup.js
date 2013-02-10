@@ -9,6 +9,11 @@ $(function() {
 	$("body").addClass(window.app).append(stormcloud.loadSettings())
 	stormcloud.reload()
 
+	// Colourizes CSS because I'm an asshole and used HTML to style
+	$("span[data-color]:not([data-color=gradient])").map(function() {
+		$(this).css('background', '#' + $(this).attr("data-color"))
+	})
+
 	$("#panel .sliderControls img").click(function() {
 		if ($(this).hasClass("left")) {
 			slider.prev()
@@ -68,20 +73,6 @@ stormcloud.posChange = function() {
 
 stormcloud.loadSettings = function() {
 
-	// Reload Function
-	var reload = function(type) {
-		chrome.extension.getBackgroundPage().stormcloud_cli.render(
-			JSON.parse(localStorage.stormcloud_location),
-			function() {
-				if (type == "hard") {
-					stormcloud.reload()
-				} else {
-					stormcloud.softreload()
-				}
-			}
-		)
-	}
-
 	var settingsObj = {}
 
 	//Sets Speed & Temp Measurements
@@ -103,6 +94,20 @@ stormcloud.loadSettings = function() {
 	//Set up handlers if not already done
 	if (!stormcloud.settingsHandles) {
 		stormcloud.settingsHandles = true;
+
+		// Reload Function
+		var reload = function(type) {
+			chrome.extension.getBackgroundPage().stormcloud_cli.render(
+				JSON.parse(localStorage.stormcloud_location),
+				function() {
+					if (type == "hard") {
+						stormcloud.reload()
+					} else {
+						stormcloud.softreload()
+					}
+				}
+			)
+		}
 
 		//Sets up the Toggle Switches
 		$('body').on('click', '.toggleswitch span', function() {
