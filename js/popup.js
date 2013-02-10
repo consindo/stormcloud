@@ -21,6 +21,12 @@ $(function() {
 	$("#panel .sync img").click(function() {
 		$("#settings").toggle()
 	})
+
+	// So, it won't be instant but close enough (100secs)
+	// Yes, I should have used a MVC framework
+	setInterval(function() {
+		stormcloud.softreload()
+	}, 100000)
 })
 
 stormcloud.reload = function() {
@@ -40,6 +46,18 @@ stormcloud.reload = function() {
 	stormcloud.posChange()
 }
 
+stormcloud.softreload = function() {
+	var template = Handlebars.templates['pane.template'],
+		weather = JSON.parse(localStorage.stormcloud_weathercache)
+
+	for (var i in weather) {
+		$("#container li > div")[i].innerHTML = template(weather[i])
+	}
+
+	stormcloud.textfix()
+	stormcloud.posChange()
+}
+
 stormcloud.posChange = function() {
 	if (localStorage.stormcloud_color == "gradient") {
 		$('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
@@ -49,6 +67,20 @@ stormcloud.posChange = function() {
 }
 
 stormcloud.loadSettings = function() {
+
+	// Reload Function
+	var reload = function(type) {
+		chrome.extension.getBackgroundPage().stormcloud_cli.render(
+			JSON.parse(localStorage.stormcloud_location),
+			function() {
+				if (type == "hard") {
+					stormcloud.reload()
+				} else {
+					stormcloud.softreload()
+				}
+			}
+		)
+	}
 
 	var settingsObj = {}
 
@@ -76,6 +108,8 @@ stormcloud.loadSettings = function() {
 		$('body').on('click', '.toggleswitch span', function() {
 			$(this).parent().children().removeClass('selected')
 			localStorage.setItem("stormcloud_" + $(this).parent().attr("class").replace("toggleswitch ", ""), $(this).addClass('selected').attr("data-type"))
+
+			reload("hard")
 		})
 
 		$('body').on('click', '.color span', function() {
@@ -86,6 +120,8 @@ stormcloud.loadSettings = function() {
 			} else {
 				$("#background").css('background', localStorage.stormcloud_color)
 			}
+
+			reload("soft")
 		})
 
 		$('body').on('click', '#desktopswitch', function() {
@@ -115,7 +151,7 @@ stormcloud.loadSettings = function() {
 
 		var doneTyping = function() {
 			$(statusElem).attr('class', 'thinking status')
-			stormcloud.dataGet.zipcode($(locationInput).val(), function(data) {
+			chrome.extension.getBackgroundPage().stormcloud_cli.dataGet.zipcode($(locationInput).val(), function(data) {
 				if (data === undefined) {
 					$(statusElem).attr('class', 'error status')
 				} else {
@@ -134,9 +170,10 @@ stormcloud.loadSettings = function() {
 				//Save to LocalStorage
 				localStorage.stormcloud_location = makeLocationArray()
 
+				reload("hard")
+
 				//Animate it =)
 				$(this).hide()
-
 				setTimeout(function() {
 					$('.locationSettings ul li.placeInput').hide().find('input').val('')
 					$($('.locationSettings ul li')[1]).show()
@@ -149,12 +186,14 @@ stormcloud.loadSettings = function() {
 		// The remove button next to a location.
 		$('body').on('click', '.locationSettings ul li .delete', function() {
 			if ($('.locationSettings ul li').length != 2) {
-				$(this).parent().addClass("deleting")
 
+				$(this).parent().addClass("deleting")
 				var elem = $(this).parent()
 				setTimeout(function() {
 					elem.remove()
 					localStorage.stormcloud_location = makeLocationArray()
+
+					reload("hard")
 				}, 600)
 			}
 		})

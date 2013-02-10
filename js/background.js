@@ -20,7 +20,7 @@ localStorage.stormcloud_measurement = localStorage.stormcloud_measurement || "f"
   localStorage.stormcloud_color =  localStorage.stormcloud_color || "gradient"
   localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}, {"zip":"USCA0091", "place": "Bieber"}, {"zip":"SWXX0031", "place": "Stockholm"}]'
 
-stormcloud = {
+stormcloud_cli = {
 	dataGet: {
 		zipcode: function(location, callback) {
 			//If it's a woeid, we bypass the first step
@@ -243,7 +243,7 @@ stormcloud = {
 		}
 	},
 
-	render: function(locations) {
+	render: function(locations, callbackfn) {
 		var arr = [],
 			count = 0
 
@@ -262,13 +262,17 @@ stormcloud = {
 				} catch (err) {
 
 				}
+
+				if (callbackfn) {
+					callbackfn()
+				}
 			}
 		}
 
 		for (var i in locations) {
 			//We need this so it's in the right order - stupid async programming
 			arr[i] = locations[i].zip
-			stormcloud.dataGet.weather(locations[i], arr, callback)
+			stormcloud_cli.dataGet.weather(locations[i], arr, callback)
 		}
 	}
 }
@@ -329,8 +333,8 @@ function weather_code(a) {
 }
 
 // App Start
-stormcloud.render(JSON.parse(localStorage.stormcloud_location))
+stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location))
 
 setInterval(function() {
-	stormcloud.render(JSON.parse(localStorage.stormcloud_location))
+	stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location))
 }, 150000)
