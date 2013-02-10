@@ -271,7 +271,7 @@ img {
     .sliderControls {
         position: absolute;
         top: 3px;
-        right: 12px;
+        right: 7px;
 
         img {
             height: 21px;
@@ -287,7 +287,7 @@ img {
 
     .sync {
         right: 50px;
-        width: 18px;
+        width: 13px;
         position: absolute;
         height: 30px;
         -webkit-transition: 300ms ease opacity;
@@ -784,6 +784,54 @@ span[data-color=gradient] {
         display: none;
     }
 }
+
+/* Pre hide sections with JavaScript on
+--- */
+#accordion h3+div {
+  display: none;
+}
+
+#accordion {
+    padding-top: 30px;
+}
+
+#accordion h3 {
+    margin: 0;
+    padding: 5px 10px;
+    background: #222;
+    letter-spacing: -1px;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+}
+
+#accordion h3 + div {
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background: #333;
+    display: block!important;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#accordion .content {
+  padding: 10px;
+}
+
+#accordion h3.open + div {
+  height: auto;
+  background: #333;
+}
+
+
 
 
 

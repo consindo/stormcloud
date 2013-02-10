@@ -1,5 +1,33 @@
-<div class="locationSettings">
-    <h2>{{locationsText}}<span class="add" title="Add City">+</span></h2>
+<div id="accordion">
+  <h3>{{locationsText}}</h3>
+  <div>
+    <div class="content">
+      <p>This example simply sets a class attribute to the details and let's an
+      external stylesheet toggle the collapsed state.</p>
+      <p>Hello Sir.</p>
+      <p>I'm sliding</p>
+    </div>
+  </div>
+  <h3>{{appearanceText}}</h3>
+  <div>
+    <div class="content">
+      <p>This example simply sets a class attribute to the details and let's an
+      external stylesheet toggle the collapsed state.</p>
+      <p>Hello Sir.</p>
+    </div>
+  </div>
+  <h3>{{otherText}}</h3>
+  <div>
+    <div class="content">
+      <p>This example simply sets a class attribute to the details and let's an
+      external stylesheet toggle the collapsed state.</p>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="locationSettings">
+    <h2>{{locationsText}}<h2>
+        <span class="add" title="Add City">+</span></h2>
     <ul>
         <li class="placeInput"><input placeholder="{{locationText}}" type="text"><span class="status"></span></li>
         {{#each location}}
@@ -37,3 +65,5 @@
     </div>
     <a class="btn credits" href="#">{{creditsText}}</a><br>
 </div>
+
+ -->

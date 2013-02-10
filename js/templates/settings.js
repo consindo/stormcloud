@@ -26,11 +26,23 @@ function program5(depth0,data) {
   
   return "\n        <input type=\"checkbox\" id=\"desktopswitch\">\n    ";}
 
-  buffer += "<div class=\"locationSettings\">\n    <h2>";
+  buffer += "<div id=\"accordion\">\n  <h3>";
   foundHelper = helpers.locationsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.locationsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "<span class=\"add\" title=\"Add City\">+</span></h2>\n    <ul>\n        <li class=\"placeInput\"><input placeholder=\"";
+  buffer += escapeExpression(stack1) + "</h3>\n  <div>\n    <div class=\"content\">\n      <p>This example simply sets a class attribute to the details and let's an\n      external stylesheet toggle the collapsed state.</p>\n      <p>Hello Sir.</p>\n      <p>I'm sliding</p>\n    </div>\n  </div>\n  <h3>";
+  foundHelper = helpers.appearanceText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.appearanceText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</h3>\n  <div>\n    <div class=\"content\">\n      <p>This example simply sets a class attribute to the details and let's an\n      external stylesheet toggle the collapsed state.</p>\n      <p>Hello Sir.</p>\n    </div>\n  </div>\n  <h3>";
+  foundHelper = helpers.otherText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.otherText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</h3>\n  <div>\n    <div class=\"content\">\n      <p>This example simply sets a class attribute to the details and let's an\n      external stylesheet toggle the collapsed state.</p>\n    </div>\n  </div>\n</div>\n\n<!-- <div class=\"locationSettings\">\n    <h2>";
+  foundHelper = helpers.locationsText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.locationsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "<h2>\n        <span class=\"add\" title=\"Add City\">+</span></h2>\n    <ul>\n        <li class=\"placeInput\"><input placeholder=\"";
   foundHelper = helpers.locationText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.locationText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
@@ -64,6 +76,6 @@ function program5(depth0,data) {
   foundHelper = helpers.creditsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.creditsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</a><br>\n</div>\n";
+  buffer += escapeExpression(stack1) + "</a><br>\n</div>\n\n -->\n";
   return buffer;});
 })();
