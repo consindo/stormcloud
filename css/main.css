@@ -518,13 +518,13 @@ input[type=checkbox] {
   #settings .wrapperTwenty {
     padding: 10px 20px 20px; }
 
-.measurement {
+.toggleswitch.measurement {
   font-family: "ClimaconsRegular";
-  font-size: 32px; }
+  font-size: 32px;
+  margin-top: 5px; }
 
 .measurement span {
-  padding: 0 7px 5px 10px;
-  cursor: default; }
+  padding: 0 7px 5px 10px; }
 
 .toggleswitch {
   margin-top: 10px; }
@@ -534,6 +534,8 @@ input[type=checkbox] {
     vertical-align: top;
     -webkit-transition: 150ms ease background-color;
     cursor: default;
+    box-sizing: border-box;
+    width: 44px;
     border: 2px solid #222222;
     border-right: 0;
     background-color: #333;
@@ -550,17 +552,15 @@ input[type=checkbox] {
   .toggleswitch.speed span {
     line-height: 35px;
     padding: 0 7px;
-    width: 42px;
     box-sizing: border-box;
     height: 41px;
-    text-align: center;
-    cursor: default; }
+    text-align: center; }
 
 .measurement span[data-type=k] {
   font-family: "Ubuntu Condensed";
   font-size: 18px;
   line-height: 36px;
-  height: 37px;
+  height: 41px;
   padding: 0px 14px 0px;
   vertical-align: top;
   font-weight: bold;
@@ -629,11 +629,13 @@ span[data-color=gradient] {
   padding-top: 30px; }
 
 #accordion h3 {
-  margin: 0;
-  padding: 5px 10px;
-  background: #222;
-  letter-spacing: -1px; }
+  margin: 0; }
   #accordion h3 a {
+    padding: 5px 15px;
+    background: #222;
+    letter-spacing: -1px;
+    font-size: 18px;
+    display: block;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -653,10 +655,9 @@ span[data-color=gradient] {
   transition: all 0.3s ease; }
 
 #accordion .content {
-  padding: 10px; }
+  padding: 10px 15px; }
 
 #accordion h3.open + div {
-  height: auto;
   background: #333; }
 
 /* ==========================================================================

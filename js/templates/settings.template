@@ -11,9 +11,25 @@
   <h3>{{appearanceText}}</h3>
   <div>
     <div class="content">
-      <p>This example simply sets a class attribute to the details and let's an
-      external stylesheet toggle the collapsed state.</p>
-      <p>Hello Sir.</p>
+      <div class="toggleswitch measurement">
+        {{{measurement}}}
+      </div>
+      <div class="toggleswitch speed">
+          {{{speed}}}
+      </div>
+      <div class="color">
+          <span data-color="gradient"></span>
+          <span data-color="A200FF"></span>
+          <span data-color="FF0097"></span>
+          <span data-color="00ABA9"></span>
+          <span data-color="8CBF26"></span>
+          <span data-color="A05000"></span>
+          <span data-color="333333"></span>
+          <span data-color="F09609"></span>
+          <span data-color="1BA1E2"></span>
+          <span data-color="E51400"></span>
+          <span data-color="339933"></span>
+      </div>
     </div>
   </div>
   <h3>{{otherText}}</h3>
@@ -36,25 +52,6 @@
     </ul>
 </div>
 <div class="wrapperTwenty">
-    <div class="toggleswitch measurement">
-        {{{measurement}}}
-    </div>
-    <div class="toggleswitch speed">
-        {{{speed}}}
-    </div>
-    <div class="color">
-        <span data-color="gradient"></span>
-        <span data-color="A200FF"></span>
-        <span data-color="FF0097"></span>
-        <span data-color="00ABA9"></span>
-        <span data-color="8CBF26"></span>
-        <span data-color="A05000"></span>
-        <span data-color="333333"></span>
-        <span data-color="F09609"></span>
-        <span data-color="1BA1E2"></span>
-        <span data-color="E51400"></span>
-        <span data-color="339933"></span>
-    </div>
     <div class="launcher" data-boop="{{launcher}}">
     {{#if desktop}}
         <input type="checkbox" id="desktopswitch" checked>
