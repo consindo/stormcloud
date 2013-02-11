@@ -18,14 +18,15 @@ $(function() {
     accordion: true,
     persist: false,
     open: function() {
-      this.addClass("open");
-      this.css({ height: this.children().outerHeight() });
+      this.addClass("open")
+      this.css({ height: this.children().outerHeight() })
     },
     close: function() {
-      this.css({ height: "0px" });
-      this.removeClass("open");
+      this.css({ height: "0px" })
+      this.removeClass("open")
     }
-   });
+   })
+
 
   $("#panel .sliderControls img").click(function() {
     if ($(this).hasClass("left")) {
@@ -38,6 +39,9 @@ $(function() {
 
   $("#panel .sync img").click(function() {
     $("#settings").toggle()
+    if ($("#settings").is(":visible") && $($("#accordion").children()[1]).attr("aria-hidden") == "true") {
+      $("#accordion").children().first().find("a").trigger("click")
+    }
   })
 
   // So, it won't be instant but close enough (100secs)

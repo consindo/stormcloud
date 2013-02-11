@@ -582,9 +582,6 @@ span[data-color=gradient] {
 
 /* Pre hide sections with JavaScript on
 --- */
-#accordion h3 + div {
-  display: none; }
-
 #accordion {
   padding-top: 30px; }
 
