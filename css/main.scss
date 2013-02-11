@@ -145,7 +145,6 @@ body.drag {
     -webkit-transform-origin: left;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(600px) rotateY(-90deg);
-    overflow: hidden;
 
     &.show {
         -webkit-transform: perspective(600px) rotateY(0deg);
@@ -183,6 +182,10 @@ body.drag {
             text-decoration: underline;
         }
     }
+}
+
+#credits::-webkit-scrollbar-track {
+    background: #f7f7f7;
 }
 
 img {

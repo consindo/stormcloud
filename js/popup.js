@@ -27,6 +27,16 @@ $(function() {
     }
    })
 
+  //Sets up Credits
+  document.getElementById('credits').innerHTML = Handlebars.templates['credits.template']()
+
+  // Various Handlers
+  $("body").on("click", "a.credits", function() {
+    $("#credits").addClass("show anim")
+  })
+  $("#credits img").click(function() {
+    $("#credits").removeClass("show")
+  })
 
   $("#panel .sliderControls img").click(function() {
     if ($(this).hasClass("left")) {

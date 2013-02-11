@@ -121,8 +121,7 @@ body.drag {
   -webkit-animation: 500ms ease credits-show 1;
   -webkit-transform-origin: left;
   -webkit-transform-style: preserve-3d;
-  -webkit-transform: perspective(600px) rotateY(-90deg);
-  overflow: hidden; }
+  -webkit-transform: perspective(600px) rotateY(-90deg); }
   #credits.show {
     -webkit-transform: perspective(600px) rotateY(0deg); }
   #credits.anim {
@@ -145,6 +144,9 @@ body.drag {
     color: #444; }
     #credits a:hover {
       text-decoration: underline; }
+
+#credits::-webkit-scrollbar-track {
+  background: #f7f7f7; }
 
 img {
   -webkit-user-drag: none;
