@@ -5,7 +5,45 @@ var stormcloud = {},
   slider = new Swipe(document.getElementById('container'))
 
 $(function() {
-  // Copy Ze localstorage over
+
+  //Node Webkit Guff
+  if (window.app == "linux") {
+    // Load native UI library
+    gui = require('nw.gui')
+
+    // Get the current window
+    win = gui.Window.get()
+    win.show()
+    // win.showDevTools()
+
+    //Bind Handlers
+    $("#panel .close").click(function() {
+      win.close()
+    })
+
+    $("#panel .minimize").click(function() {
+      win.minimize()
+    })
+
+    //Opens links in browsers
+    $('body').on("click", "a", function(e) {
+      e.preventDefault()
+      gui.Shell.openExternal($(e.currentTarget).attr("href"))
+    })
+
+    //Disables Dragging on Certain Elements
+    $('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img", function() {
+      $('body').removeClass('drag')
+    }).on("mouseout", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img", function() {
+      $('body').addClass('drag')
+    })
+
+  } else if (window.app == "chrome") {
+    $("body").removeClass('drag')
+    console.log("Running under Chrome")
+  }
+
+
   $("body").addClass(window.app).append(stormcloud.loadSettings())
   stormcloud.reload()
 
@@ -127,16 +165,26 @@ stormcloud.loadSettings = function() {
 
     // Reload Function
     var reload = function(type) {
-      chrome.extension.getBackgroundPage().stormcloud_cli.render(
-        JSON.parse(localStorage.stormcloud_location),
-        function() {
-          if (type == "hard") {
-            stormcloud.reload()
-          } else {
-            stormcloud.softreload()
-          }
-        }
-      )
+
+      if (window.app == "chrome") {
+        chrome.extension.getBackgroundPage().stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location),
+          function() {
+            if (type == "hard") {
+              stormcloud.reload()
+            } else {
+              stormcloud.softreload()
+            }
+          })
+      } else {
+        stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location),
+          function() {
+            if (type == "hard") {
+              stormcloud.reload()
+            } else {
+              stormcloud.softreload()
+            }
+          })
+      }
     }
 
     //Sets up the Toggle Switches
@@ -182,13 +230,25 @@ stormcloud.loadSettings = function() {
 
     var doneTyping = function() {
       $(statusElem).attr('class', 'thinking status')
-      chrome.extension.getBackgroundPage().stormcloud_cli.dataGet.zipcode($(locationInput).val(), function(data) {
+
+      var callback = function(data) {
         if (data === undefined) {
           $(statusElem).attr('class', 'error status')
         } else {
           $(statusElem).attr({'class': 'success status', 'data-code': data.zip, 'data-place': data.place})
         }
-      })
+      }
+
+      if (window.app == "chrome") {
+        chrome.extension.getBackgroundPage().stormcloud_cli.dataGet.zipcode($(locationInput).val(), function(data) {
+          callback(data)
+        })
+      } else {
+        stormcloud_cli.dataGet.zipcode($(locationInput).val(), function(data) {
+          callback(data)
+        })
+      }
+
     }
 
     // This is the little tick icon that appears
