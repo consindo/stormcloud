@@ -498,27 +498,6 @@ input[type=checkbox] {
 0% { -webkit-transform: rotate(0deg);}
 100% {-webkit-transform: rotate(360deg);}
 }
-@-webkit-keyframes showplaceinput {
-    0% {
-        padding: 0;
-        height: 0;
-    }
-    100% {
-        padding: 2px 0;
-        height: 20px;
-    }
-}
-@-webkit-keyframes showinput {
-    0% {
-        opacity: 0.001;
-    }
-    60% {
-        opacity: 0.001;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 @-webkit-keyframes deletion {
     0% {
         -webkit-transform: translateX(0%);
@@ -552,35 +531,18 @@ input[type=checkbox] {
     bottom: 0;
 
     .locationSettings {
-        padding-top: 40px;
-        h2 {
-            margin: 0;
-            padding: 5px 20px;
-            text-transform: uppercase;
-            font-weight: normal;
-            letter-spacing: -2px;
-            font-size: 22px;
 
-            .add {
-                float: right;
-                display: inline-block;
-                font-size: 32px;
-                line-height: 26px;
-                padding: 0 5px;
-                cursor: pointer;
-            }
-        }
         ul {
-            padding: 10px 20px;
-            background: #222;
+
+            padding: 0;
+            margin: 0;
 
             li {
 
                 &.placeInput {
 
-                    display: none;
-                    -webkit-animation: 200ms ease showplaceinput 1;
                     font-size:0;
+                    position: relative;
 
                     input {
                         outline: 0;
@@ -593,14 +555,7 @@ input[type=checkbox] {
                         padding: 5px 30px 5px 20px;
                         position: relative;
                         margin-left: -20px;
-                        width: 70%;
-                        -webkit-animation: 600ms ease showinput 1;
-
-                        &.mimic {
-                            -webkit-transition: 600ms ease all;
-                            background: #222;
-                            padding: 2px 20px;
-                        }
+                        width: 100%;
                     }
 
                     .status {
@@ -608,8 +563,9 @@ input[type=checkbox] {
                         width: 27px;
                         height: 27px;
                         vertical-align: top;
-                        position: relative;
-                        left: -27px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
                         font-size: 15px;
                         -webkit-animation: 600ms ease showinput 1;
 
@@ -780,7 +736,7 @@ span[data-color=gradient] {
    OS Specific Stuff
    ================ */
 .chrome {
-    #panel .close, #panel .minimize {
+    #panel .close, #panel .minimize, .launcher {
         display: none;
     }
 }

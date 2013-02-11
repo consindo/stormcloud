@@ -102,9 +102,10 @@ stormcloud.loadSettings = function() {
   settingsObj.locationsText = $.i18n._("Locations")
   settingsObj.appearanceText = $.i18n._("Appearance")
   settingsObj.otherText = $.i18n._("Other")
-  settingsObj.locationText = $.i18n._("Location")
+  settingsObj.locationText = $.i18n._("Add Location")
   settingsObj.charmText = $.i18n._("Use Chameleonic Background")
   settingsObj.creditsText = $.i18n._("Credits")
+  settingsObj.proText = $.i18n._("Go Pro")
 
   //Set up handlers if not already done
   if (!stormcloud.settingsHandles) {
@@ -152,10 +153,6 @@ stormcloud.loadSettings = function() {
       }
     })
 
-    $('body').on('click', '.locationSettings .add', function() {
-      $('.locationSettings ul .placeInput').val('').show()
-    })
-
     var locationInput = '.locationSettings ul li.placeInput input',
       doneTypingInterval = 1500,
       typingTimer = '',
@@ -183,23 +180,17 @@ stormcloud.loadSettings = function() {
     // This is the little tick icon that appears
     $('body').on('click', statusElem, function() {
       if ($(this).hasClass('success')) {
-        $('.locationSettings ul li.placeInput').after('<li style="display:none"data-code="' + $(this).attr('data-code') + '"><span class="name">' + $(this).attr('data-place') + '</span><span class="delete">&#10005;</span></li>')
+        $('.locationSettings ul li.placeInput').before('<li data-code="' + $(this).attr('data-code') + '"><span class="name">' + $(this).attr('data-place') + '</span><span class="delete">&#10005;</span></li>')
         $(this).removeClass('success')
-        $('.locationSettings ul li.placeInput input').addClass("mimic")
+        $('.locationSettings ul li.placeInput input').val("")
 
         //Save to LocalStorage
         localStorage.stormcloud_location = makeLocationArray()
 
         reload("hard")
 
-        //Animate it =)
-        $(this).hide()
-        setTimeout(function() {
-          $('.locationSettings ul li.placeInput').hide().find('input').val('')
-          $($('.locationSettings ul li')[1]).show()
-          $('.locationSettings ul li.placeInput input').removeClass("mimic")
-          $(statusElem).show()
-        }, 700)
+        // Adjusts height of window
+        $(".locationSettings").parent().parent().height($(".locationSettings").parent().outerHeight())
       }
     })
 
@@ -214,6 +205,8 @@ stormcloud.loadSettings = function() {
           localStorage.stormcloud_location = makeLocationArray()
 
           reload("hard")
+
+          $(".locationSettings").parent().parent().height($(".locationSettings").parent().outerHeight())
         }, 600)
       }
     })
@@ -221,7 +214,7 @@ stormcloud.loadSettings = function() {
 
   var makeLocationArray = function() {
     var obj = []
-    $('.locationSettings ul li:not(:first-child)').map(function() {
+    $('.locationSettings ul li:not(:last-child)').map(function() {
       obj.push({zip: $(this).attr("data-code"), place: $(this).find('.name').text()})
     })
     return JSON.stringify(obj)

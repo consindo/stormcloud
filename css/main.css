@@ -387,25 +387,6 @@ input[type=checkbox] {
   100% {
     -webkit-transform: rotate(360deg); } }
 
-@-webkit-keyframes showplaceinput {
-  0% {
-    padding: 0;
-    height: 0; }
-
-  100% {
-    padding: 2px 0;
-    height: 20px; } }
-
-@-webkit-keyframes showinput {
-  0% {
-    opacity: 0.001; }
-
-  60% {
-    opacity: 0.001; }
-
-  100% {
-    opacity: 1; } }
-
 @-webkit-keyframes deletion {
   0% {
     -webkit-transform: translateX(0%);
@@ -435,86 +416,65 @@ input[type=checkbox] {
   left: 0;
   right: 0;
   bottom: 0; }
-  #settings .locationSettings {
-    padding-top: 40px; }
-    #settings .locationSettings h2 {
-      margin: 0;
-      padding: 5px 20px;
-      text-transform: uppercase;
-      font-weight: normal;
-      letter-spacing: -2px;
-      font-size: 22px; }
-      #settings .locationSettings h2 .add {
-        float: right;
-        display: inline-block;
-        font-size: 32px;
-        line-height: 26px;
-        padding: 0 5px;
-        cursor: pointer; }
-    #settings .locationSettings ul {
-      padding: 10px 20px;
-      background: #222; }
-      #settings .locationSettings ul li {
-        font-size: 15px;
-        list-style-type: none;
-        padding: 2px 0;
-        -webkit-transition: 300ms ease -webkit-transform; }
-        #settings .locationSettings ul li.placeInput {
-          display: none;
-          -webkit-animation: 200ms ease showplaceinput 1;
-          font-size: 0; }
-          #settings .locationSettings ul li.placeInput input {
-            outline: 0;
-            background: #333;
-            color: white;
-            font-family: "Ubuntu Condensed";
-            font-size: 15px;
-            border: 0;
-            height: 17px;
-            padding: 5px 30px 5px 20px;
-            position: relative;
-            margin-left: -20px;
-            width: 70%;
-            -webkit-animation: 600ms ease showinput 1; }
-            #settings .locationSettings ul li.placeInput input.mimic {
-              -webkit-transition: 600ms ease all;
-              background: #222;
-              padding: 2px 20px; }
-          #settings .locationSettings ul li.placeInput .status {
-            display: inline-block;
+  #settings .locationSettings ul {
+    padding: 0;
+    margin: 0; }
+    #settings .locationSettings ul li {
+      font-size: 15px;
+      list-style-type: none;
+      padding: 2px 0;
+      -webkit-transition: 300ms ease -webkit-transform; }
+      #settings .locationSettings ul li.placeInput {
+        font-size: 0;
+        position: relative; }
+        #settings .locationSettings ul li.placeInput input {
+          outline: 0;
+          background: #333;
+          color: white;
+          font-family: "Ubuntu Condensed";
+          font-size: 15px;
+          border: 0;
+          height: 17px;
+          padding: 5px 30px 5px 20px;
+          position: relative;
+          margin-left: -20px;
+          width: 100%; }
+        #settings .locationSettings ul li.placeInput .status {
+          display: inline-block;
+          width: 27px;
+          height: 27px;
+          vertical-align: top;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 15px;
+          -webkit-animation: 600ms ease showinput 1; }
+          #settings .locationSettings ul li.placeInput .status.thinking {
+            background: url(../img/sync.svg) no-repeat 50% 50%;
+            background-size: 14px;
+            -webkit-animation: spinning 1200ms linear infinite; }
+          #settings .locationSettings ul li.placeInput .status.error::before {
+            content: "\2715";
+            text-align: center;
+            position: absolute;
             width: 27px;
             height: 27px;
-            vertical-align: top;
-            position: relative;
-            left: -27px;
-            font-size: 15px;
-            -webkit-animation: 600ms ease showinput 1; }
-            #settings .locationSettings ul li.placeInput .status.thinking {
-              background: url(../img/sync.svg) no-repeat 50% 50%;
-              background-size: 14px;
-              -webkit-animation: spinning 1200ms linear infinite; }
-            #settings .locationSettings ul li.placeInput .status.error::before {
-              content: "\2715";
-              text-align: center;
-              position: absolute;
-              width: 27px;
-              height: 27px;
-              line-height: 27px; }
-            #settings .locationSettings ul li.placeInput .status.success {
-              background: url(../img/tick.svg) no-repeat 50% 50%;
-              background-size: 18px;
-              cursor: pointer; }
-        #settings .locationSettings ul li .delete {
-          float: right;
-          padding: 0 5px;
-          font-size: 14px;
-          cursor: pointer;
-          -webkit-animation: 150ms ease opacity 1; }
-        #settings .locationSettings ul li.deleting {
-          -webkit-animation: 500ms ease deletion 1;
-          -webkit-transform: translateX(-130%);
-          height: 0;
-          padding: 0; }
+            line-height: 27px; }
+          #settings .locationSettings ul li.placeInput .status.success {
+            background: url(../img/tick.svg) no-repeat 50% 50%;
+            background-size: 18px;
+            cursor: pointer; }
+      #settings .locationSettings ul li .delete {
+        float: right;
+        padding: 0 5px;
+        font-size: 14px;
+        cursor: pointer;
+        -webkit-animation: 150ms ease opacity 1; }
+      #settings .locationSettings ul li.deleting {
+        -webkit-animation: 500ms ease deletion 1;
+        -webkit-transform: translateX(-130%);
+        height: 0;
+        padding: 0; }
   #settings .wrapperTwenty {
     padding: 10px 20px 20px; }
 
@@ -617,7 +577,7 @@ span[data-color=gradient] {
 /* ================
    OS Specific Stuff
    ================ */
-.chrome #panel .close, .chrome #panel .minimize {
+.chrome #panel .close, .chrome #panel .minimize, .chrome .launcher {
   display: none; }
 
 /* Pre hide sections with JavaScript on
