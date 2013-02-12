@@ -124,8 +124,8 @@ stormcloud.reload = function() {
   stormcloud.posChange()
 
   // Hardcoded dimensions
-  if (window.app == "chrome") {
-    stormcloud.dimensions(280, 450)
+  if (window.app == "linux") {
+    stormcloud.dimensions(300, 500)
   }
 }
 

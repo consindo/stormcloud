@@ -99,8 +99,8 @@ body.drag {
   font-family: 'Ubuntu Condensed'; }
 
 #background {
-  width: 300px;
-  height: 500px;
+  width: 280px;
+  height: 450px;
   position: relative;
   background: #2f75af;
   overflow: hidden; }
@@ -177,8 +177,8 @@ img {
     opacity: 0; }
 
 .middle {
-  width: 300px;
-  height: 500px;
+  width: 280px;
+  height: 450px;
   overflow: auto;
   color: #fff; }
 
