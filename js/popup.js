@@ -1,5 +1,13 @@
 /*jshint asi: true*/
-window.app = "linux"
+
+// So we dont have to define twice
+try {
+  chrome
+  window.app = "chrome"
+} catch(err) {
+  window.app = "linux"
+}
+
 
 var stormcloud = {},
   slider = new Swipe(document.getElementById('container'))
@@ -14,7 +22,7 @@ $(function() {
     // Get the current window
     win = gui.Window.get()
     win.show()
-    // win.showDevTools()
+    win.showDevTools()
 
     //Bind Handlers
     $("#panel .close").click(function() {
