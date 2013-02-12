@@ -1,6 +1,6 @@
 /*jshint asi: true*/
 
-app = "chrome"
+app = "linux"
 
 if (app == "chrome") {
 	/* Zepto v1.0rc1 - polyfill zepto event detect fx ajax form touch - zeptojs.com/license */

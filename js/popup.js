@@ -1,5 +1,5 @@
 /*jshint asi: true*/
-window.app = "chrome"
+window.app = "linux"
 
 var stormcloud = {},
   slider = new Swipe(document.getElementById('container'))
@@ -114,6 +114,11 @@ stormcloud.reload = function() {
   slider = new Swipe(document.getElementById('container'))
   stormcloud.textfix()
   stormcloud.posChange()
+
+  // Hardcoded dimensions
+  if (window.app == "chrome") {
+    stormcloud.dimensions(280, 450)
+  }
 }
 
 stormcloud.softreload = function() {
@@ -294,6 +299,10 @@ stormcloud.loadSettings = function() {
     return JSON.stringify(obj)
   }
   return "<div id='settings'>" + Handlebars.templates['settings.template'](settingsObj) + "</div>"
+}
+
+stormcloud.dimensions = function(width, height) {
+  $("#background, .middle").width(width).height(height)
 }
 
 stormcloud.textfix = function() {
