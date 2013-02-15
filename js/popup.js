@@ -165,6 +165,8 @@ stormcloud.softreload = function() {
 stormcloud.posChange = function() {
   if (localStorage.stormcloud_color == "gradient") {
     $('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
+  } else if (localStorage.stormcloud_color == "desktop") {
+    $('#container').css('background-color', stormcloud.getUnityDesktopBackgroundColor())
   } else {
     $('#container').css('background-color', localStorage.color)
   }
@@ -339,4 +341,20 @@ stormcloud.textfix = function() {
   $(".left").fitText(0.17)
   $(".right").fitText(0.5)
   $(".forecast span.day, .forecast span.temp").fitText(0.17)
+}
+
+stormcloud.getUnityDesktopBackgroundColor = function() {
+  //Going to just do straight dom so I don't have to deal with nodes async model
+  try {
+    var exec = require('child_process').exec;
+    exec("xprop -root | grep _GNOME_BACKGROUND_REPRESENTATIVE_COLORS", function(error, stdout, stderr) {
+      if (error === null) {
+        $("#container").css("background-color", stdout.substring(51, stdout.length -2))
+      } else {
+        $("#container").css("background-color", "#444444")
+      }
+    })
+  } catch (err) {
+
+  }
 }
