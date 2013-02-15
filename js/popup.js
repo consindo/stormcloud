@@ -93,10 +93,16 @@ $(function() {
     stormcloud.posChange()
   })
 
-  $("#panel .sync img").click(function() {
-    $("#settings").toggle()
-    if ($("#settings").is(":visible") && $($("#accordion").children()[1]).attr("aria-hidden") == "true") {
-      $("#accordion").children().first().find("a").trigger("click")
+  $("#panel").click(function(e) {
+    if ($(e.target).hasClass("settingsImg")) {
+      $("#settings").fadeToggle(200)
+      if ($("#settings").is(":visible") && $($("#accordion").children()[1]).attr("aria-hidden") == "true") {
+        $("#accordion").children().first().find("a").trigger("click")
+      }
+    } else {
+      if ($("#settings").is(":visible")) {
+        $("#settings").fadeOut(200)
+      }
     }
   })
 

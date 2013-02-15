@@ -294,12 +294,34 @@ img {
         position: absolute;
         height: 30px;
         -webkit-transition: 300ms ease opacity;
-        cursor: pointer;
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
     .sync img {
+        cursor: pointer;
         width: 16px;
         height: 16px;
         padding: 7px 0;
+    }
+    .settings {
+        right: 76px;
+        width: 13px;
+        position: absolute;
+        height: 30px;
+        -webkit-transition: 300ms ease opacity;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        img {
+            cursor: pointer;
+            width: 17px;
+            height: 17px;
+            padding: 7px 0;
+        }
     }
     .close, .minimize {
         font-family: monospace;

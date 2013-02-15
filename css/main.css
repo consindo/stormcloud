@@ -225,12 +225,27 @@ img {
     width: 13px;
     position: absolute;
     height: 30px;
-    -webkit-transition: 300ms ease opacity;
-    cursor: pointer; }
+    -webkit-transition: 300ms ease opacity; }
+    #panel .sync:hover {
+      opacity: 0.6; }
   #panel .sync img {
+    cursor: pointer;
     width: 16px;
     height: 16px;
     padding: 7px 0; }
+  #panel .settings {
+    right: 76px;
+    width: 13px;
+    position: absolute;
+    height: 30px;
+    -webkit-transition: 300ms ease opacity; }
+    #panel .settings:hover {
+      opacity: 0.6; }
+    #panel .settings img {
+      cursor: pointer;
+      width: 17px;
+      height: 17px;
+      padding: 7px 0; }
   #panel .close, #panel .minimize {
     font-family: monospace;
     font-size: 18px;
