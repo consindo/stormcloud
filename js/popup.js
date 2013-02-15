@@ -93,6 +93,20 @@ $(function() {
     stormcloud.posChange()
   })
 
+  $("#panel .sync").click(function() {
+    $(this).addClass("pulse")
+    if (window.app == "chrome") {
+      chrome.extension.getBackgroundPage().stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location), function() {
+        stormcloud.softreload()
+      })
+    } else {
+      stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location), function() {
+        stormcloud.softreload()
+      })
+    }
+  })
+
+
   $("#panel").click(function(e) {
     if ($(e.target).hasClass("settingsImg")) {
       $("#settings").fadeToggle(200)
@@ -145,6 +159,7 @@ stormcloud.softreload = function() {
 
   stormcloud.textfix()
   stormcloud.posChange()
+  $("#panel .sync").removeClass("pulse")
 }
 
 stormcloud.posChange = function() {

@@ -295,6 +295,10 @@ img {
         height: 30px;
         -webkit-transition: 300ms ease opacity;
 
+        &.pulse {
+            -webkit-animation: pulse 800ms linear infinite;
+        }
+
         &:hover {
             opacity: 0.6;
         }
@@ -518,6 +522,11 @@ input[type=checkbox] {
 @-webkit-keyframes opacity {
 0% {opacity: 0;}
 100% {opacity: 1;}
+}
+@-webkit-keyframes pulse {
+0% {opacity: 0;}
+50% {opacity: 1;}
+100% {opacity:0;}
 }
 @-webkit-keyframes spinning {
 0% { -webkit-transform: rotate(0deg);}
