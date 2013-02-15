@@ -139,14 +139,14 @@ stormcloud.reload = function() {
     $("#container li > div")[i].innerHTML = template(weather[i])
   }
 
-  slider = new Swipe(document.getElementById('container'))
-  stormcloud.textfix()
-  stormcloud.posChange()
-
   // Hardcoded dimensions
   if (window.app == "linux") {
     stormcloud.dimensions(300, 500)
   }
+
+  slider = new Swipe(document.getElementById('container'))
+  stormcloud.textfix()
+  stormcloud.posChange()
 }
 
 stormcloud.softreload = function() {
