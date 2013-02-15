@@ -1,39 +1,60 @@
-<div class="locationSettings">
-    <h2>{{locationsText}}<span class="add" title="Add City">+</span></h2>
-    <ul>
-        <li class="placeInput"><input placeholder="{{locationText}}" type="text"><span class="status"></span></li>
-        {{#each location}}
-        <li data-code="{{this.zip}}"><span class="name">{{this.place}}</span><span class="delete">&#10005;</span></li>
-        {{/each}}
-    </ul>
-</div>
-<div class="wrapperTwenty">
-    <div class="toggleswitch measurement">
+<div id="accordion">
+  <h3>{{locationsText}}</h3>
+  <div>
+    <div class="content">
+      <div class="locationSettings">
+        <ul>
+            {{#each location}}
+            <li data-code="{{this.zip}}"><span class="name">{{this.place}}</span><span class="delete">&#10005;</span></li>
+            {{/each}}
+            <li class="placeInput"><input placeholder="{{locationText}}" type="text"><span class="status"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h3>{{appearanceText}}</h3>
+  <div>
+    <div class="content">
+      <div class="toggleswitch measurement">
         {{{measurement}}}
+      </div>
+      <div class="toggleswitch speed">
+          {{{speed}}}
+      </div>
+      <div class="color">
+          <span data-color="gradient"></span>
+          <span data-color="A200FF"></span>
+          <span data-color="FF0097"></span>
+          <span data-color="00ABA9"></span>
+          <span data-color="8CBF26"></span>
+          <span data-color="A05000"></span>
+          <span data-color="333333"></span>
+          <span data-color="F09609"></span>
+          <span data-color="1BA1E2"></span>
+          <span data-color="FF8E83"></span>
+          <span data-color="339933"></span>
+      </div>
     </div>
-    <div class="toggleswitch speed">
-        {{{speed}}}
+  </div>
+  <h3>{{otherText}}</h3>
+  <div>
+    <div class="content">
+        <div class="launcher" data-boop="{{launcher}}">
+      {{#if desktop}}
+          <input type="checkbox" id="desktopswitch" checked>
+      {{else}}
+          <input type="checkbox" id="desktopswitch">
+      {{/if}}
+          <label for="desktopswitch">{{charmText}}</label>
+      </div>
+      <a class="btn pro" href="#">{{proText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
     </div>
-    <div class="color">
-        <span data-color="gradient"></span>
-        <span data-color="A200FF"></span>
-        <span data-color="FF0097"></span>
-        <span data-color="00ABA9"></span>
-        <span data-color="8CBF26"></span>
-        <span data-color="A05000"></span>
-        <span data-color="333333"></span>
-        <span data-color="F09609"></span>
-        <span data-color="1BA1E2"></span>
-        <span data-color="FF8E83"></span>
-        <span data-color="339933"></span>
-    </div>
-    <div class="launcher" data-boop="{{launcher}}">
-    {{#if desktop}}
-        <input type="checkbox" id="desktopswitch" checked>
-    {{else}}
-        <input type="checkbox" id="desktopswitch">
-    {{/if}}
-        <label for="desktopswitch">{{charmText}}</label>
-    </div>
-    <a class="btn credits" href="#">{{creditsText}}</a><br>
+  </div>
 </div>
+
+<!--
+<div class="wrapperTwenty">
+
+</div>
+
+ -->

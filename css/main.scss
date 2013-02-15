@@ -99,8 +99,8 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-$app_width: 300px;
-$app_height: 500px;
+$app_width: 280px;
+$app_height: 450px;
 
 body.drag {
     -webkit-app-region: drag;
@@ -145,7 +145,6 @@ body.drag {
     -webkit-transform-origin: left;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(600px) rotateY(-90deg);
-    overflow: hidden;
 
     &.show {
         -webkit-transform: perspective(600px) rotateY(0deg);
@@ -183,6 +182,10 @@ body.drag {
             text-decoration: underline;
         }
     }
+}
+
+#credits::-webkit-scrollbar-track {
+    background: #f7f7f7;
 }
 
 img {
@@ -249,10 +252,9 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    width: $app_width;
+    right: 0;
     z-index: 1;
     color: #fff;
-    display:none;
 
     -webkit-transition: 300ms ease opacity;
 
@@ -265,14 +267,6 @@ img {
         }
     }
 
-    &.transparent, &.dim.transparent {
-        opacity: 0;
-
-        .sliderControls img, .sync {
-            cursor: default;
-        }
-    }
-
     &.error .sliderControls, &.error .sync {
         display: none;
     }
@@ -280,7 +274,7 @@ img {
     .sliderControls {
         position: absolute;
         top: 3px;
-        right: 12px;
+        right: 7px;
 
         img {
             height: 21px;
@@ -296,16 +290,42 @@ img {
 
     .sync {
         right: 50px;
-        width: 18px;
+        width: 13px;
         position: absolute;
         height: 30px;
         -webkit-transition: 300ms ease opacity;
-        cursor: pointer;
+
+        &.pulse {
+            -webkit-animation: pulse 800ms linear infinite;
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
     .sync img {
+        cursor: pointer;
         width: 16px;
         height: 16px;
         padding: 7px 0;
+    }
+    .settings {
+        right: 76px;
+        width: 13px;
+        position: absolute;
+        height: 30px;
+        -webkit-transition: 300ms ease opacity;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        img {
+            cursor: pointer;
+            width: 17px;
+            height: 17px;
+            padding: 7px 0;
+        }
     }
     .close, .minimize {
         font-family: monospace;
@@ -503,30 +523,14 @@ input[type=checkbox] {
 0% {opacity: 0;}
 100% {opacity: 1;}
 }
+@-webkit-keyframes pulse {
+0% {opacity: 0;}
+50% {opacity: 1;}
+100% {opacity:0;}
+}
 @-webkit-keyframes spinning {
 0% { -webkit-transform: rotate(0deg);}
 100% {-webkit-transform: rotate(360deg);}
-}
-@-webkit-keyframes showplaceinput {
-    0% {
-        padding: 0;
-        height: 0;
-    }
-    100% {
-        padding: 2px 0;
-        height: 20px;
-    }
-}
-@-webkit-keyframes showinput {
-    0% {
-        opacity: 0.001;
-    }
-    60% {
-        opacity: 0.001;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 @-webkit-keyframes deletion {
     0% {
@@ -551,40 +555,28 @@ input[type=checkbox] {
     background: #333;
     font-family: "Ubuntu Condensed";
     color: #fff;
-    height: $app_height;
     box-sizing: border-box;
     overflow-y: auto;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     .locationSettings {
-        padding-top: 40px;
-        h2 {
-            margin: 0;
-            padding: 5px 20px;
-            text-transform: uppercase;
-            font-weight: normal;
-            letter-spacing: -2px;
-            font-size: 22px;
 
-            .add {
-                float: right;
-                display: inline-block;
-                font-size: 32px;
-                line-height: 26px;
-                padding: 0 5px;
-                cursor: pointer;
-            }
-        }
         ul {
-            padding: 10px 20px;
-            background: #222;
+
+            padding: 0;
+            margin: 0;
 
             li {
 
                 &.placeInput {
 
-                    display: none;
-                    -webkit-animation: 200ms ease showplaceinput 1;
                     font-size:0;
+                    position: relative;
 
                     input {
                         outline: 0;
@@ -597,14 +589,7 @@ input[type=checkbox] {
                         padding: 5px 30px 5px 20px;
                         position: relative;
                         margin-left: -20px;
-                        width: 70%;
-                        -webkit-animation: 600ms ease showinput 1;
-
-                        &.mimic {
-                            -webkit-transition: 600ms ease all;
-                            background: #222;
-                            padding: 2px 20px;
-                        }
+                        width: 100%;
                     }
 
                     .status {
@@ -612,8 +597,9 @@ input[type=checkbox] {
                         width: 27px;
                         height: 27px;
                         vertical-align: top;
-                        position: relative;
-                        left: -27px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
                         font-size: 15px;
                         -webkit-animation: 600ms ease showinput 1;
 
@@ -667,13 +653,13 @@ input[type=checkbox] {
     }
 }
 
-.measurement {
+.toggleswitch.measurement {
     font-family: "ClimaconsRegular";
     font-size: 32px;
+    margin-top: 5px;
 }
 .measurement span {
     padding: 0 7px 5px 10px;
-    cursor: default;
 }
 
 .toggleswitch {
@@ -685,6 +671,8 @@ input[type=checkbox] {
         vertical-align: top;
         -webkit-transition: 150ms ease background-color;
         cursor: default;
+        box-sizing: border-box;
+        width: 44px;
 
         border: 2px solid #222;
         border-right: 0;
@@ -711,18 +699,16 @@ input[type=checkbox] {
     &.speed span {
         line-height: 35px;
         padding: 0 7px;
-        width: 42px;
         box-sizing: border-box;
         height: 41px;
         text-align: center;
-        cursor: default;
     }
 }
 .measurement span[data-type=k] {
     font-family: "Ubuntu Condensed";
     font-size: 18px;
     line-height: 36px;
-    height: 37px;
+    height: 41px;
     padding: 0px 14px 0px;
     vertical-align: top;
     font-weight: bold;
@@ -778,6 +764,58 @@ span[data-color=gradient] {
     &:hover {
         background: #555;
     }
+}
+
+/* ================
+   OS Specific Stuff
+   ================ */
+.chrome {
+    #panel .close, #panel .minimize, .launcher {
+        display: none;
+    }
+}
+
+/* Pre hide sections with JavaScript on
+--- */
+#accordion {
+    padding-top: 30px;
+}
+
+#accordion h3 {
+    margin: 0;
+
+    a {
+        padding: 5px 15px;
+        background: #222;
+        letter-spacing: -1px;
+        font-size: 18px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+}
+
+#accordion h3 + div {
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background: #333;
+    display: block!important;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#accordion .content {
+  padding: 10px 15px;
+}
+
+#accordion h3.open + div {
+  background: #333;
 }
 
 
