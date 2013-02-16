@@ -60,6 +60,9 @@ $(function() {
     $(this).css('background', '#' + $(this).attr("data-color"))
   })
 
+  // Adds font in
+  $("#settings .font").val(localStorage.stormcloud_font)
+
   $("#accordion").collapse({
     accordion: true,
     persist: false,
