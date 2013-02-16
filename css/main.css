@@ -11,6 +11,36 @@
   font-weight: 400;
   src: local("Ubuntu Condensed"), local("UbuntuCondensed-Regular"), url("../fonts/ubuntu.woff") format("woff"); }
 
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url("../fonts/lato.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Bitter-Regular"), url("../fonts/bitter.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Titillium Web"), local("TitilliumWeb-Regular"), url("../fonts/titillium.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Cantarell';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Cantarell Regular"), local("Cantarell-Regular"), url("../fonts/cantarell.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Regular"), local("Roboto-Regular"), url("../fonts/roboto.woff") format("woff"); }
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
