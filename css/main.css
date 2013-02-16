@@ -97,6 +97,21 @@ body.lato {
 body.bitter {
   font-family: "Bitter"; }
 
+body.titillium {
+  font-family: "Titillium Web"; }
+  body.titillium .stats .left {
+    letter-spacing: -8px; }
+
+body.cantarell {
+  font-family: "Cantarell"; }
+  body.cantarell .city {
+    letter-spacing: -2px; }
+  body.cantarell .stats .left {
+    letter-spacing: -8px; }
+
+body.roboto {
+  font-family: "Roboto"; }
+
 body.drag {
   -webkit-app-region: drag; }
 

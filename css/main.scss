@@ -122,6 +122,24 @@ body.lato {
 body.bitter {
     font-family: "Bitter";
 }
+body.titillium {
+    font-family: "Titillium Web";
+    .stats .left {
+        letter-spacing: -8px;
+    }
+}
+body.cantarell {
+    font-family: "Cantarell";
+    .city {
+        letter-spacing: -2px;
+    }
+    .stats .left {
+        letter-spacing: -8px;
+    }
+}
+body.roboto {
+    font-family: "Roboto";
+}
 
 body.drag {
     -webkit-app-region: drag;

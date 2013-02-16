@@ -38,6 +38,9 @@
         <option value="ubuntufont">Ubuntu</option>
         <option value="lato">Lato</option>
         <option value="bitter">Bitter</option>
+        <option value="titillium">Titillium Web</option>
+        <option value="cantarell">Cantarell</option>
+        <option value="roboto">Roboto</option>
       </select>
     </div>
   </div>
