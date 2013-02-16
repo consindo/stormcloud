@@ -102,6 +102,27 @@ textarea {
 $app_width: 280px;
 $app_height: 450px;
 
+body {
+    font-family: "Ubuntu Condensed";
+}
+body.ubuntufont {
+    .city, .forecast > div {
+        text-transform: uppercase;
+    }
+    .city {
+        letter-spacing: -2px;
+    }
+    .stats .left {
+        letter-spacing: -7px;
+    }
+}
+body.lato {
+    font-family: "Lato";
+}
+body.bitter {
+    font-family: "Bitter";
+}
+
 body.drag {
     -webkit-app-region: drag;
 }
@@ -362,9 +383,7 @@ img {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     position: relative;
-    font-family: "Ubuntu Condensed";
-    text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 
     div {
         position: absolute;
@@ -405,7 +424,6 @@ img {
         height: 100%;
         display: inline-block;
         font-size: 13px;
-        font-family: "Ubuntu Condensed";
         vertical-align: top;
         position: relative;
     }
@@ -425,7 +443,7 @@ img {
 
     .left {
         text-align: right;
-        letter-spacing: -7px;
+        letter-spacing: -6px;
 
         div {
             right: 5%;
@@ -460,8 +478,6 @@ img {
         -webkit-box-orient: vertical;
         -webkit-flex-direction: column;
         text-align: center;
-        font-family: "Ubuntu Condensed";
-        text-transform: uppercase;
         letter-spacing: -1px;
 
         & > span {

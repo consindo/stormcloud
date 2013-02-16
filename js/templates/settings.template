@@ -34,6 +34,11 @@
           <span data-color="FF8E83"></span>
           <span data-color="339933"></span>
       </div>
+      <select class="font">
+        <option value="ubuntufont">Ubuntu</option>
+        <option value="lato">Lato</option>
+        <option value="bitter">Bitter</option>
+      </select>
     </div>
   </div>
   <h3>{{otherText}}</h3>

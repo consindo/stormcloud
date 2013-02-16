@@ -81,6 +81,22 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+  font-family: "Ubuntu Condensed"; }
+
+body.ubuntufont .city, body.ubuntufont .forecast > div {
+  text-transform: uppercase; }
+body.ubuntufont .city {
+  letter-spacing: -2px; }
+body.ubuntufont .stats .left {
+  letter-spacing: -7px; }
+
+body.lato {
+  font-family: "Lato"; }
+
+body.bitter {
+  font-family: "Bitter"; }
+
 body.drag {
   -webkit-app-region: drag; }
 
@@ -275,9 +291,7 @@ img {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   position: relative;
-  font-family: "Ubuntu Condensed";
-  text-transform: uppercase;
-  letter-spacing: -2px; }
+  letter-spacing: -1px; }
   .city div {
     position: absolute;
     top: 0;
@@ -309,7 +323,6 @@ img {
     height: 100%;
     display: inline-block;
     font-size: 13px;
-    font-family: "Ubuntu Condensed";
     vertical-align: top;
     position: relative; }
   .stats .right > div, .stats .left div {
@@ -323,7 +336,7 @@ img {
       vertical-align: middle; }
   .stats .left {
     text-align: right;
-    letter-spacing: -7px; }
+    letter-spacing: -6px; }
     .stats .left div {
       right: 5%; }
       .stats .left div span {
@@ -350,8 +363,6 @@ img {
     -webkit-box-orient: vertical;
     -webkit-flex-direction: column;
     text-align: center;
-    font-family: "Ubuntu Condensed";
-    text-transform: uppercase;
     letter-spacing: -1px; }
     .forecast > div > span {
       display: block;

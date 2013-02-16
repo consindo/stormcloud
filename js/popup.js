@@ -52,7 +52,7 @@ $(function() {
   }
 
 
-  $("body").addClass(window.app).append(stormcloud.loadSettings())
+  $("body").addClass(window.app).addClass(localStorage.stormcloud_font).append(stormcloud.loadSettings())
   stormcloud.reload()
 
   // Colourizes CSS because I'm an asshole and used HTML to style
@@ -229,6 +229,11 @@ stormcloud.loadSettings = function() {
       localStorage.setItem("stormcloud_" + $(this).parent().attr("class").replace("toggleswitch ", ""), $(this).addClass('selected').attr("data-type"))
 
       reload("hard")
+    })
+
+    $('body').on('change', '.font', function() {
+      $('body').removeClass(localStorage.stormcloud_font).addClass($(this).val())
+      localStorage.stormcloud_font = $(this).val()
     })
 
     $('body').on('click', '.color span', function() {
