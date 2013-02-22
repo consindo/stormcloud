@@ -194,7 +194,7 @@ body.drag {
     width: $app_width;
     height: $app_height;
     position: relative;
-    background: #2f75af;
+    background: #fff;
     overflow: hidden;
 }
 #credits {
@@ -279,17 +279,6 @@ img {
         padding: 0;
         margin: 0;
     }
-
-    &.transparent {
-        opacity: 0;
-    }
-}
-
-#spinner {
-    -webkit-transition: 300ms ease opacity;
-    position: absolute;
-    top: 35%;
-    left:50%;
 
     &.transparent {
         opacity: 0;

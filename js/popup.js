@@ -160,6 +160,11 @@ stormcloud.softreload = function() {
     $("#container li > div")[i].innerHTML = template(weather[i])
   }
 
+  // This shouldn't need to be here but bugs.
+  if (window.app == "linux") {
+    stormcloud.dimensions(300, 500)
+  }
+
   stormcloud.textfix()
   stormcloud.posChange()
   $("#panel .sync").removeClass("pulse")
@@ -171,7 +176,7 @@ stormcloud.posChange = function() {
   } else if (localStorage.stormcloud_color == "desktop") {
     $('#container').css('background-color', stormcloud.getUnityDesktopBackgroundColor())
   } else {
-    $('#container').css('background-color', localStorage.color)
+    $('#container').css('background-color', localStorage.stormcloud_color)
   }
 }
 
@@ -245,7 +250,7 @@ stormcloud.loadSettings = function() {
         $("#background").attr("style", "")
         localStorage.stormcloud_color = 'gradient'
       } else {
-        $("#background").css('background', localStorage.stormcloud_color)
+        $("#container").css('background', localStorage.stormcloud_color)
       }
 
       reload("soft")
