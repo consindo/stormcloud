@@ -221,12 +221,15 @@ stormcloud_cli = {
 						if (localStorage.stormcloud_measurement == "c") {
 							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + " °"
 							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + " °"
+							weather.week[i].average = Math.round(((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")) - 64)*5/9)/2) + " °"
 						} else if (localStorage.stormcloud_measurement == "k") {
 							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + 273 + " K"
 							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + 273 + " K"
+							weather.week[i].average = Math.round(((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")) - 64)*5/9)/2)+273 + " K"
 						} else {
 							weather.week[i].low = $(weekArr[i]).attr("low") + " °"
 							weather.week[i].high = $(weekArr[i]).attr("high") + " °"
+							weather.week[i].average = Math.round((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")))/2) + " °"
 						}
 					}
 

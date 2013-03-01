@@ -22,7 +22,7 @@ $(function() {
     // Get the current window
     win = gui.Window.get()
     win.show()
-    // win.showDevTools()
+    win.showDevTools()
 
     //Bind Handlers
     $("#panel .close").click(function() {
@@ -353,7 +353,8 @@ stormcloud.textfix = function() {
   $(".city").fitText(0.29)
   $(".left").fitText(0.17)
   $(".right").fitText(0.5)
-  $(".forecast span.day, .forecast span.temp").fitText(0.17)
+  $(".forecast span.day").fitText(0.17)
+  $(".forecast span.temp").fitText(0.15)
 }
 
 stormcloud.getUnityDesktopBackgroundColor = function() {

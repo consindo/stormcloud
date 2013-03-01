@@ -46,6 +46,11 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   buffer += escapeExpression(stack1) + ".svg\"></span>\n            <span class=\"temp\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
+  stack1 = typeof stack1 === functionType ? stack1() : stack1;
+  buffer += escapeExpression(stack1) + "</span>\n            <!--<span class=\"temp\">";
+  stack1 = depth0.week;
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
@@ -53,7 +58,7 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n        </div>\n        <div class=\"1\">\n            <span class=\"day\">";
+  buffer += escapeExpression(stack1) + "</span></span>-->\n        </div>\n        <div class=\"1\">\n            <span class=\"day\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.day;
@@ -66,6 +71,11 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   buffer += escapeExpression(stack1) + ".svg\"></span>\n            <span class=\"temp\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
+  stack1 = typeof stack1 === functionType ? stack1() : stack1;
+  buffer += escapeExpression(stack1) + "</span>\n            <!--<span class=\"temp\">";
+  stack1 = depth0.week;
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
@@ -73,7 +83,7 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n        </div>\n        <div class=\"2\">\n            <span class=\"day\">";
+  buffer += escapeExpression(stack1) + "</span></span>-->\n        </div>\n        <div class=\"2\">\n            <span class=\"day\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.day;
@@ -86,6 +96,11 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   buffer += escapeExpression(stack1) + ".svg\"></span>\n            <span class=\"temp\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
+  stack1 = typeof stack1 === functionType ? stack1() : stack1;
+  buffer += escapeExpression(stack1) + "</span>\n            <!--<span class=\"temp\">";
+  stack1 = depth0.week;
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
@@ -93,7 +108,7 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n        </div>\n        <div class=\"3\">\n            <span class=\"day\">";
+  buffer += escapeExpression(stack1) + "</span></span>-->\n        </div>\n        <div class=\"3\">\n            <span class=\"day\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.day;
@@ -106,6 +121,11 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   buffer += escapeExpression(stack1) + ".svg\"></span>\n            <span class=\"temp\">";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
+  stack1 = typeof stack1 === functionType ? stack1() : stack1;
+  buffer += escapeExpression(stack1) + "</span>\n            <!--<span class=\"temp\">";
+  stack1 = depth0.week;
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
@@ -113,6 +133,6 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n        </div>\n    </div>\n</div>\n";
+  buffer += escapeExpression(stack1) + "</span></span>-->\n        </div>\n    </div>\n</div>\n";
   return buffer;});
 })();
