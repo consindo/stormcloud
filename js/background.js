@@ -182,6 +182,7 @@ stormcloud_cli = {
 					weather = {}
 
 					//Location
+					weather.link = $($(data).find('link')[0]).text()
 					weather.place = location.place || $(data).find('location').attr("city")
 					weather.country = $(data).find('location').attr("country")
 					weather.zip = $($(data).find("guid")).text().substring(0,8)

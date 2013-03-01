@@ -9,11 +9,15 @@ templates['pane.template'] = template(function (Handlebars,depth0,helpers,partia
   foundHelper = helpers.background;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.background; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "\">\n    <div class=\"top\">\n        <div class=\"padding\"></div>\n        <div class=\"city\">\n            <div><span>";
+  buffer += escapeExpression(stack1) + "\">\n    <div class=\"top\">\n        <div class=\"padding\"></div>\n        <div class=\"city\">\n            <div><span><a href=\"";
+  foundHelper = helpers.link;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.link; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "\">";
   foundHelper = helpers.place;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</span></div>\n        </div>\n    </div>\n    <div class=\"weather\">\n        <img src=\"img/climacons/";
+  buffer += escapeExpression(stack1) + "</a></span></div>\n        </div>\n    </div>\n    <div class=\"weather\">\n        <img src=\"img/climacons/";
   foundHelper = helpers.code;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.code; stack1 = typeof stack1 === functionType ? stack1() : stack1; }

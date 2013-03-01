@@ -40,9 +40,9 @@ $(function() {
     })
 
     //Disables Dragging on Certain Elements
-    $('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img", function() {
+    $('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img, .city div span", function() {
       $('body').removeClass('drag')
-    }).on("mouseout", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img", function() {
+    }).on("mouseout", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img, .city div span", function() {
       $('body').addClass('drag')
     })
 

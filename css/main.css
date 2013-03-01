@@ -163,7 +163,7 @@ body.drag {
   width: 280px;
   height: 450px;
   position: relative;
-  background: #2f75af;
+  background: #fff;
   overflow: hidden; }
 
 #credits {
@@ -227,14 +227,6 @@ img {
     padding: 0;
     margin: 0; }
   #container.transparent {
-    opacity: 0; }
-
-#spinner {
-  -webkit-transition: 300ms ease opacity;
-  position: absolute;
-  top: 35%;
-  left: 50%; }
-  #spinner.transparent {
     opacity: 0; }
 
 .middle {
@@ -349,9 +341,16 @@ img {
       display: inline-block;
       height: 100%;
       vertical-align: middle; }
+    .city div a {
+      text-decoration: none;
+      color: #fff; }
     .city div span {
       display: inline-block;
-      cursor: default; }
+      cursor: pointer; }
+      .city div span:hover::after {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.5);
+        content: "\00A0\221E"; }
 
 .weather {
   height: 30%;

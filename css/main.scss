@@ -436,9 +436,21 @@ img {
           height: 100%;
           vertical-align: middle;
         }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
         span {
             display: inline-block;
-            cursor: default;
+            cursor: pointer;
+
+            &:hover {
+                &::after {
+                    position: absolute;
+                    color: rgba(255,255,255,0.5);
+                    content: "\00A0\221E";
+                }
+            }
         }
     }
 }
