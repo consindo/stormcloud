@@ -637,26 +637,37 @@ label {
 input[type=checkbox]:checked {
   background-image: url(../img/tick.svg); }
 
-.color {
+.color.boxes {
   font-size: 0;
   margin-top: 10px;
   display: inline-block;
   border: 2px solid #333333; }
+  .color.boxes span {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    border: 4px solid rgba(0, 0, 0, 0.4);
+    cursor: default; }
+    .color.boxes span[data-color=gradient] {
+      background: -webkit-linear-gradient(#0071b2, #d6411b);
+      border: 0;
+      height: 22px;
+      width: 22px;
+      border-right: 2px solid #333333;
+      cursor: default; }
 
-.color span {
-  height: 14px;
-  width: 14px;
-  display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.4);
-  cursor: default; }
+label.color {
+  margin: 0;
+  padding-top: 5px;
+  display: inline-block; }
 
-span[data-color=gradient] {
-  background: -webkit-linear-gradient(#0071b2, #d6411b);
-  border: 0;
-  height: 22px;
-  width: 22px;
-  border-right: 2px solid #333333;
-  cursor: default; }
+.color.toggleswitch {
+  margin-top: 5px; }
+  .color.toggleswitch span {
+    width: auto;
+    height: 33px;
+    line-height: 29px;
+    padding: 0 10px; }
 
 .btn {
   cursor: default;

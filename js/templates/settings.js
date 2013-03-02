@@ -52,7 +52,12 @@ function program5(depth0,data) {
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.speed; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </div>\n      <div class=\"color\">\n          <span data-color=\"gradient\"></span>\n          <span data-color=\"A200FF\"></span>\n          <span data-color=\"FF0097\"></span>\n          <span data-color=\"00ABA9\"></span>\n          <span data-color=\"8CBF26\"></span>\n          <span data-color=\"A05000\"></span>\n          <span data-color=\"333333\"></span>\n          <span data-color=\"F09609\"></span>\n          <span data-color=\"1BA1E2\"></span>\n          <span data-color=\"FF8E83\"></span>\n          <span data-color=\"339933\"></span>\n      </div>\n      <select class=\"font\">\n        <option value=\"ubuntufont\">Ubuntu</option>\n        <option value=\"lato\">Lato</option>\n        <option value=\"bitter\">Bitter</option>\n        <option value=\"titillium\">Titillium Web</option>\n        <option value=\"cantarell\">Cantarell</option>\n        <option value=\"roboto\">Roboto</option>\n      </select>\n    </div>\n  </div>\n  <h3>";
+  buffer += "\n      </div>\n      <div class=\"color boxes\">\n          <span data-color=\"gradient\"></span>\n          <span data-color=\"A200FF\"></span>\n          <span data-color=\"FF0097\"></span>\n          <span data-color=\"00ABA9\"></span>\n          <span data-color=\"8CBF26\"></span>\n          <span data-color=\"A05000\"></span>\n          <span data-color=\"333333\"></span>\n          <span data-color=\"F09609\"></span>\n          <span data-color=\"1BA1E2\"></span>\n          <span data-color=\"FF8E83\"></span>\n          <span data-color=\"339933\"></span>\n      </div>\n      <label class=\"color\">Adjust background based on:</label>\n      <div class=\"toggleswitch color\">\n        ";
+  foundHelper = helpers.gradient;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.gradient; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      </div>\n      <select class=\"font\">\n        <option value=\"ubuntufont\">Ubuntu</option>\n        <option value=\"lato\">Lato</option>\n        <option value=\"bitter\">Bitter</option>\n        <option value=\"titillium\">Titillium Web</option>\n        <option value=\"cantarell\">Cantarell</option>\n        <option value=\"roboto\">Roboto</option>\n      </select>\n    </div>\n  </div>\n  <h3>";
   foundHelper = helpers.otherText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.otherText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
@@ -76,6 +81,6 @@ function program5(depth0,data) {
   foundHelper = helpers.creditsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.creditsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</a><br>\n    </div>\n  </div>\n</div>\n\n<!--\n<div class=\"wrapperTwenty\">\n\n</div>\n\n -->\n";
+  buffer += escapeExpression(stack1) + "</a><br>\n    </div>\n  </div>\n</div>\n";
   return buffer;});
 })();

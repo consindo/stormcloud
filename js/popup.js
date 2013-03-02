@@ -10,7 +10,7 @@ try {
 
 
 var stormcloud = {},
-  slider = new Swipe(document.getElementById('container'))
+    slider = new Swipe(document.getElementById('container'))
 
 $(function() {
 
@@ -171,7 +171,7 @@ stormcloud.softreload = function() {
 }
 
 stormcloud.posChange = function() {
-  if (localStorage.stormcloud_color == "gradient") {
+  if (localStorage.stormcloud_color == "gradient" || localStorage.stormcloud_color == "weather") {
     $('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
   } else if (localStorage.stormcloud_color == "desktop") {
     $('#container').css('background-color', stormcloud.getUnityDesktopBackgroundColor())
@@ -187,6 +187,13 @@ stormcloud.loadSettings = function() {
   //Sets Speed & Temp Measurements
   settingsObj.measurement = $("<div><span data-type='c'><img src='img/climacons/Degrees-Celcius.svg'></span><span data-type='f'><img src='img/climacons/Degrees-Fahrenheit.svg'></span><span data-type='k'>K</span></div>").children().filter("[data-type=" + localStorage.stormcloud_measurement +"]").addClass("selected").parent().html()
   settingsObj.speed = $("<div><span data-type='mph'>mph</span><span data-type='kph'>kph</span><span data-type='ms'>m/s</span></div>").children().filter("[data-type=" + localStorage.stormcloud_speed +"]").addClass("selected").parent().html()
+
+  // This is bad practice. I should fix this.
+  settingsObj.gradient = $("<div><span data-type='gradient' data-color='gradient'>Temperature</span><span data-type='weather' data-color='weather'>Weather</span></div>").children().filter("[data-type=" + localStorage.stormcloud_color +"]").addClass("selected").parent().html()
+  if (settingsObj.gradient === undefined) {
+    settingsObj.gradient = "<span data-type='gradient' data-color='gradient'>Temperature</span><span data-type='weather' data-color='weather'>Weather</span>"
+  }
+
   settingsObj.location = JSON.parse(localStorage.stormcloud_location)
   if (localStorage.stormcloud_color == 'desktop') {
     settingsObj.desktop = true
@@ -234,6 +241,7 @@ stormcloud.loadSettings = function() {
     //Sets up the Toggle Switches
     $('body').on('click', '.toggleswitch span', function() {
       $(this).parent().children().removeClass('selected')
+      console.log($(this).parent().attr("class"))
       localStorage.setItem("stormcloud_" + $(this).parent().attr("class").replace("toggleswitch ", ""), $(this).addClass('selected').attr("data-type"))
 
       reload("hard")
@@ -244,15 +252,16 @@ stormcloud.loadSettings = function() {
       localStorage.stormcloud_font = $(this).val()
     })
 
-    $('body').on('click', '.color span', function() {
+    $('body').on('click', '.color.boxes span', function() {
       localStorage.stormcloud_color = "#" + $(this).attr("data-color")
+      $(".toggleswitch.color").children().removeClass("selected")
       if ($(this).attr("data-color") == "gradient") {
         $("#background").attr("style", "")
         localStorage.stormcloud_color = 'gradient'
+        $(".toggleswitch.color [data-color=gradient]").addClass("selected")
       } else {
         $("#container").css('background', localStorage.stormcloud_color)
       }
-
       reload("soft")
     })
 
