@@ -277,12 +277,32 @@ stormcloud_cli = {
 			if (count == locations.length) {
 				localStorage.stormcloud_weathercache = JSON.stringify(arr)
 
-				try {
+				// Update Count
+				if(app == "chrome") {
 					chrome.browserAction.setBadgeBackgroundColor({color: "#888"})
 					chrome.browserAction.setBadgeText({text: arr[0].temperature.replace(" ", "")})
-					// chrome.browserAction.setBadgeText({text: Math.random().toString())})
-				} catch (err) {
+				} else {
+					try {
+						var net = require('net');
 
+						var HOST = '127.0.0.1';
+						var PORT = 5005;
+
+						var client = new net.Socket();
+
+						// Send to Python
+						client.connect(PORT, HOST, function() {
+						    client.write(arr[0].temperature.replace(" °", ""));
+						});
+
+						// Recieve from Python
+						client.on('data', function(data) {
+						    client.destroy();
+						});
+
+					} catch (err) {
+						console.log("Could not connect")
+					}
 				}
 
 				if (callbackfn) {
