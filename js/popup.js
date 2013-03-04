@@ -39,6 +39,14 @@ $(function() {
       gui.Shell.openExternal($(e.currentTarget).attr("href"))
     })
 
+    $(document).keydown(function(e){
+      if (e.keyCode == 37) {
+        $(".sliderControls .left").trigger("click")
+      } else if (e.keyCode == 39) {
+        $(".sliderControls .right").trigger("click")
+      }
+    });
+
     //Disables Dragging on Certain Elements
     $('body').on("mouseover", ".close, .minimize, .sync, .sliderControls, #settings, #credits a, #credits img, .city div span", function() {
       $('body').removeClass('drag')
