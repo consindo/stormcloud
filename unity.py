@@ -1,27 +1,18 @@
 #!/usr/bin/env python
-import socket
+import sys
+from gi.repository import Unity, GObject
 
 """
-Basic TCP Server because #YOLO
-Well, not really. Just the easiest way to communicate from node to python
+I had something fancy with TCP going on
+but it seems easier to use just command line args
+and kill the process. One day I'll use sockets.
 """
 
-print "hey"
+loop = GObject.MainLoop()
 
-TCP_IP = '127.0.0.1'
-TCP_PORT = 7691
-BUFFER_SIZE = 20  # Normally 1024, but we want fast response
+launcher = Unity.LauncherEntry.get_for_desktop_id("stormcloud.desktop")
+launcher.set_property("count", int(sys.argv[1]))
+launcher.set_property("count_visible", True)
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((TCP_IP, TCP_PORT))
-s.listen(1)
-
-while 1:
-	conn, addr = s.accept()
-	print 'Connection address:', addr
-	while 1:
-	    data = conn.recv(BUFFER_SIZE)
-	    if not data: break
-	    print "received data:", data
-	    conn.send("success")
-	conn.close()
+# This needs to be run =(
+loop.run()
