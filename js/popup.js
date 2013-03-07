@@ -207,6 +207,11 @@ stormcloud.loadSettings = function() {
   } else {
     settingsObj.desktop = false
   }
+  if (localStorage.stormcloud_count === 'true') {
+    settingsObj.count = true
+  } else {
+    settingsObj.count = false
+  }
 
   //Translations Guff
   settingsObj.locationsText = $.i18n._("Locations")
@@ -214,6 +219,7 @@ stormcloud.loadSettings = function() {
   settingsObj.otherText = $.i18n._("Other")
   settingsObj.locationText = $.i18n._("Add Location")
   settingsObj.charmText = $.i18n._("Use Chameleonic Background")
+  settingsObj.countText = $.i18n._("Show Temperature in Launcher")
   settingsObj.creditsText = $.i18n._("Credits")
   settingsObj.proText = $.i18n._("Go Pro")
 
@@ -278,6 +284,15 @@ stormcloud.loadSettings = function() {
       } else {
         localStorage.stormcloud_color = 'gradient'
       }
+    })
+
+    $('body').on('click', '#countswitch', function() {
+      if ($(this).is(':checked')) {
+        localStorage.stormcloud_count = 'true'
+      } else {
+        localStorage.stormcloud_count = 'false'
+      }
+      reload("hard")
     })
 
     var locationInput = '.locationSettings ul li.placeInput input',

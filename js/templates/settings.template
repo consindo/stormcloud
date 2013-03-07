@@ -59,6 +59,12 @@
       {{/if}}
           <label for="desktopswitch">{{charmText}}</label>
       </div>
+      {{#if count}}
+          <input type="checkbox" id="countswitch" checked>
+      {{else}}
+          <input type="checkbox" id="countswitch">
+      {{/if}}
+      <label for="countswitch">{{countText}}</label>
       <a class="btn pro" href="#">{{proText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
     </div>
   </div>
