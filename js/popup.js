@@ -35,7 +35,9 @@ $(function() {
     //Opens links in browsers
     $('body').on("click", "a", function(e) {
       e.preventDefault()
-      gui.Shell.openExternal($(e.currentTarget).attr("href"))
+      if ($(this).attr("href") != "#") {
+        gui.Shell.openExternal($(e.currentTarget).attr("href"))
+      }
     })
 
     $(document).keydown(function(e){
