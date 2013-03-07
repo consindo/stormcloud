@@ -15,12 +15,11 @@ var stormcloud = {},
 $(function() {
 
   //Node Webkit Guff
-  if (window.app == "linux") {
-    // Load native UI library
-    gui = require('nw.gui')
+  if (window.app === "linux") {
 
-    // Get the current window
-    win = gui.Window.get()
+    // Load native UI library
+    var gui = require('nw.gui')
+    var win = gui.Window.get()
     win.show()
     win.showDevTools()
 
@@ -40,9 +39,9 @@ $(function() {
     })
 
     $(document).keydown(function(e){
-      if (e.keyCode == 37) {
+      if (e.keyCode === 37) {
         $(".sliderControls .left").trigger("click")
-      } else if (e.keyCode == 39) {
+      } else if (e.keyCode === 39) {
         $(".sliderControls .right").trigger("click")
       }
     });
@@ -54,7 +53,7 @@ $(function() {
       $('body').addClass('drag')
     })
 
-  } else if (window.app == "chrome") {
+  } else if (window.app === "chrome") {
     $("body").removeClass('drag')
     console.log("Running under Chrome")
   }
@@ -106,7 +105,7 @@ $(function() {
 
   $("#panel .sync").click(function() {
     $(this).addClass("pulse")
-    if (window.app == "chrome") {
+    if (window.app === "chrome") {
       chrome.extension.getBackgroundPage().stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location), function() {
         stormcloud.softreload()
       })
@@ -115,7 +114,7 @@ $(function() {
         stormcloud.softreload()
       })
     }
-  })
+  }).trigger("click")
 
 
   $("#panel").click(function(e) {
@@ -151,7 +150,7 @@ stormcloud.reload = function() {
   }
 
   // Hardcoded dimensions
-  if (window.app == "linux") {
+  if (window.app === "linux") {
     stormcloud.dimensions(300, 500)
   }
 
@@ -169,7 +168,7 @@ stormcloud.softreload = function() {
   }
 
   // This shouldn't need to be here but bugs.
-  if (window.app == "linux") {
+  if (window.app === "linux") {
     stormcloud.dimensions(300, 500)
   }
 
@@ -179,9 +178,9 @@ stormcloud.softreload = function() {
 }
 
 stormcloud.posChange = function() {
-  if (localStorage.stormcloud_color == "gradient" || localStorage.stormcloud_color == "weather") {
+  if (localStorage.stormcloud_color === "gradient" || localStorage.stormcloud_color === "weather") {
     $('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
-  } else if (localStorage.stormcloud_color == "desktop") {
+  } else if (localStorage.stormcloud_color === "desktop") {
     $('#container').css('background-color', stormcloud.getUnityDesktopBackgroundColor())
   } else {
     $('#container').css('background-color', localStorage.stormcloud_color)
@@ -203,7 +202,7 @@ stormcloud.loadSettings = function() {
   }
 
   settingsObj.location = JSON.parse(localStorage.stormcloud_location)
-  if (localStorage.stormcloud_color == 'desktop') {
+  if (localStorage.stormcloud_color === 'desktop') {
     settingsObj.desktop = true
   } else {
     settingsObj.desktop = false
@@ -225,10 +224,10 @@ stormcloud.loadSettings = function() {
     // Reload Function
     var reload = function(type) {
 
-      if (window.app == "chrome") {
+      if (window.app === "chrome") {
         chrome.extension.getBackgroundPage().stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location),
           function() {
-            if (type == "hard") {
+            if (type === "hard") {
               stormcloud.reload()
             } else {
               stormcloud.softreload()
@@ -237,7 +236,7 @@ stormcloud.loadSettings = function() {
       } else {
         stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location),
           function() {
-            if (type == "hard") {
+            if (type === "hard") {
               stormcloud.reload()
             } else {
               stormcloud.softreload()
@@ -263,7 +262,7 @@ stormcloud.loadSettings = function() {
     $('body').on('click', '.color.boxes span', function() {
       localStorage.stormcloud_color = "#" + $(this).attr("data-color")
       $(".toggleswitch.color").children().removeClass("selected")
-      if ($(this).attr("data-color") == "gradient") {
+      if ($(this).attr("data-color") === "gradient") {
         $("#background").attr("style", "")
         localStorage.stormcloud_color = 'gradient'
         $(".toggleswitch.color [data-color=gradient]").addClass("selected")
@@ -305,7 +304,7 @@ stormcloud.loadSettings = function() {
         }
       }
 
-      if (window.app == "chrome") {
+      if (window.app === "chrome") {
         chrome.extension.getBackgroundPage().stormcloud_cli.dataGet.zipcode($(locationInput).val(), function(data) {
           callback(data)
         })
@@ -336,7 +335,7 @@ stormcloud.loadSettings = function() {
 
     // The remove button next to a location.
     $('body').on('click', '.locationSettings ul li .delete', function() {
-      if ($('.locationSettings ul li').length != 2) {
+      if ($('.locationSettings ul li').length !== 2) {
 
         $(this).parent().addClass("deleting")
         var elem = $(this).parent()
@@ -378,7 +377,7 @@ stormcloud.getUnityDesktopBackgroundColor = function() {
   //Going to just do straight dom so I don't have to deal with nodes async model
   try {
     var exec = require('child_process').exec;
-    exec("xprop -root | grep _GNOME_BACKGROUND_REPRESENTATIVE_COLORS", function(error, stdout, stderr) {
+    exec("xprop -root | grep _GNOME_BACKGROUND_REPRESENTATIVE_COLORS", function(error, stdout) {
       if (error === null) {
         $("#container").css("background-color", stdout.substring(51, stdout.length -2))
       } else {
