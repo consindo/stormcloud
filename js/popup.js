@@ -21,7 +21,7 @@ $(function() {
     var gui = require('nw.gui')
     var win = gui.Window.get()
     win.show()
-    win.showDevTools()
+    // win.showDevTools()
 
     //Bind Handlers
     $("#panel .close").click(function() {
