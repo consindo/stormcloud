@@ -67,6 +67,11 @@ $(function() {
     $(this).css('background', '#' + $(this).attr("data-color"))
   })
 
+  // Sortable Locations
+  $(".locationSettings ul").sortable({
+    items: ':not(.placeInput)'
+  })
+
   // Adds font in
   $("#settings .font").val(localStorage.stormcloud_font)
 
@@ -346,6 +351,12 @@ stormcloud.loadSettings = function() {
         // Adjusts height of window
         $(".locationSettings").parent().parent().height($(".locationSettings").parent().outerHeight())
       }
+    })
+
+    $("body").on("sortupdate", ".locationSettings ul", function() {
+      // Saves order and reloads
+      localStorage.stormcloud_location = makeLocationArray()
+      reload("hard")
     })
 
     // The remove button next to a location.

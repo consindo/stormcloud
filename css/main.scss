@@ -638,6 +638,10 @@ input[type=checkbox] {
 
             li {
 
+                &.sortable-placeholder {
+                    height: 21px;
+                }
+
                 &.placeInput {
 
                     font-size:0;

@@ -508,6 +508,8 @@ input[type=checkbox] {
       list-style-type: none;
       padding: 2px 0;
       -webkit-transition: 300ms ease -webkit-transform; }
+      #settings .locationSettings ul li.sortable-placeholder {
+        height: 21px; }
       #settings .locationSettings ul li.placeInput {
         font-size: 0;
         position: relative; }
