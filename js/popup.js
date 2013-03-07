@@ -119,7 +119,12 @@ $(function() {
         stormcloud.softreload()
       })
     }
-  }).trigger("click")
+  })
+
+  // Since Chrome runs in the background, we don't need this.
+  if (window.app === "linux") {
+    $("#panel .sync").trigger("click")
+  }
 
 
   $("#panel").click(function(e) {
