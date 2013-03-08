@@ -10,7 +10,7 @@
 </ul>
 
 <h2>Libraries / Resources</h2>
-<p><a href="http://zeptojs.com/">Zepto</a>, <a href="http://swipejs.com/">Swipe</a>, <a href="http://handlebarsjs.com">Handlebars</a>, <a href="http://fittextjs.com/">FitText</a>, <a href="http://adamwhitcroft.com/climacons/">Climacons</a>, <a href="http://sass-lang.com/">SASS</a>, <a href="http://glyphicons.com">Glyphicons</a>, <a href="http://font.ubuntu.com/">Ubuntu Condensed</a></p>
+<p><a href="http://jquery.com/">jQuery</a>, <a href="http://swipejs.com/">Swipe</a>, <a href="http://handlebarsjs.com">Handlebars</a>, <a href="http://fittextjs.com/">FitText</a>, <a href="http://webcloud.se/code/jQuery-Collapse">jQuery Collapse</a>, <a href="http://recursive-design.com/projects/jquery-i18n/">jQuery i18n</a>, <a href="http://farhadi.ir/projects/html5sortable">HTML5 Sortable</a>, <a href="http://adamwhitcroft.com/climacons/">Climacons</a>, <a href="http://sass-lang.com/">SASS</a> and <a href="http://glyphicons.com">Glyphicons</a>.
 
 <h2>Made With</h2>
-<p><a href="https://www.google.com/chrome">Chrome</a>, <a href="http://www.sublimetext.com/">Sublime Text 3</a>, <a href="http://incident57.com/codekit/">CodeKit</a>, <a href="http://git-scm.com/">Git</a>, <a href="http://www.sourcetreeapp.com/">SourceTree</a>, <a href="https://github.com">GitHub</a>, <a href="http://inkscape.org/">Inkscape</a> and Love.</p>
+<p><a href="https://github.com/rogerwang/node-webkit">node-webkit</a>, <a href="http://www.sublimetext.com/">Sublime Text 3</a>, <a href="http://incident57.com/codekit/">CodeKit</a>, <a href="http://git-scm.com/">Git</a>, <a href="http://www.sourcetreeapp.com/">SourceTree</a>, <a href="https://github.com">GitHub</a>, <a href="http://inkscape.org/">Inkscape</a> and Love.</p>

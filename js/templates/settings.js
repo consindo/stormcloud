@@ -62,7 +62,7 @@ function program9(depth0,data) {
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.speed; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </div>\n      <div class=\"color boxes\">\n          <span data-color=\"gradient\"></span>\n          <span data-color=\"A200FF\"></span>\n          <span data-color=\"FF0097\"></span>\n          <span data-color=\"00ABA9\"></span>\n          <span data-color=\"8CBF26\"></span>\n          <span data-color=\"A05000\"></span>\n          <span data-color=\"333333\"></span>\n          <span data-color=\"F09609\"></span>\n          <span data-color=\"1BA1E2\"></span>\n          <span data-color=\"FF8E83\"></span>\n          <span data-color=\"339933\"></span>\n      </div>\n      <label class=\"color\">Adjust background based on:</label>\n      <div class=\"toggleswitch color\">\n        ";
+  buffer += "\n      </div>\n      <div class=\"color boxes\">\n          <span data-color=\"gradient\"></span>\n          <span data-color=\"A200FF\"></span>\n          <span data-color=\"FF0097\"></span>\n          <span data-color=\"00ABA9\"></span>\n          <span data-color=\"8CBF26\"></span>\n          <span data-color=\"A05000\"></span>\n          <span data-color=\"333333\"></span>\n          <span data-color=\"F09609\"></span>\n          <span data-color=\"1BA1E2\"></span>\n          <span data-color=\"FF8E83\"></span>\n          <span data-color=\"339933\"></span>\n      </div>\n      <label class=\"color\">Adjust back`round based on:</label>\n      <div class=\"toggleswitch color\">\n        ";
   foundHelper = helpers.gradient;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.gradient; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
@@ -91,11 +91,11 @@ function program9(depth0,data) {
   foundHelper = helpers.countText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.countText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</label>\n      <a class=\"btn pro\" href=\"#\">";
+  buffer += escapeExpression(stack1) + "</label>\n      <!--a class=\"btn pro\" href=\"#\">";
   foundHelper = helpers.proText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.proText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</a> <a class=\"btn credits\" href=\"#\">";
+  buffer += escapeExpression(stack1) + "</a--> <a class=\"btn credits\" href=\"#\">";
   foundHelper = helpers.creditsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.creditsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }

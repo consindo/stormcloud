@@ -34,7 +34,7 @@
           <span data-color="FF8E83"></span>
           <span data-color="339933"></span>
       </div>
-      <label class="color">Adjust background based on:</label>
+      <label class="color">Adjust back`round based on:</label>
       <div class="toggleswitch color">
         {{{gradient}}}
       </div>
@@ -65,7 +65,7 @@
           <input type="checkbox" id="countswitch">
       {{/if}}
       <label for="countswitch">{{countText}}</label>
-      <a class="btn pro" href="#">{{proText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
+      <!--a class="btn pro" href="#">{{proText}}</a--> <a class="btn credits" href="#">{{creditsText}}</a><br>
     </div>
   </div>
 </div>
