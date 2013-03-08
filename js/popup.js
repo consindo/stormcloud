@@ -353,6 +353,12 @@ stormcloud.loadSettings = function() {
         //Save to LocalStorage
         localStorage.stormcloud_location = makeLocationArray()
 
+        // Makes Sortable Work
+        $(".locationSettings ul").sortable("destroy")
+        $(".locationSettings ul").sortable({
+          items: ':not(.placeInput)'
+        })
+
         reload("hard")
 
         // Adjusts height of window
