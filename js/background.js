@@ -301,6 +301,7 @@ stormcloud_cli = {
 					}
 
 					if (localStorage.stormcloud_count === "true") {
+						exec("chmod +x ./unity.py")
 						pyserver = exec("./unity.py " + arr[0].temperature.replace(" °", ""))
 					}
 				}
