@@ -238,6 +238,7 @@ stormcloud.loadSettings = function() {
   settingsObj.locationText = $.i18n._("Add Location")
   settingsObj.charmText = $.i18n._("Use Chameleonic Background")
   settingsObj.countText = $.i18n._("Show Temperature in Launcher")
+  settingsObj.websiteText = $.i18n._("Support")
   settingsObj.creditsText = $.i18n._("Credits")
   settingsObj.proText = $.i18n._("Go Pro")
 

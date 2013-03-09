@@ -95,7 +95,11 @@ function program9(depth0,data) {
   foundHelper = helpers.proText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.proText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</a--> <a class=\"btn credits\" href=\"#\">";
+  buffer += escapeExpression(stack1) + "</a--> <a class=\"btn website\" href=\"http://getstormcloud.com\">";
+  foundHelper = helpers.websiteText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.websiteText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</a> <a class=\"btn credits\" href=\"#\">";
   foundHelper = helpers.creditsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.creditsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
