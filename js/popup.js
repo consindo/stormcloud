@@ -173,10 +173,16 @@ stormcloud.reload = function() {
 
 stormcloud.softreload = function() {
   var template = Handlebars.templates['pane.template'],
-    weather = JSON.parse(localStorage.stormcloud_weathercache)
+      weather = JSON.parse(localStorage.stormcloud_weathercache)
 
-  for (var i in weather) {
-    $("#container li > div")[i].innerHTML = template(weather[i])
+  // I'm throughly annoyed at the amount of try catch statements in this app.
+  try {
+    for (var i in weather) {
+      $("#container li > div")[i].innerHTML = template(weather[i])
+    }
+  } catch (err) {
+    console.log("Running from temporary cache for now. Doing a hard reload.")
+    stormcloud.reload()
   }
 
   // This shouldn't need to be here but bugs.
