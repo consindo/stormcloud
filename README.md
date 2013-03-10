@@ -10,20 +10,19 @@ An awesome weather app.
 
 Released under the DBAD License (Don't be a dick license).
 
-Packages avaliable exclusively from the Ubuntu Software Center.
+Packages available exclusively from the Ubuntu Software Center.
 
 Can't afford it?
 ----------------
 
-It's $2.99. If you live in some place like Cambodia or Vietnam, I can totally understand. If you're currently sitting in Starbucks with your Mac, iPhone and $5 Latte - I don't even...
+It's $2.99, just think twice if you're currently sitting in Starbucks with your Mac, iPhone and $5 Latte.
 
-But seriously. It's pretty simple to get Stormcloud up and running.
+In any case, it's pretty simple to get Stormcloud up and running.
 
-- Download this Repo
+- Download this repo
 - Download node-webkit
-- Drag and Drop the Repo onto node-webkit or `nw /path/to/stormcloud` in terminal
+- Drag and drop the repo onto node-webkit or `nw /path/to/stormcloud` in terminal
 
-Remember, I'm an unemployed high school student. It would be great if you could purchase the app :)
+I'm an unemployed high school student. Even though it's the most downloaded app in the Ubuntu Store, I'm not cruising in my luxury yacht.
 
-
-<http://caffeinatedco.de>
+<http://getstormcloud.com>
