@@ -64,7 +64,13 @@
       {{else}}
           <input type="checkbox" id="countswitch">
       {{/if}}
-      <label for="countswitch">{{countText}}</label>
+      <label for="countswitch">{{countText}}</label><br>
+      {{#if average}}
+          <input type="checkbox" id="averageswitch" checked>
+      {{else}}
+          <input type="checkbox" id="averageswitch">
+      {{/if}}
+      <label for="averageswitch">{{averageText}}</label>
       <!--a class="btn pro" href="#">{{proText}}</a--> <a class="btn website" href="http://getstormcloud.com">{{websiteText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
     </div>
   </div>

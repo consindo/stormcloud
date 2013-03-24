@@ -230,6 +230,11 @@ stormcloud.loadSettings = function() {
   } else {
     settingsObj.count = false
   }
+  if (localStorage.stormcloud_average === 'true') {
+    settingsObj.average = true
+  } else {
+    settingsObj.average = false
+  }
 
   //Translations Guff
   settingsObj.locationsText = $.i18n._("Locations")
@@ -238,6 +243,7 @@ stormcloud.loadSettings = function() {
   settingsObj.locationText = $.i18n._("Add Location")
   settingsObj.charmText = $.i18n._("Use Chameleonic Background")
   settingsObj.countText = $.i18n._("Show Temperature in Launcher")
+  settingsObj.averageText = $.i18n._("Use Average Temperature")
   settingsObj.websiteText = $.i18n._("Support")
   settingsObj.creditsText = $.i18n._("Credits")
   settingsObj.proText = $.i18n._("Go Pro")
@@ -297,6 +303,7 @@ stormcloud.loadSettings = function() {
       reload("soft")
     })
 
+    // TODO: Refactor this.
     $('body').on('click', '#desktopswitch', function() {
       if ($(this).is(':checked')) {
         localStorage.stormcloud_color = 'desktop'
@@ -310,6 +317,14 @@ stormcloud.loadSettings = function() {
         localStorage.stormcloud_count = 'true'
       } else {
         localStorage.stormcloud_count = 'false'
+      }
+      reload("hard")
+    })
+    $('body').on('click', '#averageswitch', function() {
+      if ($(this).is(':checked')) {
+        localStorage.stormcloud_average = 'true'
+      } else {
+        localStorage.stormcloud_average = 'false'
       }
       reload("hard")
     })

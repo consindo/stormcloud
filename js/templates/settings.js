@@ -36,6 +36,16 @@ function program9(depth0,data) {
   
   return "\n          <input type=\"checkbox\" id=\"countswitch\">\n      ";}
 
+function program11(depth0,data) {
+  
+  
+  return "\n          <input type=\"checkbox\" id=\"averageswitch\" checked>\n      ";}
+
+function program13(depth0,data) {
+  
+  
+  return "\n          <input type=\"checkbox\" id=\"averageswitch\">\n      ";}
+
   buffer += "<div id=\"accordion\">\n  <h3>";
   foundHelper = helpers.locationsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
@@ -91,6 +101,14 @@ function program9(depth0,data) {
   foundHelper = helpers.countText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.countText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</label><br>\n      ";
+  stack1 = depth0.average;
+  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(13, program13, data),fn:self.program(11, program11, data)});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      <label for=\"averageswitch\">";
+  foundHelper = helpers.averageText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.averageText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   buffer += escapeExpression(stack1) + "</label>\n      <!--a class=\"btn pro\" href=\"#\">";
   foundHelper = helpers.proText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }

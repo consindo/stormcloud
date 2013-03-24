@@ -25,26 +25,38 @@
         <div class="0">
             <span class="day">{{week.0.day}}</span>
             <span class="code"><img src="img/climacons/{{week.0.code}}.svg"></span>
-            <span class="temp">{{week.0.average}}</span>
-            <!--<span class="temp">{{week.0.high}}&nbsp;&nbsp;<span>{{week.0.low}}</span></span>-->
+            {{#if average}}
+                <span class="temp">{{week.0.average}}</span>
+            {{else}}
+                <span class="temp">{{week.0.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+            {{/if}}
         </div>
         <div class="1">
             <span class="day">{{week.1.day}}</span>
             <span class="code"><img src="img/climacons/{{week.1.code}}.svg"></span>
-            <span class="temp">{{week.1.average}}</span>
-            <!--<span class="temp">{{week.1.high}}&nbsp;&nbsp;<span>{{week.1.low}}</span></span>-->
+            {{#if average}}
+                <span class="temp">{{week.1.average}}</span>
+            {{else}}
+                <span class="temp">{{week.1.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+            {{/if}}
         </div>
         <div class="2">
             <span class="day">{{week.2.day}}</span>
             <span class="code"><img src="img/climacons/{{week.2.code}}.svg"></span>
-            <span class="temp">{{week.2.average}}</span>
-            <!--<span class="temp">{{week.2.high}}&nbsp;&nbsp;<span>{{week.2.low}}</span></span>-->
+            {{#if average}}
+                <span class="temp">{{week.2.average}}</span>
+            {{else}}
+                <span class="temp">{{week.2.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+            {{/if}}
         </div>
         <div class="3">
             <span class="day">{{week.3.day}}</span>
             <span class="code"><img src="img/climacons/{{week.3.code}}.svg"></span>
-            <span class="temp">{{week.3.average}}</span>
-            <!--<span class="temp">{{week.3.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>-->
+            {{#if average}}
+                <span class="temp">{{week.3.average}}</span>
+            {{else}}
+                <span class="temp">{{week.3.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+            {{/if}}
         </div>
     </div>
 </div>

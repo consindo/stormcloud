@@ -28,6 +28,7 @@ if (localStorage.stormcloud) {
 }
 
 // Sets up localstorage
+localStorage.stormcloud_average = localStorage.stormcloud_average || "false"
 localStorage.stormcloud_measurement = localStorage.stormcloud_measurement || "f"
 localStorage.stormcloud_speed = localStorage.stormcloud_speed || "mph"
 localStorage.stormcloud_color =  localStorage.stormcloud_color || "gradient"
@@ -184,6 +185,9 @@ stormcloud_cli = {
 
 					//Weather Object
 					weather = {}
+					if (localStorage.stormcloud_average == "true") {
+						weather.average = true
+					}
 
 					//Location
 					weather.link = $($(data).find('link')[0]).text()
@@ -224,17 +228,17 @@ stormcloud_cli = {
 						weather.week[i].code = weather_code($(weekArr[i]).attr("code"))[0]
 
 						if (localStorage.stormcloud_measurement == "c") {
-							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + " °"
-							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + " °"
+							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + "°"
+							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + "°"
 							weather.week[i].average = Math.round(((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")) - 64)*5/9)/2) + " °"
 						} else if (localStorage.stormcloud_measurement == "k") {
-							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + 273 + " K"
-							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + 273 + " K"
+							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + 273 + "K"
+							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + 273 + "K"
 							weather.week[i].average = Math.round(((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")) - 64)*5/9)/2)+273 + " K"
 						} else {
-							weather.week[i].low = $(weekArr[i]).attr("low") + " °"
-							weather.week[i].high = $(weekArr[i]).attr("high") + " °"
-							weather.week[i].average = Math.round((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")))/2) + " °"
+							weather.week[i].low = $(weekArr[i]).attr("low") + "°"
+							weather.week[i].high = $(weekArr[i]).attr("high") + "°"
+							weather.week[i].average = Math.round((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")))/2) + "°"
 						}
 					}
 
