@@ -92,10 +92,25 @@ $(function() {
 
   //Sets up Credits
   document.getElementById('credits').innerHTML = Handlebars.templates['credits.template']()
+  document.getElementById('pro').innerHTML = Handlebars.templates['pro.template']()
+
+  $("#pro textarea").on("keyup cut paste change", function() {
+    // It's not instant?
+    setTimeout(function() {
+      localStorage.stormcloud_license = $("#pro textarea").val()
+      if (stormcloud.checkPro()) {
+        $("#pro textarea").prop("disabled", true)
+        $("#pro .activated").show()
+      }
+    }, 10)
+  })
 
   // Various Handlers
   $("body").on("click", "a.credits", function() {
     $("#credits").addClass("show anim")
+  })
+  $("body").on("click", "a.pro", function() {
+    $("#pro").addClass("show anim")
   })
   $("#credits img, #pro img").click(function() {
     $("#credits, #pro").removeClass("show")
@@ -234,6 +249,11 @@ stormcloud.loadSettings = function() {
     settingsObj.average = true
   } else {
     settingsObj.average = false
+  }
+
+  settingsObj.proButton = false
+  if (window.app === "chrome" && stormcloud.hashes.indexOf(CryptoJS.SHA256(localStorage.stormcloud_license).toString()) == -1) {
+    settingsObj.proButton = true
   }
 
   //Translations Guff

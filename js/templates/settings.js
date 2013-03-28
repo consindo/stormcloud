@@ -46,6 +46,16 @@ function program13(depth0,data) {
   
   return "\n          <input type=\"checkbox\" id=\"averageswitch\">\n      ";}
 
+function program15(depth0,data) {
+  
+  var buffer = "", stack1, foundHelper;
+  buffer += "\n      <a class=\"btn pro\" href=\"#\">";
+  foundHelper = helpers.proText;
+  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
+  else { stack1 = depth0.proText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
+  buffer += escapeExpression(stack1) + "</a><br>\n      ";
+  return buffer;}
+
   buffer += "<div id=\"accordion\">\n  <h3>";
   foundHelper = helpers.locationsText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
@@ -109,11 +119,11 @@ function program13(depth0,data) {
   foundHelper = helpers.averageText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.averageText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</label>\n      <!--a class=\"btn pro\" href=\"#\">";
-  foundHelper = helpers.proText;
-  if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
-  else { stack1 = depth0.proText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</a--> <a class=\"btn website\" href=\"http://getstormcloud.com\">";
+  buffer += escapeExpression(stack1) + "</label>\n\n      ";
+  stack1 = depth0.proButton;
+  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(15, program15, data)});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      <a class=\"btn website\" href=\"http://getstormcloud.com\" target=\"_blank\">";
   foundHelper = helpers.websiteText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.websiteText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }

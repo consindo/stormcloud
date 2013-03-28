@@ -71,7 +71,11 @@
           <input type="checkbox" id="averageswitch">
       {{/if}}
       <label for="averageswitch">{{averageText}}</label>
-      <!--a class="btn pro" href="#">{{proText}}</a--> <a class="btn website" href="http://getstormcloud.com">{{websiteText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
+
+      {{#if proButton}}
+      <a class="btn pro" href="#">{{proText}}</a><br>
+      {{/if}}
+      <a class="btn website" href="http://getstormcloud.com" target="_blank">{{websiteText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
     </div>
   </div>
 </div>

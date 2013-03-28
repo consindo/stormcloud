@@ -256,6 +256,39 @@ body.drag {
 #credits::-webkit-scrollbar-track {
     background: #f7f7f7;
 }
+#pro {
+    img {
+        float: left;
+        margin-right: 80%;
+        margin-bottom: 10%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    font-size: 16px;
+    text-align: center;
+
+    textarea {
+        font-family: monospace;
+        font-size: 12px;
+        resize: none;
+        border: 1px solid #ccc;
+        width: 85%;
+        height: 70px
+    }
+
+    a {
+        color: #fff;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .activated {
+        margin-top: 5px;
+        color: green;
+        display: none;
+    }
+}
 
 img {
     -webkit-user-drag: none;
@@ -719,6 +752,10 @@ input[type=checkbox] {
 
     .wrapperTwenty {
         padding: 10px 20px 20px;
+    }
+    .pro {
+        position: relative;
+        top: 5px;
     }
 }
 
