@@ -166,7 +166,7 @@ body.drag {
   background: #fff;
   overflow: hidden; }
 
-#credits {
+#credits, #pro {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -183,27 +183,27 @@ body.drag {
   -webkit-transform-origin: left;
   -webkit-transform-style: preserve-3d;
   -webkit-transform: perspective(600px) rotateY(-90deg); }
-  #credits.show {
+  #credits.show, #pro.show {
     -webkit-transform: perspective(600px) rotateY(0deg); }
-  #credits.anim {
+  #credits.anim, #pro.anim {
     -webkit-transition: 500ms ease all; }
-  #credits strong {
+  #credits strong, #pro strong {
     letter-spacing: -1px; }
-  #credits img {
+  #credits img, #pro img {
     cursor: pointer; }
-  #credits ul {
+  #credits ul, #pro ul {
     padding-left: 1.5em; }
-  #credits h1, #credits h2 {
+  #credits h1, #credits h2, #pro h1, #pro h2 {
     margin-top: 0.3em;
     margin-bottom: 0.2em;
     color: #222;
     letter-spacing: -1px; }
-  #credits p {
+  #credits p, #pro p {
     margin-top: 0; }
-  #credits a {
+  #credits a, #pro a {
     text-decoration: none;
     color: #444; }
-    #credits a:hover {
+    #credits a:hover, #pro a:hover {
       text-decoration: underline; }
 
 #credits::-webkit-scrollbar-track {

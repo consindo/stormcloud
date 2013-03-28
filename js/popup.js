@@ -97,8 +97,8 @@ $(function() {
   $("body").on("click", "a.credits", function() {
     $("#credits").addClass("show anim")
   })
-  $("#credits img").click(function() {
-    $("#credits").removeClass("show")
+  $("#credits img, #pro img").click(function() {
+    $("#credits, #pro").removeClass("show")
   })
 
   $("#panel .sliderControls img").click(function() {
@@ -278,6 +278,12 @@ stormcloud.loadSettings = function() {
 
     //Sets up the Toggle Switches
     $('body').on('click', '.toggleswitch span', function() {
+      if ($(this).parent().hasClass("color")) {
+        // Check if it's pro
+        if (!stormcloud.checkPro()) {
+          return
+        }
+      }
       $(this).parent().children().removeClass('selected')
       console.log($(this).parent().attr("class"))
       localStorage.setItem("stormcloud_" + $(this).parent().attr("class").replace("toggleswitch ", ""), $(this).addClass('selected').attr("data-type"))
@@ -286,21 +292,27 @@ stormcloud.loadSettings = function() {
     })
 
     $('body').on('change', '.font', function() {
-      $('body').removeClass(localStorage.stormcloud_font).addClass($(this).val())
-      localStorage.stormcloud_font = $(this).val()
+        if (stormcloud.checkPro()) {
+          $('body').removeClass(localStorage.stormcloud_font).addClass($(this).val())
+          localStorage.stormcloud_font = $(this).val()
+        } else {
+          $(this).val("ubuntu")
+        }
     })
 
     $('body').on('click', '.color.boxes span', function() {
-      localStorage.stormcloud_color = "#" + $(this).attr("data-color")
-      $(".toggleswitch.color").children().removeClass("selected")
-      if ($(this).attr("data-color") === "gradient") {
-        $("#background").attr("style", "")
-        localStorage.stormcloud_color = 'gradient'
-        $(".toggleswitch.color [data-color=gradient]").addClass("selected")
-      } else {
-        $("#container").css('background', localStorage.stormcloud_color)
+      if (stormcloud.checkPro()) {
+        localStorage.stormcloud_color = "#" + $(this).attr("data-color")
+        $(".toggleswitch.color").children().removeClass("selected")
+        if ($(this).attr("data-color") === "gradient") {
+          $("#background").attr("style", "")
+          localStorage.stormcloud_color = 'gradient'
+          $(".toggleswitch.color [data-color=gradient]").addClass("selected")
+        } else {
+          $("#container").css('background', localStorage.stormcloud_color)
+        }
+        reload("soft")
       }
-      reload("soft")
     })
 
     // TODO: Refactor this.
@@ -364,6 +376,12 @@ stormcloud.loadSettings = function() {
       }
 
     }
+    // Prevents users from adding more than two locations if they aren't pro
+    $('body').on('focus', '.locationSettings ul li.placeInput input', function() {
+      if (JSON.parse(makeLocationArray()).length > 1 && !stormcloud.checkPro()) {
+        $(this).blur()
+      }
+    })
 
     // This is the little tick icon that appears
     $('body').on('click', statusElem, function() {
@@ -449,3 +467,14 @@ stormcloud.getUnityDesktopBackgroundColor = function() {
 
   }
 }
+
+stormcloud.checkPro = function() {
+  if (window.app === "chrome" && stormcloud.hashes.indexOf(CryptoJS.SHA256(localStorage.stormcloud_license).toString()) == -1) {
+    // Shows Marketing Bullshit
+    $("#pro").addClass("anim show")
+    return false
+  }
+  return true
+}
+
+stormcloud.hashes = []

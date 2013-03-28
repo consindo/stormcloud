@@ -1,18 +1,7 @@
 {
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
-  "creatorBuild" : "8248",
+  "creatorBuild" : "8283",
   "files" : {
-    "\/js\/vendor\/zepto.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/vendor\/zepto.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/vendor\/zepto-ck.js",
-      "fileType" : 64
-    },
     "\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -55,15 +44,6 @@
       "outputAbbreviatedPath" : "\/js\/templates\/credits-ck.js",
       "fileType" : 64
     },
-    "\/popup.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/popup.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/js\/popup.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -75,14 +55,34 @@
       "outputAbbreviatedPath" : "\/js\/popup-ck.js",
       "fileType" : 64
     },
+    "\/popup.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/popup.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/css\/main.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/css\/main.css",
-      "outputAbbreviatedPath" : "No Output Path",
+      "outputAbbreviatedPath" : "\/No Output Path",
       "fileType" : 16
+    },
+    "\/stormcloud.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/stormcloud.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/stormcloud.png",
+      "initialSize" : 1857,
+      "fileType" : 8192
     },
     "\/js\/templates\/pane.js" : {
       "ignoreWasSetByUser" : 1,
@@ -94,15 +94,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/templates\/pane-ck.js",
       "fileType" : 64
-    },
-    "\/css\/normalize.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/normalize.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/css\/main.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -116,17 +107,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/vendor\/jquery.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/vendor\/jquery.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/vendor\/jquery-ck.js",
-      "fileType" : 64
-    },
     "\/js\/plugins.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -138,26 +118,24 @@
       "outputAbbreviatedPath" : "\/js\/plugins-ck.js",
       "fileType" : 64
     },
-    "\/stormcloud.png" : {
+    "\/css\/normalize.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/stormcloud.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/stormcloud.png",
-      "initialSize" : 1857,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/css\/normalize.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
-    "\/js\/main.js" : {
+    "\/js\/vendor\/jquery.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/main.js",
+      "inputAbbreviatedPath" : "\/js\/vendor\/jquery.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/main-ck.js",
+      "outputAbbreviatedPath" : "\/js\/vendor\/jquery-ck.js",
       "fileType" : 64
     }
   },
@@ -194,7 +172,7 @@
     "stylusDebugStyle" : 0,
     "hamlUseCDATA" : 0,
     "hamlAutoOutputPathStyle" : 0,
-    "sassDebugStyle" : 0,
+    "sassDebugStyle" : 2,
     "hamlOutputStyle" : 0,
     "stylusAutoOutputPathRelativePath" : "..\/css",
     "jsCheckerIndent" : 4,
@@ -343,7 +321,7 @@
   "projectAttributes" : {
     "bourbonEnabled" : 0,
     "displayValue" : "stormcloud",
-    "displayValueWasSetByUser" : 0,
+    "displayValueWasSetByUser" : 1,
     "compassEnabled" : 0
   }
 }
