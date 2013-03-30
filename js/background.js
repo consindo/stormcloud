@@ -257,6 +257,7 @@ stormcloud_cli = {
 					if (localStorage.stormcloud_color == "gradient") {
 						weather.background = background(temp)
 					}
+					weather.gradientbackground = background(temp)
 
 					if (callback && arr) {
 						callback(weather, arr)
@@ -290,7 +291,20 @@ stormcloud_cli = {
 				// Update Count
 				if(app == "chrome") {
 					if (localStorage.stormcloud_count === "true") {
-						chrome.browserAction.setBadgeBackgroundColor({color: "#888"})
+
+						var hexDigits = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+
+						//Function to convert hex format to a rgb color
+						function rgb2hex(rgb) {
+							rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+							return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+						}
+
+						function hex(x) {
+							return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+						}
+
+						chrome.browserAction.setBadgeBackgroundColor({color: rgb2hex(arr[0].gradientbackground)})
 						chrome.browserAction.setBadgeText({text: arr[0].temperature.replace(" ", "")})
 					} else {
 						chrome.browserAction.setBadgeText({text: ""})
