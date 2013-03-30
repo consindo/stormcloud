@@ -12,8 +12,13 @@
   },
   "manifest_version": 2,
   "permissions": [
-    "unlimitedStorage",
-    "http://*/",
-    "https://*/"
-  ]
+    "http://query.yahooapis.com/*",
+    "http://weather.yahooapis.com/*",
+    "http://xml.weather.yahoo.com/*"
+  ],
+  "icons": {
+    "16": "stormcloud_16.png",
+    "128": "stormcloud_128.png",
+    "256": "stormcloud_256.png"
+  }
 }
