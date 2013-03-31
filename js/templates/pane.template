@@ -2,7 +2,7 @@
     <div class="top">
         <div class="padding"></div>
         <div class="city">
-            <div><span><a href="{{link}}">{{place}}</a></span></div>
+            <div><span><a href="{{link}}" target="_blank">{{place}}</a></span></div>
         </div>
     </div>
     <div class="weather">

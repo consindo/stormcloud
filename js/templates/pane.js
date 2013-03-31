@@ -120,7 +120,7 @@ function program15(depth0,data) {
   foundHelper = helpers.link;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.link; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "\">";
+  buffer += escapeExpression(stack1) + "\" target=\"_blank\">";
   foundHelper = helpers.place;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
