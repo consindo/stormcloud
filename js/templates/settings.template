@@ -31,7 +31,9 @@
           <span data-color="333333"></span>
           <span data-color="F09609"></span>
           <span data-color="1BA1E2"></span>
+          {{#unless proButton}}
           <span data-color="FF8E83"></span>
+          {{/unless}}
           <span data-color="339933"></span>
       </div>
       <label class="color">Adjust background based on:</label>
@@ -71,11 +73,13 @@
           <input type="checkbox" id="averageswitch">
       {{/if}}
       <label for="averageswitch">{{averageText}}</label>
-
-      {{#if proButton}}
-      <a class="btn pro" href="#">{{proText}}</a><br>
-      {{/if}}
       <a class="btn website" href="http://getstormcloud.com" target="_blank">{{websiteText}}</a> <a class="btn credits" href="#">{{creditsText}}</a><br>
     </div>
   </div>
 </div>
+{{#if proButton}}
+<div id="proAdvert">
+  <p>Support the development of Stormcloud and unlock extra features with a pro upgrade.</p>
+  <a class="btn pro" href="#">{{proText}}</a><br>
+</div>
+{{/if}}

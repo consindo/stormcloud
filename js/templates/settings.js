@@ -19,41 +19,46 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   
-  return "\n          <input type=\"checkbox\" id=\"desktopswitch\" checked>\n      ";}
+  return "\n          <span data-color=\"FF8E83\"></span>\n          ";}
 
 function program5(depth0,data) {
   
   
-  return "\n          <input type=\"checkbox\" id=\"desktopswitch\">\n      ";}
+  return "\n          <input type=\"checkbox\" id=\"desktopswitch\" checked>\n      ";}
 
 function program7(depth0,data) {
   
   
-  return "\n          <input type=\"checkbox\" id=\"countswitch\" checked>\n      ";}
+  return "\n          <input type=\"checkbox\" id=\"desktopswitch\">\n      ";}
 
 function program9(depth0,data) {
   
   
-  return "\n          <input type=\"checkbox\" id=\"countswitch\">\n      ";}
+  return "\n          <input type=\"checkbox\" id=\"countswitch\" checked>\n      ";}
 
 function program11(depth0,data) {
   
   
-  return "\n          <input type=\"checkbox\" id=\"averageswitch\" checked>\n      ";}
+  return "\n          <input type=\"checkbox\" id=\"countswitch\">\n      ";}
 
 function program13(depth0,data) {
   
   
-  return "\n          <input type=\"checkbox\" id=\"averageswitch\">\n      ";}
+  return "\n          <input type=\"checkbox\" id=\"averageswitch\" checked>\n      ";}
 
 function program15(depth0,data) {
   
+  
+  return "\n          <input type=\"checkbox\" id=\"averageswitch\">\n      ";}
+
+function program17(depth0,data) {
+  
   var buffer = "", stack1, foundHelper;
-  buffer += "\n      <a class=\"btn pro\" href=\"#\">";
+  buffer += "\n<div id=\"proAdvert\">\n  <p>Support the development of Stormcloud and unlock extra features with a pro upgrade.</p>\n  <a class=\"btn pro\" href=\"#\">";
   foundHelper = helpers.proText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.proText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</a><br>\n      ";
+  buffer += escapeExpression(stack1) + "</a><br>\n</div>\n";
   return buffer;}
 
   buffer += "<div id=\"accordion\">\n  <h3>";
@@ -82,7 +87,11 @@ function program15(depth0,data) {
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.speed; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </div>\n      <div class=\"color boxes\">\n          <span data-color=\"gradient\"></span>\n          <span data-color=\"A200FF\"></span>\n          <span data-color=\"FF0097\"></span>\n          <span data-color=\"00ABA9\"></span>\n          <span data-color=\"8CBF26\"></span>\n          <span data-color=\"A05000\"></span>\n          <span data-color=\"333333\"></span>\n          <span data-color=\"F09609\"></span>\n          <span data-color=\"1BA1E2\"></span>\n          <span data-color=\"FF8E83\"></span>\n          <span data-color=\"339933\"></span>\n      </div>\n      <label class=\"color\">Adjust background based on:</label>\n      <div class=\"toggleswitch color\">\n        ";
+  buffer += "\n      </div>\n      <div class=\"color boxes\">\n          <span data-color=\"gradient\"></span>\n          <span data-color=\"A200FF\"></span>\n          <span data-color=\"FF0097\"></span>\n          <span data-color=\"00ABA9\"></span>\n          <span data-color=\"8CBF26\"></span>\n          <span data-color=\"A05000\"></span>\n          <span data-color=\"333333\"></span>\n          <span data-color=\"F09609\"></span>\n          <span data-color=\"1BA1E2\"></span>\n          ";
+  stack1 = depth0.proButton;
+  stack1 = helpers.unless.call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(3, program3, data)});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n          <span data-color=\"339933\"></span>\n      </div>\n      <label class=\"color\">Adjust background based on:</label>\n      <div class=\"toggleswitch color\">\n        ";
   foundHelper = helpers.gradient;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.gradient; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
@@ -97,7 +106,7 @@ function program15(depth0,data) {
   else { stack1 = depth0.launcher; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   buffer += escapeExpression(stack1) + "\">\n      ";
   stack1 = depth0.desktop;
-  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data)});
+  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(7, program7, data),fn:self.program(5, program5, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n          <label for=\"desktopswitch\">";
   foundHelper = helpers.charmText;
@@ -105,7 +114,7 @@ function program15(depth0,data) {
   else { stack1 = depth0.charmText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   buffer += escapeExpression(stack1) + "</label>\n      </div>\n      ";
   stack1 = depth0.count;
-  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(9, program9, data),fn:self.program(7, program7, data)});
+  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(11, program11, data),fn:self.program(9, program9, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n      <label for=\"countswitch\">";
   foundHelper = helpers.countText;
@@ -113,17 +122,13 @@ function program15(depth0,data) {
   else { stack1 = depth0.countText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   buffer += escapeExpression(stack1) + "</label><br>\n      ";
   stack1 = depth0.average;
-  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(13, program13, data),fn:self.program(11, program11, data)});
+  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.program(15, program15, data),fn:self.program(13, program13, data)});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n      <label for=\"averageswitch\">";
   foundHelper = helpers.averageText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.averageText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</label>\n\n      ";
-  stack1 = depth0.proButton;
-  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(15, program15, data)});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      <a class=\"btn website\" href=\"http://getstormcloud.com\" target=\"_blank\">";
+  buffer += escapeExpression(stack1) + "</label>\n      <a class=\"btn website\" href=\"http://getstormcloud.com\" target=\"_blank\">";
   foundHelper = helpers.websiteText;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.websiteText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
@@ -132,5 +137,9 @@ function program15(depth0,data) {
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.creditsText; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
   buffer += escapeExpression(stack1) + "</a><br>\n    </div>\n  </div>\n</div>\n";
+  stack1 = depth0.proButton;
+  stack1 = helpers['if'].call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(17, program17, data)});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
   return buffer;});
 })();
