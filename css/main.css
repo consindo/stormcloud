@@ -559,6 +559,7 @@ input[type=checkbox] {
           top: 0;
           right: 0;
           font-size: 15px;
+          color: #fff;
           -webkit-animation: 600ms ease showinput 1; }
           #settings .locationSettings ul li.placeInput .status.thinking {
             background: url(../img/sync.svg) no-repeat 50% 50%;
@@ -572,9 +573,18 @@ input[type=checkbox] {
             height: 27px;
             line-height: 27px; }
           #settings .locationSettings ul li.placeInput .status.success {
-            background: url(../img/tick.svg) no-repeat 50% 50%;
-            background-size: 18px;
-            cursor: pointer; }
+            cursor: pointer;
+            border: 2px solid #222222;
+            padding: 1px 5px;
+            height: 22px;
+            text-align: center;
+            margin-top: 1px; }
+            #settings .locationSettings ul li.placeInput .status.success:hover {
+              background: #444; }
+            #settings .locationSettings ul li.placeInput .status.success:active {
+              background: #222; }
+            #settings .locationSettings ul li.placeInput .status.success::after {
+              content: "Add"; }
       #settings .locationSettings ul li .delete {
         float: right;
         padding: 0 5px;

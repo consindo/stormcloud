@@ -406,8 +406,8 @@ stormcloud.loadSettings = function() {
     // This is the little tick icon that appears
     $('body').on('click', statusElem, function() {
       if ($(this).hasClass('success')) {
-        $('.locationSettings ul li.placeInput').before('<li data-code="' + $(this).attr('data-code') + '"><span class="name">' + $(this).attr('data-place') + '</span><span class="delete">&#10005;</span></li>')
         $(this).removeClass('success')
+        $('.locationSettings ul li.placeInput').before('<li data-code="' + $(this).attr('data-code') + '"><span class="name">' + $(this).attr('data-place') + '</span><span class="delete">&#10005;</span></li>')
         $('.locationSettings ul li.placeInput input').val("")
 
         //Save to LocalStorage

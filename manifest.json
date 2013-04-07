@@ -1,7 +1,7 @@
 {
   "name": "Stormcloud",
   "description": "Easier than looking outside",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "browser_action": {
     "default_icon": "stormcloud.png",
     "default_popup": "popup.html"
