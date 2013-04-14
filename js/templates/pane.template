@@ -28,7 +28,7 @@
             {{#if average}}
                 <span class="temp">{{week.0.average}}</span>
             {{else}}
-                <span class="temp">{{week.0.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+                <span class="temp">{{week.0.high}}&nbsp;&nbsp;<span>{{week.0.low}}</span></span>
             {{/if}}
         </div>
         <div class="1">
@@ -37,7 +37,7 @@
             {{#if average}}
                 <span class="temp">{{week.1.average}}</span>
             {{else}}
-                <span class="temp">{{week.1.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+                <span class="temp">{{week.1.high}}&nbsp;&nbsp;<span>{{week.1.low}}</span></span>
             {{/if}}
         </div>
         <div class="2">
@@ -46,7 +46,7 @@
             {{#if average}}
                 <span class="temp">{{week.2.average}}</span>
             {{else}}
-                <span class="temp">{{week.2.high}}&nbsp;&nbsp;<span>{{week.3.low}}</span></span>
+                <span class="temp">{{week.2.high}}&nbsp;&nbsp;<span>{{week.2.low}}</span></span>
             {{/if}}
         </div>
         <div class="3">
