@@ -25,7 +25,7 @@ function program3(depth0,data) {
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
-  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "</span></span>\n            ";
@@ -52,7 +52,7 @@ function program7(depth0,data) {
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
-  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "</span></span>\n            ";
@@ -79,7 +79,7 @@ function program11(depth0,data) {
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
-  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
+  stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
   buffer += escapeExpression(stack1) + "</span></span>\n            ";
