@@ -12,7 +12,8 @@ function program1(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span>\n            ";
   return buffer;}
 
 function program3(depth0,data) {
@@ -23,12 +24,14 @@ function program3(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[0];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n            ";
   return buffer;}
 
 function program5(depth0,data) {
@@ -39,7 +42,8 @@ function program5(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span>\n            ";
   return buffer;}
 
 function program7(depth0,data) {
@@ -50,12 +54,14 @@ function program7(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[1];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n            ";
   return buffer;}
 
 function program9(depth0,data) {
@@ -66,7 +72,8 @@ function program9(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span>\n            ";
   return buffer;}
 
 function program11(depth0,data) {
@@ -77,12 +84,14 @@ function program11(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[2];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n            ";
   return buffer;}
 
 function program13(depth0,data) {
@@ -93,7 +102,8 @@ function program13(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.average;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span>\n            ";
   return buffer;}
 
 function program15(depth0,data) {
@@ -104,12 +114,14 @@ function program15(depth0,data) {
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.high;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "&nbsp;&nbsp;<span>";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "&nbsp;&nbsp;<span>";
   stack1 = depth0.week;
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1[3];
   stack1 = stack1 == null || stack1 === false ? stack1 : stack1.low;
   stack1 = typeof stack1 === functionType ? stack1() : stack1;
-  buffer += escapeExpression(stack1) + "</span></span>\n            ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n            ";
   return buffer;}
 
   buffer += "<div class=\"middle\" data-background=\"";
@@ -132,7 +144,8 @@ function program15(depth0,data) {
   foundHelper = helpers.temperature;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.temperature; stack1 = typeof stack1 === functionType ? stack1() : stack1; }
-  buffer += escapeExpression(stack1) + "</span></div>\n        </div>\n        <div class=\"right\">\n            <div>\n                <div>\n                    <span>";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></div>\n        </div>\n        <div class=\"right\">\n            <div>\n                <div>\n                    <span>";
   foundHelper = helpers.windSpeed;
   if (foundHelper) { stack1 = foundHelper.call(depth0, {hash:{}}); }
   else { stack1 = depth0.windSpeed; stack1 = typeof stack1 === functionType ? stack1() : stack1; }

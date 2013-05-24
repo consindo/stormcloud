@@ -1,7 +1,7 @@
 {
   "name": "Stormcloud",
   "description": "Easier than looking outside",
-  "version": "1.3.6",
+  "version": "1.3.8",
   "browser_action": {
     "default_icon": "stormcloud.png",
     "default_popup": "popup.html"
@@ -11,9 +11,8 @@
   },
   "manifest_version": 2,
   "permissions": [
-    "http://query.yahooapis.com/*",
-    "http://weather.yahooapis.com/*",
-    "http://xml.weather.yahoo.com/*"
+    "http://xml.weather.yahoo.com/*",
+    "http://api.openweathermap.org/*"
   ],
   "icons": {
     "16": "stormcloud_16.png",

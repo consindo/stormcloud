@@ -36,12 +36,41 @@ localStorage.stormcloud_count =  localStorage.stormcloud_count || "true"
 localStorage.stormcloud_font =  localStorage.stormcloud_font || "ubuntufont"
 localStorage.stormcloud_license =  localStorage.stormcloud_license || ""
 if (app == "chrome") {
-	localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}]'
-	localStorage.stormcloud_weathercache = localStorage.stormcloud_weathercache || '[{"link":"http://us.rd.yahoo.com/dailynews/rss/weather/Kuala_Lumpur__MY/*http://weather.yahoo.com/forecast/MYXX0008_f.html","place":"Kuala Lumpur","country":"MY","zip":"MYXX0008","temperature":"91 °","windSpeed":"2","windUnit":"mph","windDirection":"40","humidity":"63","week":[{"day":"Thu","code":"Cloud-Lightning","low":"75 °","high":"92 °","average":"84 °"},{"day":"Fri","code":"Cloud-Lightning","low":"76 °","high":"93 °","average":"85 °"},{"day":"Sat","code":"Cloud-Sun","low":"75 °","high":"93 °","average":"84 °"},{"day":"Sun","code":"Cloud-Lightning","low":"76 °","high":"91 °","average":"84 °"}],"code":"Cloud-Sun","background":"rgb(228, 66, 17)"}]'
+	localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"5128581","place":"New York"}]'
+	localStorage.stormcloud_weathercache = localStorage.stormcloud_weathercache || '[{"link":"http://openweathermap.org/Maps?zoom=11&lat=40.714272&lon=-74.005966","place":"New York","country":"US","zip":5128581,"temperature":"9 &deg;","windSpeed":8,"windUnit":"mph","windDirection":319,"humidity":98,"week":[{"day":"Sat","code":"Cloud-Rain","low":"9&deg;","high":"17&deg;","average":"150&deg;"},{"day":"Sat","code":"Cloud-Rain","low":"8&deg;","high":"10&deg;","average":"146&deg;"},{"day":"Sat","code":"Sun","low":"11&deg;","high":"18&deg;","average":"151&deg;"},{"day":"Sat","code":"Sun","low":"10&deg;","high":"20&deg;","average":"152&deg;"}],"code":"Cloud-Rain","background":"rgb(0, 124, 197)","gradientbackground":"rgb(0, 124, 197)"}]'
 } else {
-	localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"MYXX0008", "place": "Kuala Lumpur"}, {"zip":"USCA0091", "place": "Bieber"}, {"zip":"SWXX0031", "place": "Stockholm"}]'
-	localStorage.stormcloud_weathercache = localStorage.stormcloud_weathercache || '[{"link":"http://us.rd.yahoo.com/dailynews/rss/weather/Kuala_Lumpur__MY/*http://weather.yahoo.com/forecast/MYXX0008_f.html","place":"Kuala Lumpur","country":"MY","zip":"MYXX0008","temperature":"91 °","windSpeed":"2","windUnit":"mph","windDirection":"40","humidity":"63","week":[{"day":"Thu","code":"Cloud-Lightning","low":"75 °","high":"92 °","average":"84 °"},{"day":"Fri","code":"Cloud-Lightning","low":"76 °","high":"93 °","average":"85 °"},{"day":"Sat","code":"Cloud-Sun","low":"75 °","high":"93 °","average":"84 °"},{"day":"Sun","code":"Cloud-Lightning","low":"76 °","high":"91 °","average":"84 °"}],"code":"Cloud-Sun","background":"rgb(228, 66, 17)"},{"link":"http://us.rd.yahoo.com/dailynews/rss/weather/Bieber__CA/*http://weather.yahoo.com/forecast/USCA0091_f.html","place":"Bieber","country":"US","zip":"USCA0091","temperature":"26 °","windSpeed":"0","windUnit":"mph","windDirection":"0","humidity":"95","week":[{"day":"Wed","code":"Cloud-Snow","low":"23 °","high":"37 °","average":"30 °"},{"day":"Thu","code":"Sun","low":"22 °","high":"46 °","average":"34 °"},{"day":"Fri","code":"Sun","low":"22 °","high":"49 °","average":"36 °"},{"day":"Sat","code":"Sun","low":"23 °","high":"53 °","average":"38 °"}],"code":"Cloud-Moon","background":"rgb(0, 129, 211)"},{"link":"http://us.rd.yahoo.com/dailynews/rss/weather/Stockholm__SW/*http://weather.yahoo.com/forecast/SWXX0031_f.html","place":"Stockholm","country":"SW","zip":"SWXX0031","temperature":"23 °","windSpeed":"6","windUnit":"mph","windDirection":"310","humidity":"57","week":[{"day":"Thu","code":"Sun","low":"17 °","high":"33 °","average":"25 °"},{"day":"Fri","code":"Sun","low":"17 °","high":"33 °","average":"25 °"},{"day":"Sat","code":"Sun","low":"17 °","high":"29 °","average":"23 °"},{"day":"Sun","code":"Sun","low":"14 °","high":"27 °","average":"21 °"}],"code":"Moon","background":"rgb(0, 129, 211)"}]'
+	localStorage.stormcloud_location = localStorage.stormcloud_location || '[{"zip":"5128581","place":"New York"},{"zip":"2643743","place":"London"},{"zip":"1880252","place":"Singapore"}]'
+	localStorage.stormcloud_weathercache = localStorage.stormcloud_weathercache || '[{"link":"http://openweathermap.org/Maps?zoom=11&lat=40.714272&lon=-74.005966","place":"New York","country":"US","zip":5128581,"temperature":"9 &deg;","windSpeed":8,"windUnit":"mph","windDirection":319,"humidity":98,"week":[{"day":"Sat","code":"Cloud-Rain","low":"9&deg;","high":"17&deg;","average":"150&deg;"},{"day":"Sat","code":"Cloud-Rain","low":"8&deg;","high":"10&deg;","average":"146&deg;"},{"day":"Sat","code":"Sun","low":"11&deg;","high":"18&deg;","average":"151&deg;"},{"day":"Sat","code":"Sun","low":"10&deg;","high":"20&deg;","average":"152&deg;"}],"code":"Cloud-Rain","background":"rgb(0, 124, 197)","gradientbackground":"rgb(0, 124, 197)"},{"link":"http://openweathermap.org/Maps?zoom=11&lat=51.50853&lon=-0.12574","place":"London","country":"GB","zip":2643743,"temperature":"7 &deg;","windSpeed":8,"windUnit":"mph","windDirection":288,"humidity":99,"week":[{"day":"Sat","code":"Cloud-Rain","low":"7&deg;","high":"8&deg;","average":"144&deg;"},{"day":"Sat","code":"Sun","low":"6&deg;","high":"14&deg;","average":"147&deg;"},{"day":"Sat","code":"Sun","low":"8&deg;","high":"16&deg;","average":"149&deg;"},{"day":"Sat","code":"Sun","low":"8&deg;","high":"14&deg;","average":"148&deg;"}],"code":"Cloud-Rain","background":"rgb(0, 129, 211)","gradientbackground":"rgb(0, 129, 211)"},{"link":"http://openweathermap.org/Maps?zoom=11&lat=1.28967&lon=103.850067","place":"Singapore","country":"SG","zip":1880252,"temperature":"29 &deg;","windSpeed":3,"windUnit":"mph","windDirection":296,"humidity":100,"week":[{"day":"Sat","code":"Sun","low":"29&deg;","high":"29&deg;","average":"165&deg;"},{"day":"Sat","code":"Sun","low":"29&deg;","high":"30&deg;","average":"166&deg;"},{"day":"Sat","code":"Sun","low":"29&deg;","high":"30&deg;","average":"166&deg;"},{"day":"Sat","code":"Sun","low":"29&deg;","high":"30&deg;","average":"166&deg;"}],"code":"Sun","background":"rgb(209, 65, 31)","gradientbackground":"rgb(209, 65, 31)"}]'
 }
+
+// Upgrades from Yahoo! to Open Weather Map
+upgrader = function() {
+	var list = JSON.parse(localStorage.stormcloud_location)
+	if (isNaN(parseInt(list[0].zip))) {
+		console.log("running upgrader")
+		var newList = []
+		for (item in list) {
+			// Finds the latitude and longitude for each location
+			$.get("http://xml.weather.yahoo.com/forecastrss/" + encodeURIComponent(list[item].zip) + "_f.xml", function(data) {
+				var lat = $($(data).find('lat')).text()
+				var long = $($(data).find('long')).text()
+				$.get("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long, function(data) {
+					newList.push({zip: data.city.id, place: data.city.name})
+					localStorage.stormcloud_location = JSON.stringify(newList)
+
+					// Chrome Extension or fast internet
+					if (item == newList.length) {
+						stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location))
+					}
+				})
+			})
+		}
+		// Temporarily set this.
+		localStorage.stormcloud_location = '[{"zip":"5128581","place":"New York"}]'
+		localStorage.stormcloud_weathercache = '[{"link":"http://openweathermap.org/Maps?zoom=11&lat=40.714272&lon=-74.005966","place":"New York","country":"US","zip":5128581,"temperature":"9 &deg;","windSpeed":8,"windUnit":"mph","windDirection":319,"humidity":98,"week":[{"day":"Sat","code":"Cloud-Rain","low":"9&deg;","high":"17&deg;","average":"150&deg;"},{"day":"Sat","code":"Cloud-Rain","low":"8&deg;","high":"10&deg;","average":"146&deg;"},{"day":"Sat","code":"Sun","low":"11&deg;","high":"18&deg;","average":"151&deg;"},{"day":"Sat","code":"Sun","low":"10&deg;","high":"20&deg;","average":"152&deg;"}],"code":"Cloud-Rain","background":"rgb(0, 124, 197)","gradientbackground":"rgb(0, 124, 197)"}]'
+	}
+}()
+
 stormcloud_cli = {
 	dataGet: {
 		zipcode: function(location, callback) {
@@ -50,28 +79,10 @@ stormcloud_cli = {
 				woeid_request(location, callback)
 			//If they use a normal location
 			} else {
-				$.get("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(location) + "%22&format=xml&" + Math.round(Math.random() * 1000000), function(locationData) {
-					// Gets the WOEID && Caches Location Name
-					var woeid = $($(locationData).find("woeid")[0]).text(),
-						place = $($(locationData).find("name")[0]).text()
-
-					if (woeid) {
-						woeid_request({
-							woeid: woeid,
-							place: place
-						}, callback)
+				$.get("http://api.openweathermap.org/data/2.5/find?q=" + encodeURIComponent(location) + "&mode=json&cnt=0&" + Math.round(Math.random() * 1000000), function(locationData) {
+					if (locationData.count != 0) {
+						callback({zip: locationData.list[0].id, place: locationData.list[0].name})
 					} else {
-						callback()
-					}
-				})
-			}
-
-			// WOEID Request to find Global ZIP Code
-			function woeid_request(obj, callback) {
-				$.get("http://weather.yahooapis.com/forecastrss?w=" + encodeURIComponent(obj.woeid) + "&" + Math.round(Math.random() * 1000000), function(woeidData) {
-					try {
-						callback({zip: $($(woeidData).find("guid")).text().substring(0,8), place: $($(woeidData).find("location")).attr("city")})
-					} catch (err) {
 						callback()
 					}
 				})
@@ -184,7 +195,8 @@ stormcloud_cli = {
 			}
 
 			$.ajax({
-				url: 'http://xml.weather.yahoo.com/forecastrss/' + location.zip + '_f.xml?' + Math.round(Math.random() * 1000000),
+
+				url: 'http://api.openweathermap.org/data/2.5/forecast/daily?id=' + location.zip + "&cnt=4&mode=json&" + Math.round(Math.random() * 1000000),
 				timeout: 10000,
 				success: function(data) {
 
@@ -195,73 +207,76 @@ stormcloud_cli = {
 					}
 
 					//Location
-					weather.link = $($(data).find('link')[0]).text()
-					weather.place = location.place || $(data).find('location').attr("city")
-					weather.country = $(data).find('location').attr("country")
-					weather.zip = $($(data).find("guid")).text().substring(0,8)
+					weather.link = "http://openweathermap.org/Maps?zoom=11&lat=" + data.city.coord.lat + "&lon=" + data.city.coord.lon
+					weather.place = location.place || data.city.name
+					weather.country = data.city.country
+					weather.zip = data.city.id
 
-					//Temperature
-					var temp = $(data).find("condition").attr("temp")
+					//Temperature - not current temp (we're lying that it is)
+					time = new Date().getHours()
+					if (time >= 6 && time < 10) {
+						var temp = data.list[0].temp.morn
+					} else if (time >= 10 && time < 4) {
+						var temp = data.list[0].temp.day
+					} else if (time >= 4 && time < 8) {
+						var temp = data.list[0].temp.eve
+					} else {
+						var temp = data.list[0].temp.night
+					}
 
 					if (localStorage.stormcloud_measurement == "c") {
-						weather.temperature = Math.round((temp -32)*5/9) + " °"
+						weather.temperature = Math.round((temp - 273.15)) + " &deg;"
 					} else if (localStorage.stormcloud_measurement == "k") {
-						temp = Math.round((temp -32)*5/9) + 273
-						weather.temperature = temp + " K"
+						weather.temperature = Math.round(temp) + " K"
 					} else {
-						weather.temperature = temp + " °"
+						weather.temperature = Math.round((temp - 273.15)* 1.8 + 32) + " &deg;"
 					}
 
 					//Wind
-					weather.windSpeed = $(data).find('wind').attr("speed")
-					weather.windUnit = $(data).find('units').attr("speed")
-					if (localStorage.stormcloud_speed != "mph") {
-						weather.windSpeed = (localStorage.stormcloud_speed == "kph") ? Math.round(weather.windSpeed * 1.609344) : Math.round(weather.windSpeed * 4.4704) /10
-						weather.windUnit = (localStorage.stormcloud_speed == "kph") ? "kph" : "m/s"
+					weather.windSpeed = data.list[0].speed
+					if (localStorage.stormcloud_speed != "ms") {
+						weather.windSpeed = (localStorage.stormcloud_speed == "kph") ? Math.round(weather.windSpeed * 3.6) : Math.round(weather.windSpeed * 2.2369)
+						weather.windUnit = (localStorage.stormcloud_speed == "kph") ? "kph" : "mph"
 					}
-					weather.windDirection = $(data).find('wind').attr('direction')
+					weather.windDirection = data.list[0].deg
 
 					//Humidity
-					weather.humidity = $(data).find('atmosphere').attr('humidity')
+					weather.humidity =  data.list[0].humidity
 
-					//Weekly Weather
-					weekArr = $(data).find("forecast")
+					// //Weekly Weather
+					weekArr = data.list
 					weather.week = []
-					for (var i=0; i<4; i++) {
+					for (var i=0; i<weekArr.length; i++) {
 						weather.week[i] = {}
-						weather.week[i].day = $(weekArr[i]).attr("day")
-						weather.week[i].code = weather_code($(weekArr[i]).attr("code"))[0]
+						weather.week[i].day = new Date(weekArr[i].dt).toDateString().substr(0,3)
+						weather.week[i].code = weather_code(weekArr[i].weather[0].id)[0]
 
 						if (localStorage.stormcloud_measurement == "c") {
-							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + "°"
-							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + "°"
-							weather.week[i].average = Math.round(((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")) - 64)*5/9)/2) + " °"
+							weather.week[i].low = Math.round(weekArr[i].temp.min - 273.15) + "&deg;"
+							weather.week[i].high = Math.round(weekArr[i].temp.max - 273.15) + "&deg;"
+							weather.week[i].average = Math.round(((weekArr[i].temp.min + weekArr[i].temp.max)- 273.15)/2) + "&deg;"
 						} else if (localStorage.stormcloud_measurement == "k") {
-							weather.week[i].low = Math.round(($(weekArr[i]).attr("low") -32)*5/9) + 273 + "K"
-							weather.week[i].high = Math.round(($(weekArr[i]).attr("high") -32)*5/9) + 273 + "K"
-							weather.week[i].average = Math.round(((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")) - 64)*5/9)/2)+273 + " K"
+							weather.week[i].low = Math.round(weekArr[i].temp.min) + "K"
+							weather.week[i].high = Math.round(weekArr[i].temp.max) + "K"
+							weather.week[i].average = Math.round((weekArr[i].temp.min + weekArr[i].temp.max)/2) + "K"
 						} else {
-							weather.week[i].low = $(weekArr[i]).attr("low") + "°"
-							weather.week[i].high = $(weekArr[i]).attr("high") + "°"
-							weather.week[i].average = Math.round((parseInt($(weekArr[i]).attr("high")) + parseInt($(weekArr[i]).attr("low")))/2) + "°"
+							weather.week[i].low = Math.round((weekArr[i].temp.min - 273.15)* 1.8 + 32) + "&deg;"
+							weather.week[i].high = Math.round((weekArr[i].temp.max - 273.15)* 1.8 + 32) + "&deg;"
+							weather.week[i].average = Math.round((((weekArr[i].temp.min + weekArr[i].temp.max)- 273.15)* 1.8 + 32)/2) + "&deg;"
 						}
 					}
 
 					//Current Weather
-					weather.code = $(data).find("condition").attr("code")
-					if (weather.code != "3200") {
-						weather.background = background(Math.round(weather_code(weather.code)[1]/2.2 + 45))
-						weather.code = weather_code(weather.code)[0]
-					} else {
-						// If Yahoo is a bitch and doesn't give current weather
-						weather.code = weather.week[0].code
-						weather.background = background(Math.round(weather_code($($(data).find("forecast")[0]).attr("code"))[1]/2.2+45))
-					}
+					weather.code = data.list[0].weather[0].id
+
+					// Converts it into names etc
+					weather.background = background(Math.round(weather_code(weather.code)[1]/2.2 + 45))
+					weather.code = weather_code(weather.code)[0]
 
 					if (localStorage.stormcloud_color == "gradient") {
-						weather.background = background(temp)
+						weather.background = background((temp - 273.15)* 1.8 + 32)
 					}
-					weather.gradientbackground = background(temp)
+					weather.gradientbackground = background((temp - 273.15)* 1.8 + 32)
 
 					if (callback && arr) {
 						callback(weather, arr)
@@ -286,7 +301,7 @@ stormcloud_cli = {
 
 		// Because its bad practice to define a function in a loop
 		var callback = function(weather, arr) {
-			arr[arr.indexOf(weather.zip)] = weather
+			arr[arr.indexOf(weather.zip.toString())] = weather
 			count++
 
 			if (count == locations.length) {
@@ -309,11 +324,12 @@ stormcloud_cli = {
 						}
 
 						chrome.browserAction.setBadgeBackgroundColor({color: rgb2hex(arr[0].gradientbackground)})
-						chrome.browserAction.setBadgeText({text: arr[0].temperature.replace(" ", "")})
+						chrome.browserAction.setBadgeText({text: arr[0].temperature.replace(" &deg;", "°")})
 					} else {
 						chrome.browserAction.setBadgeText({text: ""})
 					}
 				} else {
+
 					// Launch the Unity Server
 					var exec = require('child_process').exec;
 
@@ -325,7 +341,7 @@ stormcloud_cli = {
 
 					if (localStorage.stormcloud_count === "true") {
 						exec("chmod +x ./unity.py")
-						pyserver = exec("./unity.py " + arr[0].temperature.replace(" °", ""))
+						pyserver = exec("./unity.py " + arr[0].temperature.replace(" &deg;", ""))
 					}
 				}
 
@@ -337,7 +353,7 @@ stormcloud_cli = {
 
 		for (var i in locations) {
 			//We need this so it's in the right order - stupid async programming
-			arr[i] = locations[i].zip
+			arr[i] = locations[i].zip.toString()
 			stormcloud_cli.dataGet.weather(locations[i], arr, callback)
 		}
 	}
@@ -346,55 +362,54 @@ stormcloud_cli = {
 function weather_code(a) {
 	// Icon Name & Colour Percentage
     var b = {
-        0: ["Tornado", 50],
-        1: ["Cloud-Lightning", 50],
-        2: ["Tornado", 50],
-        3: ["Cloud-Lightning", 50],
-        4: ["Cloud-Lightning", 50],
-        5: ["Cloud-Hail", 15],
-        6: ["Cloud-Hail", 15],
-        7: ["Cloud-Snow", 0],
-        8: ["Cloud-Drizzle", 40],
-        9: ["Cloud-Drizzle", 40],
-        10: ["Cloud-Rain", 30],
-        11: ["Cloud-Rain", 30],
-        12: ["Cloud-Rain", 30],
-        13: ["Cloud-Snow", 0],
-        14: ["Cloud-Snow", 0],
-        15: ["Cloud-Snow", 0],
-        16: ["Cloud-Snow", 0],
-        17: ["Cloud-Hail", 15],
-        18: ["Cloud-Hail", 15],
-        19: ["Cloud-Fog", 40],
-        20: ["Cloud-Fog", 40],
-        21: ["Cloud-Fog", 40],
-        22: ["Cloud-Fog", 40],
-        23: ["Cloud-Wind", 30],
-        24: ["Cloud-Wind", 30],
-        25: ["Cloud", 50],
-        26: ["Cloud", 50],
-        27: ["Cloud-Moon", 40],
-        28: ["Cloud-Sun", 80],
-        29: ["Cloud-Moon", 40],
-        30: ["Cloud-Sun", 80],
-        31: ["Moon", 70],
-        32: ["Sun", 100],
-        33: ["Moon", 70],
-        34: ["Sun", 100],
-        35: ["Cloud-Hail", 15],
-        36: ["Sun", 100],
-        37: ["Cloud-Lightning", 50],
-        38: ["Cloud-Lightning", 50],
-        39: ["Cloud-Lightning", 50],
-        40: ["Cloud-Drizzle", 40],
-        41: ["Cloud-Snow", 0],
-        42: ["Cloud-Snow", 0],
-        43: ["Cloud-Snow", 0],
-        44: ["Cloud", 50],
-        45: ["Cloud-Lightning", 50],
-        46: ["Cloud-Snow", 0],
-        47: ["Cloud-Lightning", 50],
-        3200: ["Cloud", 50]
+    	200: ["Cloud-Lightning", 50],
+		201: ["Cloud-Lightning", 50],
+		202: ["Cloud-Lightning", 50],
+		210: ["Cloud-Lightning", 50],
+		211: ["Cloud-Lightning", 50],
+		212: ["Cloud-Lightning", 50],
+		221: ["Cloud-Lightning", 50],
+		230: ["Cloud-Lightning", 50],
+		231: ["Cloud-Lightning", 50],
+		232: ["Cloud-Lightning", 50],
+		300: ["Cloud-Drizzle", 40],
+		301: ["Cloud-Drizzle", 40],
+		302: ["Cloud-Drizzle", 40],
+		310: ["Cloud-Drizzle", 40],
+		311: ["Cloud-Drizzle", 40],
+		312: ["Cloud-Drizzle", 40],
+		321: ["Cloud-Drizzle", 40],
+		500: ["Cloud-Rain", 30],
+		501: ["Cloud-Rain", 30],
+		502: ["Cloud-Rain", 30],
+		503: ["Cloud-Rain", 30],
+		504: ["Cloud-Rain", 30],
+		511: ["Cloud-Rain", 30],
+		520: ["Cloud-Rain", 30],
+		521: ["Cloud-Rain", 30],
+		522: ["Cloud-Rain", 30],
+		600: ["Cloud-Snow", 0],
+		601: ["Cloud-Snow", 0],
+		602: ["Cloud-Snow", 0],
+		611: ["Cloud-Snow", 0],
+		621: ["Cloud-Snow", 0],
+		800: ["Sun", 100],
+		801: ["Sun", 100],
+		701: ["Cloud-Fog", 40],
+		711: ["Cloud-Fog", 40],
+		721: ["Cloud-Fog", 40],
+		731: ["Cloud-Fog", 40],
+		741: ["Cloud-Fog", 40],
+		802: ["Cloud-Sun", 80],
+		803: ["Cloud-Sun", 80],
+		803: ["Cloud", 50],
+		900: ["Tornado", 50],
+		901: ["Tornado", 50],
+		902: ["Tornado", 50],
+		903: ["Cloud", 0],
+		904: ["Sun", 100],
+		905: ["Cloud-Wind", 30],
+		906: ["Cloud-Hail", 15]
     };
     return b[a]
 }
@@ -402,6 +417,7 @@ function weather_code(a) {
 // App Start
 stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location))
 
+// Refreshes Every 1.5 hrs
 setInterval(function() {
 	stormcloud_cli.render(JSON.parse(localStorage.stormcloud_location))
-}, 150000)
+}, 5400000)
