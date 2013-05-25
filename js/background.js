@@ -194,36 +194,27 @@ stormcloud_cli = {
 				return blend(percentage)
 			}
 
+			var weather = {}
+			var opcount = 0
+
+			// Current Data
 			$.ajax({
+				url: 'http://api.openweathermap.org/data/2.5/weather?id=' + location.zip + "&" + Math.round(Math.random() * 1000000),
+				success: function(result) {
+					opcount++
 
-				url: 'http://api.openweathermap.org/data/2.5/forecast/daily?id=' + location.zip + "&cnt=4&mode=json&" + Math.round(Math.random() * 1000000),
-				timeout: 10000,
-				success: function(data) {
+					//Current Weather
+					weather.code = result.weather[0].id
 
-					//Weather Object
-					weather = {}
-					if (localStorage.stormcloud_average == "true") {
-						weather.average = true
-					}
+					weather.temperature = result.main.temp
 
-					//Location
-					weather.link = "http://openweathermap.org/Maps?zoom=11&lat=" + data.city.coord.lat + "&lon=" + data.city.coord.lon
-					weather.place = location.place || data.city.name
-					weather.country = data.city.country
-					weather.zip = data.city.id
+					weather.windSpeed = result.wind.speed
+					weather.windDirection = result.wind.deg
 
-					//Temperature - not current temp (we're lying that it is)
-					time = new Date().getHours()
-					if (time >= 6 && time < 10) {
-						var temp = data.list[0].temp.morn
-					} else if (time >= 10 && time < 4) {
-						var temp = data.list[0].temp.day
-					} else if (time >= 4 && time < 8) {
-						var temp = data.list[0].temp.eve
-					} else {
-						var temp = data.list[0].temp.night
-					}
+					//Humidity
+					weather.humidity =  result.main.humidity
 
+					var temp = weather.temperature
 					if (localStorage.stormcloud_measurement == "c") {
 						weather.temperature = Math.round((temp - 273.15)) + " &deg;"
 					} else if (localStorage.stormcloud_measurement == "k") {
@@ -233,15 +224,51 @@ stormcloud_cli = {
 					}
 
 					//Wind
-					weather.windSpeed = data.list[0].speed
 					if (localStorage.stormcloud_speed != "ms") {
 						weather.windSpeed = (localStorage.stormcloud_speed == "kph") ? Math.round(weather.windSpeed * 3.6) : Math.round(weather.windSpeed * 2.2369)
 						weather.windUnit = (localStorage.stormcloud_speed == "kph") ? "kph" : "mph"
 					}
-					weather.windDirection = data.list[0].deg
 
-					//Humidity
-					weather.humidity =  data.list[0].humidity
+					// Converts it into names etc
+					weather.background = background(Math.round(weather_code(weather.code)[1]/2.2 + 45))
+					weather.code = weather_code(weather.code)[0]
+
+					if (localStorage.stormcloud_color == "gradient") {
+						weather.background = background((temp - 273.15)* 1.8 + 32)
+					}
+					weather.gradientbackground = background((temp - 273.15)* 1.8 + 32)
+
+					if (opcount == 2) {
+						if (callback && arr) {
+							callback(weather, arr)
+						} else if (callback) {
+							callback(weather)
+						} else {
+							console.log(weather)
+						}
+					}
+
+				},
+				timeout: 10000
+			})
+
+			$.ajax({
+
+				url: 'http://api.openweathermap.org/data/2.5/forecast/daily?id=' + location.zip + "&cnt=4&mode=json&" + Math.round(Math.random() * 1000000),
+				timeout: 10000,
+				success: function(data) {
+					opcount++
+
+					//Weather Object
+					if (localStorage.stormcloud_average == "true") {
+						weather.average = true
+					}
+
+					//Location
+					weather.link = "http://openweathermap.org/Maps?zoom=11&lat=" + data.city.coord.lat + "&lon=" + data.city.coord.lon
+					weather.place = location.place || data.city.name
+					weather.country = data.city.country
+					weather.zip = data.city.id
 
 					// //Weekly Weather
 					weekArr = data.list
@@ -266,24 +293,14 @@ stormcloud_cli = {
 						}
 					}
 
-					//Current Weather
-					weather.code = data.list[0].weather[0].id
-
-					// Converts it into names etc
-					weather.background = background(Math.round(weather_code(weather.code)[1]/2.2 + 45))
-					weather.code = weather_code(weather.code)[0]
-
-					if (localStorage.stormcloud_color == "gradient") {
-						weather.background = background((temp - 273.15)* 1.8 + 32)
-					}
-					weather.gradientbackground = background((temp - 273.15)* 1.8 + 32)
-
-					if (callback && arr) {
-						callback(weather, arr)
-					} else if (callback) {
-						callback(weather)
-					} else {
-						console.log(weather)
+					if (opcount == 2) {
+						if (callback && arr) {
+							callback(weather, arr)
+						} else if (callback) {
+							callback(weather)
+						} else {
+							console.log(weather)
+						}
 					}
 				},
 				error: function(data) {
