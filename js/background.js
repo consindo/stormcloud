@@ -254,7 +254,7 @@ stormcloud_cli = {
 						if (localStorage.stormcloud_measurement == "c") {
 							weather.week[i].low = Math.round(weekArr[i].temp.min - 273.15) + "&deg;"
 							weather.week[i].high = Math.round(weekArr[i].temp.max - 273.15) + "&deg;"
-							weather.week[i].average = Math.round(((weekArr[i].temp.min + weekArr[i].temp.max)- 273.15)/2) + "&deg;"
+							weather.week[i].average = Math.round(((weekArr[i].temp.min- 273.15) + (weekArr[i].temp.max- 273.15))/2) + "&deg;"
 						} else if (localStorage.stormcloud_measurement == "k") {
 							weather.week[i].low = Math.round(weekArr[i].temp.min) + "K"
 							weather.week[i].high = Math.round(weekArr[i].temp.max) + "K"
@@ -262,7 +262,7 @@ stormcloud_cli = {
 						} else {
 							weather.week[i].low = Math.round((weekArr[i].temp.min - 273.15)* 1.8 + 32) + "&deg;"
 							weather.week[i].high = Math.round((weekArr[i].temp.max - 273.15)* 1.8 + 32) + "&deg;"
-							weather.week[i].average = Math.round((((weekArr[i].temp.min + weekArr[i].temp.max)- 273.15)* 1.8 + 32)/2) + "&deg;"
+							weather.week[i].average = Math.round((((weekArr[i].temp.min- 273.15) + (weekArr[i].temp.max- 273.15))* 1.8 + 32)/2) + "&deg;"
 						}
 					}
 
