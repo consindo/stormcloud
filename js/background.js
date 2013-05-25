@@ -271,7 +271,7 @@ stormcloud_cli = {
 					weather.zip = data.city.id
 
 					// //Weekly Weather
-					weekArr = data.list
+					var weekArr = data.list
 					weather.week = []
 					for (var i=0; i<weekArr.length; i++) {
 						weather.week[i] = {}
@@ -410,16 +410,16 @@ function weather_code(a) {
 		602: ["Cloud-Snow", 0],
 		611: ["Cloud-Snow", 0],
 		621: ["Cloud-Snow", 0],
-		800: ["Sun", 100],
-		801: ["Sun", 100],
 		701: ["Cloud-Fog", 40],
 		711: ["Cloud-Fog", 40],
 		721: ["Cloud-Fog", 40],
 		731: ["Cloud-Fog", 40],
 		741: ["Cloud-Fog", 40],
+		800: ["Sun", 100],
+		801: ["Sun", 100],
 		802: ["Cloud-Sun", 80],
 		803: ["Cloud-Sun", 80],
-		803: ["Cloud", 50],
+		804: ["Cloud", 50],
 		900: ["Tornado", 50],
 		901: ["Tornado", 50],
 		902: ["Tornado", 50],
