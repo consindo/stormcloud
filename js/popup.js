@@ -21,7 +21,7 @@ $(function() {
     var gui = require('nw.gui')
     var win = gui.Window.get()
     win.show()
-    win.showDevTools()
+    // win.showDevTools()
 
     //Bind Handlers
     $("#panel .close").click(function() {
@@ -1072,6 +1072,7 @@ stormcloud.hashes = [
   "bc00a135f7100ddd6d0c7f4518d855044587e81cb4968074b94ce7ed545ae9f7",
   "7431b8078863e48570ef08b42aefd315491a35454fd7ea884d3c76f71555cba2",
   "2c7aac9f0eac5ce2d04da6baac6ecf306daadab3cdbef395cb3aaeb2abd032a9",
+
   "d9361e082ec2ef7322bc77c95aba8401500fee950aef934ae781046724a8f819",
   "e9675ba225a4f7d4e69f13a0f92c366f38fc54e2be5b1fd514760efee71800aa",
   "6dba0447fb901bc562d6b1a9589a6332037d563fc1d532fd077d39146533c25f",
