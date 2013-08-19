@@ -21,7 +21,7 @@ In any case, it's pretty simple to get Stormcloud up and running.
 
 - Download this repo
 - Download node-webkit
-- Drag and drop the repo onto node-webkit or `nw /path/to/stormcloud` in terminal
+- Drag and drop the repo onto node-webkit or `/path/to/nw /path/to/stormcloud` in terminal
 
 I'm an unemployed high school student. Even though it's the most downloaded app in the Ubuntu Store, I'm not cruising in my luxury yacht.
 
