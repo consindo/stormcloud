@@ -75,7 +75,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -222,7 +222,7 @@ body.drag {
     font-family: monospace;
     font-size: 12px;
     resize: none;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     width: 85%;
     height: 70px; }
   #pro a {
@@ -245,14 +245,23 @@ img {
   height: 100%;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -webkit-transition-property: opacity, background-color;
-  -webkit-transition-duration: 300ms, 300ms;
-  -webkit-transition-timing-function: ease, ease; }
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 300ms;
+  -webkit-transition-timing-function: ease; }
   #container ul {
     padding: 0;
-    margin: 0; }
-  #container.transparent {
-    opacity: 0; }
+    margin: 0;
+    list-style-type: none;
+    -webkit-transition: 300ms opacity ease; }
+    #container ul.transparent {
+      opacity: 0; }
+  #container li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden; }
+    #container li.current {
+      visibility: visible; }
 
 .middle {
   width: 280px;
@@ -453,7 +462,7 @@ img {
       cursor: default; }
 
 input[type=checkbox] {
-  border: 2px solid #222222;
+  border: 2px solid #222;
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
@@ -637,7 +646,7 @@ select {
     cursor: default;
     box-sizing: border-box;
     width: 44px;
-    border: 2px solid #222222;
+    border: 2px solid #222;
     border-right: 0;
     background-color: #333;
     cursor: default; }
@@ -649,7 +658,7 @@ select {
     .toggleswitch span.selected, .toggleswitch span:hover {
       background-color: #555; }
     .toggleswitch span:last-child {
-      border-right: 2px solid #222222; }
+      border-right: 2px solid #222; }
   .toggleswitch.speed span {
     line-height: 35px;
     padding: 0 7px;
@@ -681,7 +690,7 @@ input[type=checkbox]:checked {
   font-size: 0;
   margin-top: 10px;
   display: inline-block;
-  border: 2px solid #333333; }
+  border: 2px solid #333; }
   .color.boxes span {
     height: 14px;
     width: 14px;
@@ -693,7 +702,7 @@ input[type=checkbox]:checked {
       border: 0;
       height: 22px;
       width: 22px;
-      border-right: 2px solid #333333;
+      border-right: 2px solid #333;
       cursor: default; }
 
 label.color {
@@ -712,7 +721,7 @@ label.color {
 .btn {
   cursor: default;
   text-transform: uppercase;
-  border: 2px solid #222222;
+  border: 2px solid #222;
   background: #333;
   color: white;
   -webkit-transition: 150ms ease background;
@@ -755,7 +764,7 @@ label.color {
   padding: 0px;
   overflow: hidden;
   background: #333;
-  display: block!important;
+  display: block !important;
   -webkit-transform: translateZ(0);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -876,7 +885,7 @@ label.color {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
@@ -901,7 +910,7 @@ label.color {
 
   pre,
   blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid; }
 
   thead {

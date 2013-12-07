@@ -1,16 +1,15 @@
 /*jshint asi: true*/
+/* global stormcloud_cli, Handlebars, chrome, console, require, CryptoJS */
 
 // So we dont have to define twice
-try {
-  chrome
+if (typeof chrome !== 'undefined') {
   window.app = "chrome"
-} catch(err) {
+} else {
   window.app = "linux"
 }
 
 
-var stormcloud = {},
-    slider = new Swipe(document.getElementById('container'))
+var stormcloud = {}
 
 $(function() {
 
@@ -21,7 +20,7 @@ $(function() {
     var gui = require('nw.gui')
     var win = gui.Window.get()
     win.show()
-    // win.showDevTools()
+    win.showDevTools()
 
     //Bind Handlers
     $("#panel .close").click(function() {
@@ -35,7 +34,7 @@ $(function() {
     //Opens links in browsers
     $('body').on("click", "a", function(e) {
       e.preventDefault()
-      if ($(this).attr("href") != "#") {
+      if ($(this).attr("href") !== "#") {
         gui.Shell.openExternal($(e.currentTarget).attr("href"))
       }
     })
@@ -117,12 +116,23 @@ $(function() {
   })
 
   $("#panel .sliderControls img").click(function() {
-    if ($(this).hasClass("left")) {
-      slider.prev()
-    } else {
-      slider.next()
-    }
-    stormcloud.posChange()
+    var _this = this;
+    $("#container ul").addClass("transparent").on("webkitTransitionEnd", function() {
+      if ($(_this).hasClass("left")) {
+        if (!$(".current").is(":first-child")) {
+          $(".current").removeClass("current").prev().addClass('current')
+        }
+      } else {
+        if ($(".current").is(":last-child")) {
+          $(".current").removeClass("current")
+          $("#container li:first").addClass('current')
+        } else {
+          $(".current").removeClass("current").next().addClass('current')
+        }
+      }
+      $("#container ul").off("webkitTransitionEnd").removeClass("transparent")
+      stormcloud.posChange()
+    })
   })
 
   $("#panel .sync").click(function() {
@@ -149,7 +159,7 @@ $(function() {
   $("#panel").click(function(e) {
     if ($(e.target).hasClass("settingsImg")) {
       $("#settings").fadeToggle(200)
-      if ($("#settings").is(":visible") && $($("#accordion").children()[1]).attr("aria-hidden") == "true") {
+      if ($("#settings").is(":visible") && $($("#accordion").children()[1]).prop("aria-hidden") === true) {
         $("#accordion").children().first().find("a").trigger("click")
       }
     } else {
@@ -178,12 +188,13 @@ stormcloud.reload = function() {
     $("#container li > div")[i].innerHTML = template(weather[i])
   }
 
+  $('.middle').first().parent().parent().addClass("current")
+
   // Hardcoded dimensions
   if (window.app === "linux") {
     stormcloud.dimensions(300, 500)
   }
 
-  slider = new Swipe(document.getElementById('container'))
   stormcloud.textfix()
   stormcloud.posChange()
 }
@@ -214,7 +225,7 @@ stormcloud.softreload = function() {
 
 stormcloud.posChange = function() {
   if (localStorage.stormcloud_color === "gradient" || localStorage.stormcloud_color === "weather") {
-    $('#container').css('background-color', $($('.middle')[slider.getPos()]).attr("data-background"))
+    $('#container').css('background-color', $(".current .middle").attr("data-background"))
   } else if (localStorage.stormcloud_color === "desktop") {
     $('#container').css('background-color', stormcloud.getUnityDesktopBackgroundColor())
   } else {
@@ -254,7 +265,7 @@ stormcloud.loadSettings = function() {
   }
 
   settingsObj.proButton = false
-  if (window.app === "chrome" && stormcloud.hashes.indexOf(CryptoJS.SHA256(localStorage.stormcloud_license).toString()) == -1) {
+  if (window.app === "chrome" && stormcloud.hashes.indexOf(CryptoJS.SHA256(localStorage.stormcloud_license).toString()) === -1) {
     settingsObj.proButton = true
   }
 
@@ -491,7 +502,7 @@ stormcloud.getUnityDesktopBackgroundColor = function() {
 }
 
 stormcloud.checkPro = function() {
-  if (window.app === "chrome" && stormcloud.hashes.indexOf(CryptoJS.SHA256(localStorage.stormcloud_license).toString()) == -1) {
+  if (window.app === "chrome" && stormcloud.hashes.indexOf(CryptoJS.SHA256(localStorage.stormcloud_license).toString()) === -1) {
     // Shows Marketing Bullshit
     $("#pro").addClass("anim show")
     return false

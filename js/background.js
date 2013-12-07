@@ -9,11 +9,11 @@ try {
 }
 
 if (app === "linux") {
-	process.on("exit", function() {
-		var exec = require("child_process").exec
-		exec("kill -9 " + pyserver.pid)
-		exec("kill -9 " + (pyserver.pid + 1))
-	})
+	// process.on("exit", function() {
+	// 	var exec = require("child_process").exec
+	// 	exec("kill -9 " + pyserver.pid)
+	// 	exec("kill -9 " + (pyserver.pid + 1))
+	// })
 }
 
 // Upgrader

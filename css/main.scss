@@ -304,17 +304,30 @@ img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 
-    -webkit-transition-property: opacity, background-color;
-    -webkit-transition-duration: 300ms, 300ms;
-    -webkit-transition-timing-function: ease, ease;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease;
 
     ul {
         padding: 0;
         margin: 0;
+        list-style-type: none;
+        -webkit-transition: 300ms opacity ease;
+
+        &.transparent {
+            opacity: 0;
+        }
     }
 
-    &.transparent {
-        opacity: 0;
+    li {
+        position: absolute;
+        top:0;
+        left:0;
+        visibility: hidden;
+
+        &.current {
+            visibility: visible;
+        }
     }
 }
 
