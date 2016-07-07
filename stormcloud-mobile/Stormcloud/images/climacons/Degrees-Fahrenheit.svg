@@ -1,0 +1,8 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="34" viewBox="0 0 43.997002 33.997002" xml:space="preserve"><style>
+	.style0{
+		fill:	#ffffff;
+		fill-rule:	evenodd;
+	}
+</style><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><defs/>
+<path d="m 35 13 c 0 -2.2 -1.8 -4 -4 -4 -2.2 0 -4 1.8 -4 4 v 4 h 8 v 4 h -8 v 8 h -4 v -8 -4 -4 C 23 8.6 26.6 5 31 5 c 4.4 0 8 3.6 8 8 H 35 z M 12 19 C 8.1 19 5 15.9 5 12 5 8.1 8.1 5 12 5 c 3.9 0 7 3.1 7 7 0 3.9 -3.1 7 -7 7 z m 0 -10 c -1.7 0 -3 1.3 -3 3 0 1.7 1.3 3 3 3 1.7 0 3 -1.3 3 -3 0 -1.7 -1.3 -3 -3 -3 z" class="style0"/>
+</svg>

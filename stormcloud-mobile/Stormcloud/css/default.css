@@ -1,0 +1,272 @@
+﻿body, html {
+  height: 100%;
+  font-family: "Segoe", "Segoe WP", "Segoe UI", sans-serif;
+}
+#contenthost {
+  height: 100%;
+}
+
+#planetview-wrap-wrap {
+  transition: 300ms ease background-color;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+#planetview-wrap {
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-x: snapInterval(0px, 320px);
+  -ms-overflow-style: none;
+  padding: 10px 0 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#planetview {
+  height: 100%;
+  width: 640px;
+  /*overflow-y: hidden;*/
+  display: flex;
+}
+
+#planetview .item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* top section with city info */
+#planetview .top {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+#planetview .city {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+#planetview .city .xhr-request {
+  margin: 0px 0px 0px 10px;
+  color: #fff;
+  visibility: hidden;
+}
+#planetview .item.xhr .city span {
+
+}
+#planetview .item.xhr .city .xhr-request {
+  /*display: inline;*/
+  visibility: visible;
+}
+
+#planetview .weather {
+  height: 32%;
+  width: 100%;
+  text-align: center;
+}
+#planetview .weather canvas {
+  margin-top: 3%;
+}
+#planetview .weather img {
+  height: 100%;
+  width: auto;
+}
+
+/* 3rd section with temperature numbers */
+#planetview .stats {
+  height: 25%;
+  width: 100%;
+  display: flex;
+}
+#planetview .inner-row {
+  display: flex
+}
+#planetview .stats .left, #planetview .stats .right {
+  width: 50%;
+  /* no idea what this is relative to */
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+#planetview .stats .left {
+  text-align: right;
+}
+#planetview .stats .left span {
+  position:relative;
+  top: -3%;
+}
+#planetview .stats .right {
+  font-weight: 300;
+}
+#planetview .stats .right .inner-row {
+  padding: 3%;
+}
+
+/* 4th section with forectast */
+#planetview .forecast {
+  height: 22%;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+}
+#planetview .forecast > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+#planetview .forecast > div > span {
+  display: block;
+}
+.wday, .wtemp {
+  flex: 1;
+}
+.wday {
+  padding-top: 5%;
+}
+.wcode {
+  flex: 2;
+}
+.wcode img {
+  height: auto;
+  width: 65%;
+}
+
+#settings, #adder {
+  visibility: hidden;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* fxos override */
+#settings header {
+  display: none;
+}
+
+/* SETTINGS PANEL */
+.settings {
+  padding-top: 25px;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  height: 100%;
+}
+.settings h4 {
+  opacity: 0.8;
+  font-size: 13pt;
+  margin: 1.5em 0 0.5em;
+}
+.settings h4:first-child {
+  margin-top: 0;
+}
+
+.locationSettingsList {
+  margin: 0 0 30px 0;
+}
+.locationSettingsList h3 {
+  font-size: 22pt;
+  margin: 0 0 8px;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+/* our hover class */
+.locationSettingsList h3, #adder h3 {
+  transition: transform 0.2s;
+}
+.locationSettingsList h3:active, #adder h3:active {
+  transform: scale(0.9, 0.9);
+}
+
+.top-progress {
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  margin: 0;
+  display: none;
+}
+.top-progress.show {
+  display: block;
+}
+
+
+/* this is so stuff won't overflow. I love flexbox! */
+.radio-container {
+  display: flex;
+
+}
+.radio-button {
+  position: relative;
+  display: inline-block;
+}
+.radio-button input[type='radio'] {
+  display: none;
+}
+
+.radio-button input[type='radio']:checked + label, .radio-button input[type='radio']:active + label {
+  color: #fff;
+  background: Highlight;
+  z-index: 5;
+}
+.radio-button label {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding: 7px 20px;
+  outline: 2.25px solid #fff;
+  z-index: 4;
+  font-size: 12pt;
+  margin-left: 2.25px;
+}
+#adder {
+  display: none;
+  z-index: 2;
+  visibility: visible;
+}
+#adder section {
+	margin: 25px 18px;
+}
+#adder h3 {
+  font-size: 22pt;
+  margin: 4px 0 12px;
+}
+.title {
+  font-size: 14pt;
+  font-weight: 600;
+  padding: 12px 0 0;
+  text-transform: uppercase;
+}
+.floatyprogress {
+  display: none;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  top: 30%;
+  z-index: 1;
+}
+.floatyprogress.show {
+   display: inline;
+}
+#noResults {
+  display: none;
+  color: gray;
+}

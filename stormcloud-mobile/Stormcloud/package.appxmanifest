@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="18027CaffeinatedCode.Stormcloud" Version="1.1.0.2" Publisher="CN=7B5AEDB3-F20A-4519-AE48-930814CF4E49" />
+  <mp:PhoneIdentity PhoneProductId="d0003a4a-e765-4a05-b1b7-67cbb26159c2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>Stormcloud</DisplayName>
+    <PublisherDisplayName>Caffeinated Code</PublisherDisplayName>
+    <Logo>images\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="windows.html">
+      <m3:VisualElements DisplayName="Stormcloud" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png" Description="Stormcloud" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
+        <m3:DefaultTile Square71x71Logo="images\Square71x71Logo.png" DefaultSize="square150x150Logo" ShortName="Stormcloud">
+          <m3:ShowNameOnTiles>
+            <m3:ShowOn Tile="square150x150Logo" />
+          </m3:ShowNameOnTiles>
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="images\SplashScreen.png" />
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+        </m3:InitialRotationPreference>
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" StartPage="background.js">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>

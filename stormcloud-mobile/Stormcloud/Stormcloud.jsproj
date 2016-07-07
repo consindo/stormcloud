@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>c3aff95b-7d10-4b45-a9c7-72155b9f79aa</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0'">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <PropertyGroup Label="Configuration">
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <RequiredPlatformVersion>8.1</RequiredPlatformVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="background.js" />
+    <Content Include="css\fxos.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="images\128.png" />
+    <Content Include="images\256.png" />
+    <Content Include="images\512.png" />
+    <Content Include="images\60.png" />
+    <Content Include="images\64.png" />
+    <Content Include="images\Cloud-Lightning-01.png" />
+    <Content Include="images\cross.svg" />
+    <Content Include="images\settings.svg" />
+    <Content Include="images\store.png" />
+    <Content Include="images\sync.svg" />
+    <Content Include="images\tick.svg" />
+    <Content Include="js\atom.js" />
+    <Content Include="js\libs\iscroll.js" />
+    <Content Include="js\libs\skycons.js" />
+    <Content Include="windows.html" />
+    <Content Include="fxos.html" />
+    <Content Include="images\climacons\Cloud-Drizzle.svg" />
+    <Content Include="images\climacons\fog.svg" />
+    <Content Include="images\climacons\sleet.svg" />
+    <Content Include="images\climacons\Cloud-Lightning.svg" />
+    <Content Include="images\climacons\Cloud-Moon.svg" />
+    <Content Include="images\climacons\rain.svg" />
+    <Content Include="images\climacons\snow.svg" />
+    <Content Include="images\climacons\partly_cloudy_day.svg" />
+    <Content Include="images\climacons\wind.svg" />
+    <Content Include="images\climacons\cloudy.svg" />
+    <Content Include="images\climacons\Degrees-Celcius.svg" />
+    <Content Include="images\climacons\Degrees-Fahrenheit.svg" />
+    <Content Include="images\climacons\Moon.svg" />
+    <Content Include="images\climacons\clear_day.svg" />
+    <Content Include="images\climacons\Tornado.svg" />
+    <Content Include="images\Square150x150Logo.scale-240.png" />
+    <Content Include="images\Square44x44Logo.scale-240.png" />
+    <Content Include="images\Wide310x150Logo.scale-240.png" />
+    <Content Include="images\Square71x71Logo.scale-240.png" />
+    <Content Include="images\SplashScreen.scale-240.png" />
+    <Content Include="images\StoreLogo.scale-240.png" />
+    <Content Include="js\collections\planet.js" />
+    <Content Include="js\data.js" />
+    <Content Include="js\windows.js" />
+    <Content Include="js\fxos.js" />
+    <Content Include="js\libs\backbone-min.js" />
+    <Content Include="js\libs\backbone-min.map" />
+    <Content Include="js\libs\fittext.js" />
+    <Content Include="js\libs\simply-deferred.js" />
+    <Content Include="js\libs\underscore-min.js" />
+    <Content Include="js\libs\underscore-min.map" />
+    <Content Include="js\libs\underscore.js" />
+    <Content Include="js\libs\zepto-callbacks.js" />
+    <Content Include="js\libs\zepto-deferred.js" />
+    <Content Include="js\libs\zepto.min.js" />
+    <Content Include="js\loader.js" />
+    <Content Include="js\models\settings.js" />
+    <Content Include="js\routers\stormcloud.js" />
+    <Content Include="js\models\location.js" />
+    <Content Include="css\default.css" />
+    <Content Include="css\ui-themed.css" />
+    <Content Include="css\ui-themed.theme-dark.css" />
+    <Content Include="css\ui-themed.theme-light.css" />
+    <Content Include="js\templates\adder.js" />
+    <Content Include="js\templates\location.js" />
+    <Content Include="js\templates\settings.js" />
+    <Content Include="js\views\adder.js" />
+    <Content Include="js\views\app.js" />
+    <Content Include="js\views\location.js" />
+    <Content Include="js\views\planet.js" />
+    <Content Include="js\views\settings.js" />
+    <Content Include="manifest.webapp" />
+    <None Include="Package.StoreAssociation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.Phone.WinJS.2.1, Version=1.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>

@@ -1,0 +1,22 @@
+{
+  "version": "1.1.0.4",
+  "name": "Stormcloud",
+  "description": "Quickly check the weather with Stormcloud. With a beautifully designed interface, it's easier than looking outside.",
+  "launch_path": "/fxos.html",
+  "permissions": {
+    "geolocation": {
+      "description": "Required to get weather for current location."
+    }
+  },
+  "icons": {
+    "60": "/images/60.png",
+    "64": "/images/64.png",
+    "128": "/images/128.png",
+    "256": "/images/256.png"
+  },
+  "developer": {
+    "name": "Caffeinated Code",
+    "url": "http://getstormcloud.com"
+  },
+  "default_locale": "en"
+}

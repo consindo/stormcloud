@@ -1,28 +1,8 @@
-Stormcloud
-==========
+# Stormcloud
+This is Stormcloud. [It used to be pretty popular](http://www.omgubuntu.co.uk/2016/07/revive-stormcloud-typhoon-linux-weather-app). However, **it is no longer under active development**.
 
-An awesome weather app.
+There are two versions here, the desktop version for Ubuntu & Chrome, and the mobile version for Windows Phone 8 & Firefox OS (whoops, both dead platforms). The mobile version is newer, has much better code quality, more settings, and more fancy features. I would recommend using this codebase if you want to either revive Stormcloud, or roll bits of it into your own app.
 
-- Design and Dev by @consindo
-- Icons (Climacons) by @AdamWhitcroft
-- Weather by Yahoo
-- Inspiration from @d0od, @sil and @GeorgeCzabania
+Licensed under Simplified BSD License, so do whatever your want. [Contact me](https://m.me/jonocoopernz) if you have any questions!
 
-Released under the DBAD License (Don't be a dick license).
-
-Packages available exclusively from the Ubuntu Software Center.
-
-Can't afford it?
-----------------
-
-It's $2.99, just think twice if you're currently sitting in Starbucks with your Mac, iPhone and $5 Latte.
-
-In any case, it's pretty simple to get Stormcloud up and running.
-
-- Download this repo
-- Download node-webkit
-- Drag and drop the repo onto node-webkit or `nw /path/to/stormcloud` in terminal
-
-I'm an unemployed high school student. Even though it's the most downloaded app in the Ubuntu Store, I'm not cruising in my luxury yacht.
-
-<http://getstormcloud.com>
+(c) 2012-2014 Jono Cooper <http://jono.nz>

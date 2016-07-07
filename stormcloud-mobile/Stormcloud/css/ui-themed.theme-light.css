@@ -1,0 +1,5 @@
+﻿@import url(//Microsoft.Phone.WinJS.2.1/css/ui-light.css);
+
+.radio-button label {
+  outline-color: #000 !important;
+}
